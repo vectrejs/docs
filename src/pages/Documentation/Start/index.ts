@@ -1,0 +1,1 @@
+export { StartRoute } from './route';
