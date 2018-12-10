@@ -1,59 +1,40 @@
 <template>
   <div class="main-menu">
-    <accordion 
-      :items="routes" 
-      :checked="checked" 
-      @check="checked = $event" 
-      multiple
-    >
+    <accordion :items="routes" :checked="checked" @check="checked = $event" multiple>
       <!-- Menu item -->
       <div slot="header" slot-scope="{item: route, index}">
-        <router-link 
-          v-if="!route.children && !route.anchors" 
-          :to="route.path" 
+        <router-link
+          v-if="!route.children && !route.anchors"
+          :to="rootPath + route.path"
           @click.native="onSelect"
-          tag="div" 
-          class="router-link" 
-        > 
-          {{route.title}} 
-        </router-link>
+          tag="div"
+          class="router-link"
+          exact
+        >{{route.title}}</router-link>
 
         <template v-else>{{ route.title }}</template>
       </div>
 
       <template slot-scope="{item: parent, index}" slot="body">
         <!-- Submenu items with anchors -->
-        <vs-menu
-          v-if="parent.anchors"
-          :items="parent.anchors"
-          class="menu-nav" 
-        >
-          <router-link 
+        <vs-menu v-if="parent.anchors" :items="parent.anchors" class="menu-nav">
+          <router-link
             slot-scope="{item: anchor, index: title}"
             :key="title"
-            :to="parent.path + '#' + anchor"
-            @click.native="onSelect(), goToAnchor(parent.path, anchor)"
-          >
-            {{ title }}
-          </router-link>
+            :to="rootPath + parent.path + '#' + anchor"
+            @click.native="onSelect(), goToAnchor(rootPath + parent.path, anchor)"
+          >{{ title }}</router-link>
         </vs-menu>
 
         <!-- Submenu items from children -->
-        <vs-menu 
-          v-if="parent.children" 
-          :items="parent.children"
-          class="menu-nav" 
-        >
-          <router-link 
-            slot-scope="{item: child, index}" 
-            :to="parent.path + '/' + child.path" 
+        <vs-menu v-if="parent.children" :items="parent.children" class="menu-nav">
+          <router-link
+            slot-scope="{item: child, index}"
+            :to="rootPath + parent.path + '/' + child.path"
             @click.native="onSelect"
-          >
-            {{ child.title }}
-          </router-link>
+          >{{ child.title }}</router-link>
         </vs-menu>
       </template>
-    
     </accordion>
   </div>
 </template>
@@ -65,6 +46,7 @@ import { Component, RouteConfig } from 'vue-router/types/router';
 
 export default Vue.extend({
   props: {
+    rootPath: { type: String, default: '' },
     routes: [Object, Array],
   },
 
