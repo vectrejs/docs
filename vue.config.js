@@ -7,4 +7,4 @@ const configureWebpack = {
   
 }
 
-module.exports = { configureWebpack }
+module.exports = { configureWebpack, outputDir: 'docs' }

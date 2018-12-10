@@ -2,7 +2,7 @@ import { RouteConfig } from 'vue-router';
 import Layout from './Layout.vue';
 
 const LayoutRoute = {
-  path: '/layout',
+  path: 'layout',
   title: 'Layout',
   component: Layout,
   anchors: {
