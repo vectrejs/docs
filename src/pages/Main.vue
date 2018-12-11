@@ -12,7 +12,7 @@
           <u>Responsive</u> Component Framework
         </h2>
         <p>
-          <a class="btn btn-lg" href="/docs/getting-started">Docs</a>
+          <router-link class="btn btn-lg" to="pages/getting-started">Docs</router-link>
           &nbsp;
           <a class="btn btn-lg" href="https://github.com/vectrejs/vectre">GitHub</a>
         </p>
@@ -59,7 +59,7 @@
     <footer>
       <container grid="lg">
         <p>
-          <a href="/docs">Documentation</a>
+          <router-link to="pages">Documentation</router-link>
           ·
           <a href="https://github.com/vectrejs/vectre">GitHub</a>
           ·

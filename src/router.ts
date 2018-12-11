@@ -6,7 +6,6 @@ vue.use(vueRouter);
 
 export default new vueRouter({
   routes,
-  mode: 'history',
   scrollBehavior: (to) => {
     if (to.hash) {
       return { selector: to.hash, offset: { x: 0, y: 50 } };

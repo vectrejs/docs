@@ -9,9 +9,9 @@ export const routes: RouteConfig[] = [
     component: Main,
   },
   {
-    path: '/docs',
+    path: '/pages',
     component: Docs,
     children: docRoutes,
-    props: { routes: docRoutes, rootPath: '/docs/' },
+    props: { routes: docRoutes, rootPath: '/pages/' },
   },
 ];
