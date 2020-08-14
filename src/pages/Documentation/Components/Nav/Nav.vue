@@ -1,54 +1,66 @@
 <template>
   <component-view>
-    <h2 class="title">Nav <code>&lt;vs-nav&gt;</code></h2>
+    <h2 class="title">Navigation</h2>
     <p>Simple way to show navigation as a vertical hierarchical list</p>
 
     <h3 class="subtitle">Base use</h3>
-    <vs-nav :items="items" />
+    <navigation :items="items" />
     <prism language="html" :code="baseHtml" />
     <prism language="js" :code="baseJs" />
-    <p>
-      <code>items</code> prop should have a certain structure to be used in a simplified way:
-      <pre>  Array of { 
-        path: string,
-        text: string,
-        active?: boolean
-    }</pre>
-    </p>
+
+    <p><code>items</code> prop should have a certain structure to be used in a simplified way:</p>
+    <pre>
+Array of { 
+  path: string,
+  text: string,
+  active?: boolean
+} </pre
+    >
 
     <h3 class="subtitle">Advanced</h3>
-    <vs-nav :items="items" level="1">
-      <span slot-scope="{item, index}"> <icon type="right"/> {{ item.text }} </span>
-    </vs-nav>
-    <prism language="html" :code="advancedHtml" />  
+    <navigation :items="items" level="1">
+      <span slot-scope="{ item }">
+        <icon type="right" />
+        {{ item.text }}
+      </span>
+    </navigation>
+    <prism language="html" :code="advancedHtml" />
     <p>
-      <code>items</code> could be any iterable structure. In this case,
-      you have to define how to display each item using default scoped slot.
+      <code>items</code> could be any iterable structure. In this case, you have to define how to display each item
+      using default scoped slot.
     </p>
-
   </component-view>
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import { slots } from './slots';
 import { props } from './props';
 
-export default {
+export default Vue.extend({
+  name: 'NavigationPage',
+
   data: () => ({
     slots,
     props,
     items: [
       { path: '#elements', text: 'Elements' },
-      { path: '#layout', text: 'Layout', items: [
-        { path: '#flex', text: 'Flexbox grid' },
-        { path: '#responsive', active: true, text: 'Responsive' },
-        { path: '#navbar', text: 'Navbar', items: [
-          { path: '#menu', text: 'Menu' },
-        ]},
-      ]},
+      {
+        path: '#layout',
+        text: 'Layout',
+        items: [
+          { path: '#flex', text: 'Flexbox grid' },
+          { path: '#responsive', active: true, text: 'Responsive' },
+          {
+            path: '#navbar',
+            text: 'Navbar',
+            items: [{ path: '#menu', text: 'Menu' }],
+          },
+        ],
+      },
       { path: '#components', text: 'Components' },
     ],
-    baseHtml: '<vs-nav :items="items" />',
+    baseHtml: '<navigation :items="items" />',
     baseJs: `export default {
   data: () => ({
     items: [
@@ -64,12 +76,12 @@ export default {
     ],
   })
 }`,
-    advancedHtml: `<vs-nav :items="items" level="1">
+    advancedHtml: `<navigation :items="items" level="1">
   <span slot-scope="{item, index}">
     <icon type="right"/>
     {{ item.text }}
   </span>
-</vs-nav>`,
+</navigation>`,
   }),
-};
+});
 </script>

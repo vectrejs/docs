@@ -2,9 +2,8 @@
   <component-view>
     <h2 class="title">Popovers</h2>
     <p>
-      Popovers are small overlay content containers. 
-      Wrap elements by <code>popover</code> component. 
-      The first element will be shown the rest will be placed in the overlay
+      Popovers are small overlay content containers. Wrap elements by <code>popover</code> component. The first element
+      will be shown the rest will be placed in the overlay
     </p>
     <popover side="right">
       <btn>Right</btn>
@@ -38,9 +37,12 @@
   </component-view>
 </template>
 <script lang="ts">
+import Vue from 'vue';
 import { props } from './props';
 
-export default {
+export default Vue.extend({
+  name: 'PopoverPage',
+
   data: () => ({
     props,
     code: `<popover>
@@ -63,11 +65,11 @@ export default {
   <card>...r</card>
 </popover>`,
   }),
-};
+});
 </script>
 
 <style lang="scss" scoped>
-/deep/ .popover + .popover { 
+/deep/ .popover + .popover {
   margin-left: 0.4rem;
 }
 </style>

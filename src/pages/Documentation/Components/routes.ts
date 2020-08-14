@@ -5,7 +5,7 @@ export { BreadcrumbRoute } from './Breadcrumb';
 export { CardRoute } from './Card';
 export { ChipRoute } from './Chip';
 export { EmptyRoute } from './Empty';
-export { MenuRoute } from './Menu';
+export { VerticalMenuRoute } from './VerticalMenu';
 export { DropdownMenuRoute } from './DropdownMenu';
 export { ModalRoute } from './Modal';
 export { NavRoute } from './Nav';

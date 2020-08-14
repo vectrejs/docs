@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Overview from './Overview.vue';
 
 export const FormOverviewRoute = {
+  name: 'FormOverviewPage',
   path: 'overview',
-  title: 'Overview',
-  component: Overview,
+  component: () => import(/* webpackChunkName: "overview" */ './Overview.vue'),
+  meta: {
+    title: 'Overview',
+  },
 } as RouteConfig;

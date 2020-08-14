@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Select from './Select.vue';
 
 export const FormSelectRoute = {
+  name: 'SelectPage',
   path: 'select',
-  title: 'Select',
-  component: Select,
+  component: () => import(/* webpackChunkName: "select" */ './Select.vue'),
+  meta: {
+    title: 'Select',
+  },
 } as RouteConfig;

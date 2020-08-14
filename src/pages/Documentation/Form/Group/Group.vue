@@ -2,12 +2,12 @@
   <component-view>
     <h2 class="title">Group</h2>
     <p>
-      The <code>form-group</code> component is the easiest way to add some structure to forms. 
-      It provides the grouping of labels, controls, optional hints, and form validation messaging.
+      The <code>form-group</code> component is the easiest way to add some structure to forms. It provides the grouping
+      of labels, controls, optional hints, and form validation messaging.
     </p>
 
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-group>
           <form-label>Name</form-label>
           <form-input />
@@ -17,11 +17,10 @@
     </columns>
     <prism language="html" :code="basicHtml" />
 
-
     <h3 class="subtitle">Disabled</h3>
     <p>All controls of a group can be disabled at the group level.</p>
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-group disabled>
           <form-label>Name</form-label>
           <form-input placeholder="Name" />
@@ -50,23 +49,23 @@
     <p>The size can be applied to all form component except hints.</p>
 
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-group size="sm">
           <form-label>Email</form-label>
           <form-input />
-          <form-checkbox type="switch" label="Newsletter"/>
+          <form-checkbox type="switch" label="Newsletter" />
         </form-group>
 
         <form-group>
           <form-label>Email</form-label>
           <form-input />
-          <form-checkbox type="switch" label="Newsletter"/>
+          <form-checkbox type="switch" label="Newsletter" />
         </form-group>
 
         <form-group size="lg">
           <form-label>Email</form-label>
           <form-input />
-          <form-checkbox type="switch" label="Newsletter"/>
+          <form-checkbox type="switch" label="Newsletter" />
         </form-group>
       </column>
     </columns>
@@ -75,13 +74,12 @@
 
     <h3 class="subtitle">Validation state</h3>
     <p>
-      The groups have <code>success</code> and <code>error</code> 
-      properties to indicate the state of validatiion. Error hint appears
-      appropriately dependent on the type.
+      The groups have <code>success</code> and <code>error</code>
+      properties to indicate the state of validatiion. Error hint appears appropriately dependent on the type.
     </p>
 
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-group error>
           <form-label>Email</form-label>
           <form-input />
@@ -99,7 +97,6 @@
     </columns>
 
     <prism language="html" :code="validationHtml" />
-
   </component-view>
 </template>
 
@@ -108,6 +105,7 @@ import Vue from 'vue';
 import { props } from './props';
 
 export default Vue.extend({
+  name: 'GroupPage',
   data: () => ({
     props,
 
@@ -172,4 +170,3 @@ export default Vue.extend({
   }),
 });
 </script>
-

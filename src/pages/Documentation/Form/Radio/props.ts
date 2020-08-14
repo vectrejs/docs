@@ -10,11 +10,10 @@ export const props: PropsLists = [
       },
       value: {
         type: 'Any',
-        description:'The value of radio when it\'s checked. Can act as a label if it is not set',
+        description: "The value of radio when it's checked. Can act as a label if it is not set",
       },
       name: {
         type: 'String',
-        // tslint:disable-next-line:max-line-length
         description: 'Group of radios defined by name. In one group can be chosen only one radio button.',
       },
       checked: {
@@ -53,7 +52,6 @@ export const props: PropsLists = [
       },
       name: {
         type: 'String',
-        // tslint:disable-next-line:max-line-length
         description: 'The name is applied to the each radio of the group',
       },
       disabled: {

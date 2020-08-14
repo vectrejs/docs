@@ -1,16 +1,14 @@
 import { RouteConfig } from 'vue-router';
-import Main from './Main.vue';
-import Docs from './Docs.vue';
 import { routes as docRoutes } from './Documentation';
 
 export const routes: RouteConfig[] = [
   {
     path: '/',
-    component: Main,
+    component: () => import(/* webpackChunkName: "main" */ './Main.vue'),
   },
   {
     path: '/pages',
-    component: Docs,
+    component: () => import(/* webpackChunkName: "docs" */ './Docs.vue'),
     children: docRoutes,
     props: { routes: docRoutes, rootPath: '/pages/' },
   },

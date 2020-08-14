@@ -2,14 +2,14 @@
   <div class="section">
     <h3 class="subtitle">Checked by default</h3>
     <columns>
-      <column col=4 xs=8>
-        <accordion :items="items" checked=1 />
+      <column col="4" xs="8">
+        <accordion :items="items" checked="1" />
       </column>
     </columns>
     <prism language="html" :code="indexHtml" />
 
     <columns>
-      <column col=4 xs=8>
+      <column col="4" xs="8">
         <accordion :items="items" checked="Fact 7" />
       </column>
     </columns>

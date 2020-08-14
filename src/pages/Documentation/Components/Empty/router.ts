@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Empty from './Empty.vue';
 
 export const EmptyRoute = {
+  name: 'EmptyPage',
   path: 'empty',
-  component: Empty,
-  title: 'Empty States',
+  component: () => import(/* webpackChunkName: "empty" */ './Empty.vue'),
+  meta: {
+    title: 'Empty States',
+  },
 } as RouteConfig;

@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Button from './Button.vue';
 
 export const ButtonRoute = {
+  name: 'ButtonPage',
   path: 'button',
-  title: 'Buttons',
-  component: Button,
+  component: () => import(/* webpackChunkName: "button" */ './Button.vue'),
+  meta: {
+    title: 'Buttons',
+  },
 } as RouteConfig;

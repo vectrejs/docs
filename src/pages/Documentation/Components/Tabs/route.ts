@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Tabs from './Tabs.vue';
 
 export const TabsRoute = {
-  component: Tabs,
-  title: 'Tabs',
+  name: 'TabsPage',
   path: 'tabs',
+  component: () => import(/* webpackChunkName: "tabs" */ './Tabs.vue'),
+  meta: {
+    title: 'Tabs',
+  },
 } as RouteConfig;

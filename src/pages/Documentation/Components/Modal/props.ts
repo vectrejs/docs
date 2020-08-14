@@ -13,7 +13,7 @@ export const props: PropDefinitions = {
   },
   overlay: {
     type: 'Boolean',
-    description: 'Show overlay. Don\'t disable it for large modals.',
+    description: "Show overlay. Don't disable it for large modals.",
     default: true,
   },
   closeBtn: {

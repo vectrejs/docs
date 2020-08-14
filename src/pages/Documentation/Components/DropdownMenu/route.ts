@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import DropdownMenu from './DropdownMenu.vue';
 
 export const DropdownMenuRoute = {
+  name: 'DropdownMenuPage',
   path: 'dropdown-menu',
-  component: DropdownMenu,
-  title: 'Dropdown Menu',
+  component: () => import(/* webpackChunkName: "dropdown-menu" */ './DropdownMenu.vue'),
+  meta: {
+    title: 'Dropdown Menu',
+  },
 } as RouteConfig;

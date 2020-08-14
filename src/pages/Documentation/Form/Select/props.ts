@@ -5,12 +5,11 @@ export const props: PropsLists = [
     name: 'Select',
     props: {
       options: {
-        type: 'Object, String[]',
-        // tslint:disable-next-line:max-line-length
+        type: 'Object, String[], Number[]',
         description: 'The list of options. It takes precedence over nested <code>form-option</code> elements',
       },
       value: {
-        type: 'String, String[]',
+        type: 'String, Number, String[], Number[]',
         description: 'Selected option(s).',
       },
       multiple: {
@@ -20,7 +19,6 @@ export const props: PropsLists = [
       },
       placeholder: {
         type: 'String',
-        // tslint:disable-next-line:max-line-length
         description: 'The first option is served as a hint. It can not be selected and ignored when multiple',
       },
       disabled: {
@@ -30,7 +28,6 @@ export const props: PropsLists = [
       },
       size: {
         type: 'Number',
-        // tslint:disable-next-line:max-line-length
         description: 'Represents the number of rows in the list that should be visible at one time.',
       },
       scale: {

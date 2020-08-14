@@ -14,7 +14,6 @@ export const props: PropDefinitions = {
   loading: {
     type: 'Boolean',
     default: false,
-    // tslint:disable-next-line:max-line-length
     description: 'Displays the loading icon. The position can be set with <code>iconSide</code> property',
   },
   icon: { type: 'String' },

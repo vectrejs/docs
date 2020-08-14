@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Radio from './Radio.vue';
 
 export const FormRadioRoute = {
+  name: 'RadioPage',
   path: 'radio',
-  title: 'Radio',
-  component: Radio,
+  component: () => import(/* webpackChunkName: "radio" */ './Radio.vue'),
+  meta: {
+    title: 'Radio',
+  },
 } as RouteConfig;

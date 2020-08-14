@@ -1,12 +1,17 @@
 import { RouteConfig } from 'vue-router';
-import Start from './Start.vue';
 
-const StartRoute = {
+const StartRoute: RouteConfig = {
+  name: 'StartPage',
   path: 'getting-started',
-  title: 'Getting Started',
-  component: Start,
+  component: () => import(/* webpackChunkName: "start" */ './Start.vue'),
+  meta: {
+    title: 'Getting Started',
+  },
+  anchors: {
+    Introduction: 'introduction',
+    Installation: 'installation',
+    'Quick Start': 'quickstart',
+  },
 } as RouteConfig;
 
-export {
-  StartRoute,
-};
+export { StartRoute };

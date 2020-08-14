@@ -3,12 +3,14 @@
     <off-canvas ref="offCanvas">
       <template slot="sidebar">
         <div class="logo">
-          <img :src="require('@kitchen/img/logo.svg')">
+          <router-link to="/">
+            <img :src="require('@kitchen/img/logo.svg')" />
+          </router-link>
         </div>
-        <mnu :routes="routes" :rootPath="rootPath" @select="closeSidebar"/>
+        <mnu :routes="routes" :root-path="rootPath" @select="closeSidebar" />
       </template>
 
-      <router-view slot="content"/>
+      <router-view slot="content" />
     </off-canvas>
   </container>
 </template>
@@ -19,7 +21,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { RouteConfig } from 'vue-router';
 
 import ComponentView from '@kitchen/component/Component.vue';
-import { VectrePlugin } from 'vectre';
+import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
 
 // Register common components
 vue.component('component-view', ComponentView);
@@ -39,8 +41,8 @@ export default class extends vue {
   @Prop({ default: '', type: String })
   public rootPath: string;
 
-  public closeSidebar() {
-    (this.$refs.offCanvas as any).hideSidebar();
+  public closeSidebar(): void {
+    ((this.$refs.offCanvas as unknown) as OffCanvas).hideSidebar();
   }
 }
 </script>
@@ -76,7 +78,7 @@ export default class extends vue {
     background: rgba(248, 249, 250, 0.65);
     z-index: 100;
 
-    background-image: url("../img/logo.svg");
+    background-image: url('../img/logo.svg');
     background-repeat: no-repeat;
     background-size: 90px;
     background-position-y: 7px;
@@ -119,6 +121,10 @@ export default class extends vue {
       margin-left: 1.5rem;
       position: fixed;
       margin-top: 0.85rem;
+
+      a:focus {
+        box-shadow: unset;
+      }
 
       img {
         display: inline-block;

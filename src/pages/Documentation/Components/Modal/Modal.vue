@@ -2,25 +2,34 @@
   <component-view>
     <h3 class="subtitle">Modals</h3>
     <p>Modals are flexible dialog prompts.</p>
-    
+
     <btn @click="modal = true">Default</btn>
-    <btn @click="small = true" type="error">Small</btn>
-    <btn @click="large = true" type="primary">Large</btn>
-    
-    <modal :show="modal" @close="modal = false" >
+    <btn type="error" @click="small = true">Small</btn>
+    <btn type="primary" @click="large = true">Large</btn>
+
+    <modal :show="modal" @close="modal = false">
       <h5 slot="header">Default modal</h5>
-      <p slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
-      <btn slot="footer" type="primary" @click="modal = false" >Ok</btn>
+      <p slot="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
+        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+      </p>
+      <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
     </modal>
-    
-    <modal :show="small" size="sm" @close="small = false" :closeOverlay="false">
+
+    <modal :show="small" size="sm" :close-overlay="false" @close="small = false">
       <h5 slot="header">Small without overlay close</h5>
-      <p slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+      <p slot="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
+        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+      </p>
     </modal>
-    
-    <modal :show="large" size="lg" @close="large = false" :closeBtn="false">
-      <h2 class="title" slot="header">Big without close button</h2>
-      <p slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+
+    <modal :show="large" size="lg" :close-btn="false" @close="large = false">
+      <h2 slot="header" class="title">Big without close button</h2>
+      <p slot="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
+        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+      </p>
     </modal>
 
     <prism language="html" :code="html" />
@@ -29,10 +38,13 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import { props } from './props';
 import { slots } from './slots';
 
-export default {
+export default Vue.extend({
+  name: 'ModalPage',
+
   data: () => ({
     props,
     slots,
@@ -67,5 +79,5 @@ export default {
   }),
 }`,
   }),
-};
+});
 </script>

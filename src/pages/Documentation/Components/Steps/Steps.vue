@@ -3,7 +3,7 @@
     <h2 class="title">Steps</h2>
     <p>Steps are progress indicators of a sequence of task steps.</p>
     <columns>
-      <column col=8 xs=12>
+      <column col="8" xs="12">
         <steps :active="active">
           <step>Step 1</step>
           <step>Step 2</step>
@@ -11,8 +11,8 @@
           <step>Step 4</step>
           <step v-tooltip="'Finish'">Step 5</step>
         </steps>
-      </column> 
-      <column col=4 xs=2 mx>
+      </column>
+      <column col="4" xs="2" mx>
         <btn @click="next">Next</btn>
       </column>
     </columns>
@@ -26,11 +26,8 @@ import Vue from 'vue';
 import { props } from './props';
 
 export default Vue.extend({
-  methods: {
-    next() {
-      this.active = (this.active + 1) % 6;
-    },
-  },
+  name: 'StepsPage',
+
   data: () => ({
     props,
     active: 1,
@@ -53,5 +50,10 @@ export default Vue.extend({
   }),
 }`,
   }),
+  methods: {
+    next(): void {
+      this.active = (this.active + 1) % 6;
+    },
+  },
 });
 </script>

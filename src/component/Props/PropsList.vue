@@ -1,13 +1,13 @@
 <template>
-  <div class="props table-responsive"> 
+  <div class="props table-responsive">
     <h3 class="subtitle">{{ name }} Props</h3>
 
     <table class="table">
-      <col style="width: 20%">
-      <col style="width: 30%">
-      <col style="width: 20%">
-      <col style="width: 20%">
-      <col style="width: 10%">
+      <col style="width: 20%;" />
+      <col style="width: 30%;" />
+      <col style="width: 20%;" />
+      <col style="width: 20%;" />
+      <col style="width: 10%;" />
       <thead>
         <tr>
           <th>Property</th>
@@ -41,6 +41,7 @@ export default Vue.extend({
     },
     name: {
       type: String,
+      default: '',
     },
   },
 });

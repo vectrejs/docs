@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Divider from './Divider.vue';
 
 export const route = {
+  name: 'DividerPage',
   path: 'divider',
-  title: 'Divider',
-  component: Divider,
+  component: () => import(/* webpackChunkName: "divider" */ './Divider.vue'),
+  meta: {
+    title: 'Divider',
+  },
 } as RouteConfig;

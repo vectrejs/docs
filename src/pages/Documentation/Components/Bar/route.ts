@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Bar from './Bar.vue';
 
 export const BarRoute = {
+  name: 'BarPage',
   path: 'bar',
-  component: Bar,
-  title: 'Bar',
+  component: () => import(/* webpackChunkName: 'bar' */ './Bar.vue'),
+  meta: {
+    title: 'Bar',
+  },
 } as RouteConfig;

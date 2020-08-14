@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Card from './Card.vue';
 
 export const CardRoute = {
+  name: 'CardPage',
   path: 'card',
-  component: Card,
-  title: 'Cards',
+  component: () => import(/* webpackChunkName: "card" */ './Card.vue'),
+  meta: {
+    title: 'Cards',
+  },
 } as RouteConfig;

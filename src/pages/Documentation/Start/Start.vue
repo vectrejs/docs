@@ -1,12 +1,21 @@
 <template>
-  <div>
-    <h2 class="title">Getting Started</h2>
-    <h2 class="title">Installation</h2>
+  <container>
+    <Overview id="introduction" />
+    <Installation id="installation" />
     <h2 class="title">Quick Start</h2>
-  </div>
+  </container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({});
+import Installation from './Installation.vue';
+import Overview from './Overview.vue';
+
+export default Vue.extend({
+  name: 'StartPage',
+  components: {
+    Installation,
+    Overview,
+  },
+});
 </script>

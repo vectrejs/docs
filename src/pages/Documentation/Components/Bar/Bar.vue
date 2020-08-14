@@ -4,17 +4,17 @@
     <p>Bars represent the progress of a task or the value within the known range.</p>
 
     <h3 class="subtitle">Basic use</h3>
-    <bar :value=25 tooltip="%" />
+    <bar :value="25" tooltip="%" />
     <prism language="html" :code="basic" />
 
     <h3 class="subtitle">Advanced</h3>
-    <bar :value="now" :min="min" :max="max" :tooltip="tooltip"/>
+    <bar :value="now" :min="min" :max="max" :tooltip="tooltip" />
     <prism language="html" :code="advancedHtml" />
     <prism language="js" :code="advancedJs" />
 
     <h3 class="subtitle">Slim</h3>
     <p>There is <code>sm</code> prop for thinner Bars</p>
-    <bar :value=76 sm />
+    <bar :value="76" sm />
     <prism language="html" :code="`<bar :value=76 sm />`" />
   </component-view>
 </template>
@@ -25,22 +25,14 @@ import { setInterval, clearInterval } from 'timers';
 import { props } from './props';
 
 export default Vue.extend({
-  mounted() {
-    const interval = setInterval(
-      () => {
-        if (this.now >= this.max) return clearInterval(interval);
-        this.now = (this.now + 5) % this.max;
-      },
-      1000,
-    );
-  },
+  name: 'BarPage',
 
   data: () => ({
     props,
     now: 10,
     min: 5,
     max: 400,
-    tooltip(currentStep: number) {
+    tooltip(currentStep: number): string {
       return `${currentStep} steps of ${this.max}`;
     },
     basic: '<bar :value="25" tooltip="%" />',
@@ -64,5 +56,11 @@ export default Vue.extend({
   })
 });`,
   }),
+  mounted() {
+    const interval = setInterval(() => {
+      if (this.now >= this.max) return clearInterval(interval);
+      this.now = (this.now + 5) % this.max;
+    }, 1000);
+  },
 });
 </script>

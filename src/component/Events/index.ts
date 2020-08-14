@@ -1,2 +1,2 @@
-export { default as default } from './EventsList.vue';
+export { default } from './EventsList.vue';
 export * from './defs';

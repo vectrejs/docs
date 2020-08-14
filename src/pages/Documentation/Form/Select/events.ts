@@ -1,4 +1,4 @@
-import { EventDefinitions, EventsLists } from '@kitchen/component/Events';
+import { EventsLists } from '@kitchen/component/Events';
 
 export const events: EventsLists = [
   {

@@ -12,6 +12,8 @@ import Responsive from './Responsive.vue';
 import { props } from './props';
 
 export default Vue.extend({
+  name: 'LayoutPage',
+
   components: {
     FlexboxGrid,
     Responsive,
@@ -21,7 +23,6 @@ export default Vue.extend({
   }),
 });
 </script>
-
 
 <style lang="scss" scoped>
 /deep/ .block {

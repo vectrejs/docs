@@ -1,8 +1,9 @@
 import { RouteConfig } from 'vue-router';
-import Loading from './Loading.vue';
 
 export const route = {
   path: 'loading',
-  component: Loading,
-  title: 'Loading',
+  component: () => import(/* webpackChunkName: "loading" */ './Loading.vue'),
+  meta: {
+    title: 'Loading',
+  },
 } as RouteConfig;

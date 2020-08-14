@@ -3,13 +3,11 @@
     <header>
       <container grid="lg" class="text-center">
         <h1>
-          <img :src="require('../img/logo.svg')" alt="vectre">
+          <img :src="require('../img/logo.svg')" alt="VectreJs" />
         </h1>
         <h2>
           A
-          <u>Lightweight</u>,
-          <u>Simple</u> and
-          <u>Responsive</u> Component Framework
+          <u>Lightweight</u>, <u>Simple</u> and <u>Responsive</u> Component Framework
         </h2>
         <p>
           <router-link class="btn btn-lg" to="pages/getting-started">Docs</router-link>
@@ -20,7 +18,7 @@
           <column col="4" xs="12">
             <card>
               <span slot="header">Lightweight</span>
-              <div slot="body">30+ components less than 20KB (gzipped)</div>
+              <div slot="body">30+ components less than 30KB (gzipped)</div>
             </card>
           </column>
           <column col="4" xs="12">
@@ -44,10 +42,11 @@
         <columns>
           <column col="10" sm="12" mx class="text-left">
             <p class="text-secondary">
-              <strong>Vectre</strong> is a set of lightweight, simple and responsive Vue components based on Spectre.css 
+              <strong>Vectre</strong> is a set of lightweight, simple and responsive Vue components based on Spectre.css
             </p>
             <p class="text-secondary">
-              Vectre has absorbed the best of both worlds. Clean, consistent design of Spectre and extensibility, flexibility of Vue will allow you to realize your ideas faster and easier.
+              Vectre has absorbed the best of both worlds. Clean, consistent design of Spectre and extensibility,
+              flexibility of Vue will allow you to realize your ideas faster and easier.
             </p>
           </column>
           <column col="10" sm="12" mx>
@@ -65,7 +64,7 @@
           ·
           <a href="https://twitter.com/vectrejs">Twitter</a>
           ·
-          <span class="text-gray">Version 1.0.0</span>
+          <span class="text-gray">Version 0.1.0</span>
         </p>
       </container>
     </footer>
@@ -74,15 +73,23 @@
 
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({});
+import { Container, Columns, Column, Card } from '@vectrejs/vectre';
+
+export default Vue.extend({
+  components: { Container, Columns, Column, Card },
+  data: () => ({ r: undefined, d: undefined, a: undefined }),
+});
 </script>
 
 <style lang="scss">
 #main-page {
   header,
-  section,
-  footer {
+  section {
     padding: 3rem 0;
+  }
+
+  footer {
+    padding: 2rem 0 0.25rem;
   }
 
   header {

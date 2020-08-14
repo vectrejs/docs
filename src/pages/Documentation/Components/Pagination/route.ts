@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Pagination from './Pagination.vue';
 
 export const PaginationRoute = {
+  name: 'PaginationPage',
   path: 'pagination',
-  title: 'Pagination',
-  component: Pagination,
+  component: () => import(/* webpackChunkName: "pagination" */ './Pagination.vue'),
+  meta: {
+    title: 'Pagination',
+  },
 } as RouteConfig;

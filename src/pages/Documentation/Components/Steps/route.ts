@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Steps from './Steps.vue';
 
 export const StepsRoute = {
+  name: 'StepsPage',
   path: 'steps',
-  title: 'Steps',
-  component: Steps,
+  component: () => import(/* webpackChunkName: "steps" */ './Steps.vue'),
+  meta: {
+    title: 'Steps',
+  },
 } as RouteConfig;

@@ -1,16 +1,16 @@
 import { RouteConfig } from 'vue-router';
-import Layout from './Layout.vue';
 
 const LayoutRoute = {
+  name: 'LayoutPage',
   path: 'layout',
-  title: 'Layout',
-  component: Layout,
+  component: () => import(/* webpackChunkName: "layout" */ './Layout.vue'),
+  meta: {
+    title: 'Layout',
+  },
   anchors: {
     'Flexbox grid': 'flex',
     Responsive: 'responsive',
   },
 } as RouteConfig;
 
-export {
-  LayoutRoute,
-};
+export { LayoutRoute };

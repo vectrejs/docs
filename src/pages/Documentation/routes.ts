@@ -11,27 +11,35 @@ const routes = [
   { ...StartRoute, alias: '/' },
   {
     path: 'elements',
-    title: 'Elements',
     component: Parent,
+    meta: {
+      title: 'Elements',
+    },
     children: Object.values(elementRoutes),
   },
   LayoutRoute,
   {
     path: 'form',
-    title: 'Form',
     component: Parent,
+    meta: {
+      title: 'Form',
+    },
     children: Object.values(formRoutes),
   },
   {
     path: 'components',
-    title: 'Components',
     component: Parent,
+    meta: {
+      title: 'Components',
+    },
     children: Object.values(componentRoutes),
   },
   {
     path: 'utils',
-    title: 'Utilities',
     component: Parent,
+    meta: {
+      title: 'Utilities',
+    },
     children: Object.values(utilRoutes),
   },
 ] as RouteConfig[];

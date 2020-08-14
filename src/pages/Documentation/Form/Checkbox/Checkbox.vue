@@ -7,16 +7,15 @@
     <form-checkbox v-model="option2">
       <b>6-12</b>
     </form-checkbox>
-    <form-checkbox v-model="option3" value="custom value"  />
+    <form-checkbox v-model="option3" value="custom value" />
     0-6: {{ option1 }} 6-12: {{ option2 }} 12-20: {{ option3 }}
-    
+
     <prism language="html" :code="basicHtml" />
     <prism language="javascript" :code="basicJs" />
 
     <h5 class="subtitle">Checked</h5>
     <form-checkbox label="Option A" checked />
     <prism language="html" code='<form-checkbox label="Option A" checked />' />
-
 
     <h5 class="subtitle">Disabled</h5>
     <form-checkbox label="Option A" disabled />
@@ -31,16 +30,20 @@
     <h5 class="subtitle">Inline</h5>
     <form-checkbox label="A" inline />
     <form-checkbox label="B" inline />
-    <prism language="html" code='<form-checkbox label="A" inline />
-<form-checkbox label="B" inline />' />
+    <prism
+      language="html"
+      code='<form-checkbox label="A" inline />
+<form-checkbox label="B" inline />'
+    />
 
     <h5 class="subtitle">Invalid</h5>
     <form-checkbox label="Invalid" error />
     <prism language="html" code='<form-checkbox label="Invalid" error />' />
 
-
     <h5 class="subtitle"><code>v-model</code> as Array</h5>
-    <p>You can use the same v-model for the different checkboxes if you want to store all checked options in an array</p>
+    <p>
+      You can use the same v-model for the different checkboxes if you want to store all checked options in an array
+    </p>
     <form-checkbox v-model="arr" value="A">A</form-checkbox>
     <form-checkbox v-model="arr" value="B">B</form-checkbox>
     <form-checkbox v-model="arr" value="C">C</form-checkbox>
@@ -50,34 +53,31 @@
 
     <h2 class="subtitle">Checkbox Group</h2>
     <p>
-      It's an easy way to create a group of checkboxes without need to use 
-      <code>for...in</code> to iterate options or manual defining of <code>v-model</code> 
+      It's an easy way to create a group of checkboxes without need to use
+      <code>for...in</code> to iterate options or manual defining of <code>v-model</code>
       for each option.
     </p>
 
     <h5>Options as Array</h5>
-    <form-checkbox-group :options="['Option A', 'Option B', 'Option C']" v-model="groupArray" />
+    <form-checkbox-group v-model="groupArray" :options="['Option A', 'Option B', 'Option C']" />
     Your choice: {{ groupArray }}
-  
+
     <prism language="html" :code="groupArrayHtml" />
     <prism language="javascript" :code="groupArrayJs" />
 
-
     <h5 class="subtitle">Options as Object</h5>
     <p>Each key of object is used as a label and value as a value of checkbox</p>
-    <form-checkbox-group :options="{ A: 1, B: 2, C: 3 }" v-model="groupObject" />
+    <form-checkbox-group v-model="groupObject" :options="{ A: 1, B: 2, C: 3 }" />
     Your choice: {{ groupObject }}
 
     <prism language="html" :code="groupObjectHtml" />
     <prism language="javascript" :code="groupObjectJs" />
 
-
     <h5 class="subtitle">Nested Options</h5>
     <p>
-      It's a good way to customize each option of the group. 
-      Nested options have higher priority and can take theirs own
-      <code>size</code>,<code>error</code> and <code>disabled</code> props.
-      <code>checked</code> prop is ignored when a checkbox is in a group
+      It's a good way to customize each option of the group. Nested options have higher priority and can take theirs own
+      <code>size</code>,<code>error</code> and <code>disabled</code> props. <code>checked</code> prop is ignored when a
+      checkbox is in a group
     </p>
     <form-checkbox-group v-model="nested">
       <form-checkbox :value="1" disabled>
@@ -90,7 +90,6 @@
 
     <prism language="html" :code="nestedHtml" />
     <prism language="javascript" :code="nestedJs" />
-
 
     <h5 class="subtitle">Disabled Group</h5>
     <form-checkbox-group :options="['Option A', 'Option B', 'Option C']" disabled />
@@ -107,7 +106,6 @@
     <h5 class="subtitle">Invalid Group</h5>
     <form-checkbox-group :options="['Option A', 'Option B', 'Option C']" error />
     <prism language="html" :code="invalidGroupHtml" />
-
   </component-view>
 </template>
 
@@ -117,6 +115,8 @@ import { props } from './props';
 import { slots } from './slots';
 
 export default Vue.extend({
+  name: 'CheckboxPage',
+
   data: () => ({
     props,
     slots,

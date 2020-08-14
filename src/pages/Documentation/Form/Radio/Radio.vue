@@ -2,9 +2,8 @@
   <component-view>
     <h2 class="title">Radio</h2>
     <p>
-      Radio button allows the user to choose only one of a predefined 
-      set of mutually exclusive options. Radios of one group should 
-      have the same <code>name</code> or <code>v-model</code>
+      Radio button allows the user to choose only one of a predefined set of mutually exclusive options. Radios of one
+      group should have the same <code>name</code> or <code>v-model</code>
     </p>
 
     <form-radio v-model="gender">Male</form-radio>
@@ -14,18 +13,18 @@
     <prism language="html" :code="genderHtml" />
     <prism language="javascript" :code="genderJs" />
 
-
     <h5 class="subtitle">Checked</h5>
     <form-radio label="Option A" checked />
     <prism language="html" code='<form-radio label="Option A" checked />' />
 
-
     <h5 class="subtitle">Disabled</h5>
     <form-radio label="Option A" disabled />
     <form-radio label="Option B" disabled checked />
-    <prism language="html" code='<form-radio label="Option A" disabled />
-<form-radio label="Option B" disabled checked />' />
-
+    <prism
+      language="html"
+      code='<form-radio label="Option A" disabled />
+<form-radio label="Option B" disabled checked />'
+    />
 
     <h5 class="subtitle">Size</h5>
     <form-radio label="Text" size="sm" name="size" />
@@ -33,71 +32,59 @@
     <form-radio label="Text" size="lg" name="size" />
     <prism language="html" :code="sizeHtml" />
 
-
     <h5 class="subtitle">Inline</h5>
     <form-radio label="A" inline name="inline" />
     <form-radio label="B" inline name="inline" />
-    <prism language="html" code='<form-radio label="A" inline name="example" />
-<form-radio label="B" inline name="example" />' />
-
+    <prism
+      language="html"
+      code='<form-radio label="A" inline name="example" />
+<form-radio label="B" inline name="example" />'
+    />
 
     <h5 class="subtitle">Invalid</h5>
     <form-radio label="Invalid" error />
     <prism language="html" code='<form-radio label="Invalid" error />' />
 
-
     <h2 class="subtitle">Radio Group</h2>
     <h4 class="subtitle">Manual mode</h4>
     <p>You can create a group with the <code>for...in</code> loop</p>
 
-    <form-radio 
-      v-for="(gender, i) in options" 
-      :key="i" 
-      name="gender" 
-      :value="gender" 
-      v-model="manualGroup"
-    >
-      {{gender}}
+    <form-radio v-for="(gender, i) in options" :key="i" v-model="manualGroup" name="gender" :value="gender">
+      {{ gender }}
     </form-radio>
     Selected radio: {{ manualGroup }}
     <prism language="html" :code="manualGroupHtml" />
     <prism language="javascript" :code="manualGroupJs" />
 
-
     <h3 class="subtitle"><code>&lt;form-radio-group&gt;</code> component</h3>
     <p>
-      An easy way to create a group of checkboxes without need to use 
-      <code>for...in</code> or manual defining of <code>v-model</code> for 
-      each option.
+      An easy way to create a group of checkboxes without need to use
+      <code>for...in</code> or manual defining of <code>v-model</code> for each option.
     </p>
-
 
     <h5 class="subtitle">Options as Array</h5>
     <p>It's a good option when values match with labels</p>
 
-    <form-radio-group :options="['Male', 'Female']" v-model="arr" />
+    <form-radio-group v-model="arr" :options="['Male', 'Female']" />
     Selected radio: {{ arr }}
     <prism language="html" :code="arrHtml" />
     <prism language="js" :code="arrJs" />
 
-
     <h5 class="subtitle">Options as Object</h5>
     <p>Use an object when you need to separate values from labels</p>
 
-    <form-radio-group :options="{Male: 'm', Female: 'f'}" v-model="obj" />
+    <form-radio-group v-model="obj" :options="{ Male: 'm', Female: 'f' }" />
     Selected radio: {{ obj }}
     <prism language="html" :code="objHtml" />
     <prism language="js" :code="objJs" />
 
-
     <h5 class="subtitle">Nested Options</h5>
     <p>
-      It's a good way to customize each option of the group. 
-      Nested options have higher priority and can take theirs own
-      <code>size</code>,<code>error</code> and <code>disabled</code> props.
-      <code>checked</code> prop is ignored when a radio is in a group
+      It's a good way to customize each option of the group. Nested options have higher priority and can take theirs own
+      <code>size</code>,<code>error</code> and <code>disabled</code> props. <code>checked</code> prop is ignored when a
+      radio is in a group
     </p>
-    
+
     <form-radio-group v-model="nested">
       <form-radio value="M">Male</form-radio>
       <form-radio label="Female" error></form-radio>
@@ -120,7 +107,6 @@
     <h5 class="subtitle">Invalid Group</h5>
     <form-radio-group :options="['Option A', 'Option B', 'Option C']" error />
     <prism language="html" :code="invalidGroupHtml" />
-
   </component-view>
 </template>
 
@@ -130,6 +116,8 @@ import { props } from './props';
 import { slots } from './slots';
 
 export default Vue.extend({
+  name: 'RadioPage',
+
   data: () => ({
     props,
     slots,
