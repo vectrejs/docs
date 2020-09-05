@@ -5,34 +5,35 @@
 
     <h3 class="subtitle">Basic usage</h3>
     <columns>
-      <column col="7" xl="9" sm="12">
-        <tile
+      <column col="8" xl="9" sm="12">
+        <Tile
           icon="people"
           title="Academy Awards"
           subtitle="A set of 25 awards for artistic and technical merit in the American film industry, given annually by the Academy of Motion Picture Arts and Sciences (AMPAS)..."
         />
       </column>
-      <column col="7" xl="9" sm="12">
-        <tile
+      <column col="8" xl="9" sm="12">
+        <Tile
           avatar="https://picturepan2.github.io/spectre/img/avatar-1.png"
           title="Avengers: Infinity War"
           subtitle="The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos ..."
         >
           <template slot="actions">
-            <btn type="primary">Watch</btn>
-            <btn>Skip</btn>
+            <Btn type="primary">Watch</Btn>
+            <Btn>Skip</Btn>
           </template>
-        </tile>
+        </Tile>
       </column>
-      <column col="7" xl="9" sm="12">
-        <tile
-          initials="X"
-          title="X-Men"
-          subtitle="Two mutants come to a private academy for their kind whose resident superhero team must oppose a terrorist organization with similar powers."
-        >
-          <btn type="primary">Watch</btn>
-          <btn>Skip</btn>
-        </tile>
+      <column col="8" xl="9" sm="12">
+        <Tile>
+          <TileIcon initials="XM" />
+          <TileContent>
+            <TileTitle>X-Men</TileTitle>
+            <TileSubtitle>Two mutants come to a private academy for their kind whose resident superhero team must oppose a terrorist organization with similar powers.</TileSubtitle>
+            <Btn type="primary">Watch</Btn>
+            <Btn>Skip</Btn>
+          </TileContent>
+        </Tile>
       </column>
     </columns>
     <prism language="html" :code="baseHtml" />
@@ -41,9 +42,15 @@
     <p>Compact version of Tiles component</p>
     <columns>
       <column col="5" md="8" sm="12">
-        <tile compact initials="L" title="Logan" subtitle="Offline · Last seen: 3 March 2017">
-          <dropdown-menu slot="actions" right btn-icon="icon-more-vert" btn-type="link" :items="[{ text: 'Call' }]" />
-        </tile>
+        <Tile compact initials="L" title="Logan" subtitle="Offline · Last seen: 3 March 2017">
+          <DropdownMenu
+            slot="actions"
+            right
+            btn-icon="icon-more-vert"
+            btn-type="link"
+            :items="[{ text: 'Call' }]"
+          />
+        </Tile>
       </column>
     </columns>
     <prism language="html" :code="compactHtml" />
@@ -61,42 +68,45 @@ export default Vue.extend({
   data: () => ({
     props,
     slots,
-    baseHtml: `<tile
+    baseHtml: `<Tile
   icon="people"
   title="Academy Awards"
   subtitle="A set of 25 awards for artistic..."
 />
 
-<tile
+<Tile
   avatar="img/avatar-1.png"
   title="Avengers: Infinity War"
   subtitle="The Avengers and their allies must be willing..."
 >
   <template slot="actions">
-    <btn type="primary">Watch</btn>
-    <btn>Skip</btn>
+    <Btn type="primary">Watch</Btn>
+    <Btn>Skip</Btn>
   </template>
-</tile>
+</Tile>
 
-<tile
-  initials="X"
-  title="X-Men"
-  subtitle="Two mutants come to a private academy for their kind..."
->
-  <btn type="primary">Watch</btn>
-  <btn>Skip</btn>
-</tile>`,
-    compactHtml: `<tile compact
+<!-- OR Composition -->
+
+<Tile>
+  <TileIcon initials="XM" />
+  <TileContent>
+    <TileTitle>X-Men</TileTitle>
+    <TileSubtitle>Two mutants come to a private academy fo...</TileSubtitle>
+    <Btn type="primary">Watch</Btn>
+    <Btn>Skip</Btn>
+  </TileContent>
+</Tile>`,
+    compactHtml: `<Tile compact
   initials="L"
   title="Logan"
   subtitle="Offline · Last seen: 3 March 2017"
 >
-  <dropdown-menu right
+  <DropdownMenu right
     slot="actions"
     btn-icon="icon-more-vert"
     btn-type="link"
     :items="[{text: 'Call'}]" />
-</tile>`,
+</Tile>`,
   }),
 });
 </script>

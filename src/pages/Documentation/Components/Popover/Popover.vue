@@ -2,37 +2,58 @@
   <component-view>
     <h2 class="title">Popovers</h2>
     <p>
-      Popovers are small overlay content containers. Wrap elements by <code>popover</code> component. The first element
+      Popovers are small overlay content containers. Wrap elements by
+      <code>popover</code> component. The first element
       will be shown the rest will be placed in the overlay
     </p>
-    <popover side="right">
-      <btn>Right</btn>
-      <card>
-        <h4 slot="header">Microsoft</h4>
-        <span>Empower every person and every organization on the planet to achieve more.</span>
-        <a slot="footer" class="btn btn-primary" href="#cards">Do</a>
-      </card>
-    </popover>
-    <popover>
-      <btn>Top</btn>
-      <card>Top Popover</card>
-    </popover>
-    <popover side="bottom">
-      <btn>Bottom</btn>
-      <card>
-        <h4 slot="header">Microsoft</h4>
-        <span>Empower every person and every organization on the planet to achieve more.</span>
-        <a slot="footer" class="btn btn-primary" href="#cards">Do</a>
-      </card>
-    </popover>
-    <popover side="left">
-      <btn>Left</btn>
-      <card>
-        <h4 slot="header">Microsoft</h4>
-        <span>Empower every person and every organization on the planet to achieve more.</span>
-        <a slot="footer" class="btn btn-primary" href="#cards">Do</a>
-      </card>
-    </popover>
+    <Popover side="right">
+      <Btn>Right</Btn>
+      <Card>
+        <CardHeader>
+          <h4>Microsoft</h4>
+        </CardHeader>
+        <CardBody>
+          <span>Empower every person and every organization on the planet to achieve more.</span>
+        </CardBody>
+        <CardFooter>
+          <a class="btn btn-primary" href="#cards">Do</a>
+        </CardFooter>
+      </Card>
+    </Popover>
+    <Popover>
+      <Btn>Top</Btn>
+      <Card>
+        <CardBody>Top Popover</CardBody>
+      </Card>
+    </Popover>
+    <Popover side="bottom">
+      <Btn>Bottom</Btn>
+      <Card>
+        <CardHeader>
+          <h4>Microsoft</h4>
+        </CardHeader>
+        <CardBody>
+          <span>Empower every person and every organization on the planet to achieve more.</span>
+        </CardBody>
+        <CardFooter>
+          <a class="btn btn-primary" href="#cards">Do</a>
+        </CardFooter>
+      </Card>
+    </Popover>
+    <Popover side="left">
+      <Btn>Left</Btn>
+      <Card>
+        <CardHeader>
+          <h4>Microsoft</h4>
+        </CardHeader>
+        <CardBody>
+          <span>Empower every person and every organization on the planet to achieve more.</span>
+        </CardBody>
+        <CardFooter>
+          <a class="btn btn-primary" href="#cards">Do</a>
+        </CardFooter>
+      </Card>
+    </Popover>
     <prism language="html" :code="code" />
   </component-view>
 </template>
@@ -45,25 +66,27 @@ export default Vue.extend({
 
   data: () => ({
     props,
-    code: `<popover>
-  <btn>Top</btn>
-  <card>Top Popover</card>
-</popover>
+    code: `<Popover>
+  <Btn>Top</Btn>
+  <Card>
+    <CardBody>Top Popover</CardBody>
+  </Card>
+</Popover>
 
-<popover side="bottom">
-  <btn>Bottom</btn>
-  <card>...</card>
-</popover>
+<Popover side="bottom">
+  <Btn>Bottom</Btn>
+  <Card>...</Card>
+</Popover>
 
-<popover side="left">
-  <btn>Left</btn>
-  <card>...</card>
-</popover>
+<Popover side="left">
+  <Btn>Left</Btn>
+  <Card>...</Card>
+</Popover>
 
-<popover side="right">
-  <btn>Right</btn>
-  <card>...r</card>
-</popover>`,
+<Popover side="right">
+  <Btn>Right</Btn>
+  <Card>...</Card>
+</Popover>`,
   }),
 });
 </script>
