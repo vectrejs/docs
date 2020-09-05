@@ -3,7 +3,7 @@
     <h3 class="subtitle">Basic use</h3>
     <columns>
       <column col="4" xs="8">
-        <accordion :items="items" :checked="checked" icon="icon-arrow-right" multiple @check="checked = $event" />
+        <accordion :items="items" :checked="checked" icon="icon-arrow-right" multiple />
       </column>
     </columns>
     <prism language="html" :code="html" />
@@ -15,7 +15,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   data: () => ({
-    checked: ['Fact 1'],
+    checked: 'Fact 1',
     icon: 'right',
     html: `<accordion
   :items="{'Fact 1': '...', 'Fact 2': '...', 'Fact 3': '...'}"

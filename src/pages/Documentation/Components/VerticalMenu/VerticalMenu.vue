@@ -6,10 +6,10 @@
     <h3 class="subtitle">Base use</h3>
     <columns>
       <column col="4" md="12">
-        <vertical-menu
+        <VerticalMenu
           :items="[
             { divider: 'LINKS' },
-            { path: '#', text: 'Slack' },
+            { path: '#', text: 'Slack', badge: 'new' },
             { divider: true },
             { path: '#hipchat', text: 'Hipchat' },
             { path: '#skype', text: 'Skype' },
@@ -19,16 +19,44 @@
       </column>
     </columns>
     <prism language="html" :code="basic" />
-    <p><code>items</code> prop should have a certain structure to be used in a simplified way:</p>
+    <p>
+      <code>items</code> prop should have a certain structure to be used in a simplified way:
+    </p>
     <pre>
 Array of { 
   path: string, 
   text: string, 
   badge?: string | number, 
   divider?: string|boolean 
-}</pre
-    >
+}</pre>
     <i>Note: dividers can not be active but they are used in index count</i>
+
+    <h3 class="subtitle">Manual (Static)</h3>
+    <columns>
+      <column col="4" md="12">
+        <VerticalMenu>
+          <Tile
+            compact
+            avatar="https://picturepan2.github.io/spectre/img/avatar-1.png"
+            title="<b>John Smith</b>"
+          />
+          <VerticalMenuDivider />
+          <VerticalMenuItem>
+            <RouterLink to="#">Slack</RouterLink>
+            <VerticalMenuItemBadge>new!</VerticalMenuItemBadge>
+          </VerticalMenuItem>
+          <VerticalMenuDivider text="MESSAGING" />
+          <VerticalMenuItem>
+            <RouterLink to="#hipchat">Hipchat</RouterLink>
+            <VerticalMenuItemBadge type="error">depricated</VerticalMenuItemBadge>
+          </VerticalMenuItem>
+          <VerticalMenuItem>
+            <RouterLink to="#skypw" class="active">Skype</RouterLink>
+          </VerticalMenuItem>
+        </VerticalMenu>
+      </column>
+    </columns>
+    <prism language="html" :code="manual" />
 
     <h3 class="subtitle">Advanced</h3>
     <p>
@@ -38,23 +66,26 @@ Array of {
 
     <columns>
       <column col="4" sm="12">
-        <vertical-menu
+        <VerticalMenu
           :items="{
             people: { icon: 'people', path: '#people', text: 'Contacts', badge: 2 },
             mail: { icon: 'mail', path: '#hipchat', text: 'Mails' },
             message: { icon: 'message', path: '#message', text: 'Messages' },
           }"
         >
-          <router-link slot-scope="{ item, index }" :to="item.path" :class="index == 'message' ? 'active' : null">
-            <icon :type="item.icon" />
-            {{ item.text }}
-          </router-link>
-        </vertical-menu>
+          <VerticalMenuItem slot-scope="{ item, index }">
+            <RouterLink :to="item.path" :class="index == 'message' ? 'active' : null">
+              <Icon :type="item.icon" />
+              {{ item.text }}
+              <VerticalMenuItemBadge v-if="item.badge" :value="item.badge" />
+            </RouterLink>
+          </VerticalMenuItem>
+        </VerticalMenu>
       </column>
     </columns>
     <prism language="html" :code="advanced" />
     <p>
-      <i>Note: active is ignored. You have to define it by yourself. Badges still work.</i>
+      <i>Note: active and badge properties are ignored. You have to define them by yourself.</i>
     </p>
   </component-view>
 </template>
@@ -70,26 +101,50 @@ export default Vue.extend({
   data: () => ({
     props,
     slots,
-    basic: `<vertical-menu :items="[
+    basic: `<VerticalMenu :items="[
     { divider: 'LINKS' },
-    { path: '#', text: 'Slack' },
+    { path: '#', text: 'Slack', badge: 'new' },
     { divider: true },
     { path: '#hipchat', text: 'Hipchat' },
     { path: '#skype', text: 'Skype' },
   ]"
   active="3"
 />`,
-    advanced: `<vertical-menu :items="{
-    people: { icon: 'people', to: '#people', text: 'Contacts', badge: 2 },
-    mail: { icon: 'mail', to: '#hipchat', text: 'Mails' },
-    message: { icon: 'message', to: '#message', text: 'Messages' },
+    manual: `<VerticalMenu>
+  <Tile
+    compact
+    avatar="https://picturepan2.github.io/spectre/img/avatar-1.png"
+    title="<b>John Smith</b>"
+  />
+  <VerticalMenuDivider />
+  <VerticalMenuItem>
+    <RouterLink to="#">Slack</RouterLink>
+    <VerticalMenuItemBadge>new!</VerticalMenuItemBadge>
+  </VerticalMenuItem>
+  <VerticalMenuDivider text="MESSAGING" />
+  <VerticalMenuItem>
+    <RouterLink to="#hipchat">Hipchat</RouterLink>
+    <VerticalMenuItemBadge type="error">depricated</VerticalMenuItemBadge>
+  </VerticalMenuItem>
+  <VerticalMenuItem>
+    <RouterLink to="#skypw" class="active">Skype</RouterLink>
+  </VerticalMenuItem>
+</VerticalMenu>`,
+    advanced: `<VerticalMenu
+  :items="{
+    people: { icon: 'people', path: '#people', text: 'Contacts', badge: 2 },
+    mail: { icon: 'mail', path: '#hipchat', text: 'Mails' },
+    message: { icon: 'message', path: '#message', text: 'Messages' },
   }"
 >
-  <router-link slot-scope="{ item, index }" :to="item.to" :class="index == 'message' ? 'active' : null">
-    <icon :type="item.icon" />
-    {{item.text}}
-  </router-link>
-</vertical-menu>`,
+  <VerticalMenuItem slot-scope="{ item, index }">
+    <RouterLink :to="item.path" :class="index == 'message' ? 'active' : null">
+      <Icon :type="item.icon" />
+      {{ item.text }}
+      <VerticalMenuItemBadge v-if="item.badge" :value="item.badge" />
+    </RouterLink>
+  </VerticalMenuItem>
+</VerticalMenu>`,
   }),
 });
 </script>

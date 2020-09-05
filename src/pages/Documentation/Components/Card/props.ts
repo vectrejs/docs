@@ -1,15 +1,10 @@
-import { PropDefinitions } from '@kitchen/component/Props';
+import { PropsLists } from '@kitchen/component/Props';
 
-export const props: PropDefinitions = {
-  img: { type: 'String', description: 'URL of an image' },
-  before: {
-    type: 'String',
-    description: 'A postion of an image',
-    accepted: 'header, body, footer',
+export const props: PropsLists = [
+  {
+    name: 'CardImage',
+    props: {
+      img: { type: 'String', description: 'URL of an image' },
+    },
   },
-  after: {
-    type: 'String',
-    description: 'A postion of an image',
-    accepted: 'header, body, footer',
-  },
-};
+];

@@ -4,26 +4,48 @@
     <p>Simple way to show navigation as a vertical hierarchical list</p>
 
     <h3 class="subtitle">Base use</h3>
-    <navigation :items="items" />
+    <Navigation :items="items" />
     <prism language="html" :code="baseHtml" />
     <prism language="js" :code="baseJs" />
 
-    <p><code>items</code> prop should have a certain structure to be used in a simplified way:</p>
+    <p>
+      <code>items</code> prop should have a certain structure to be used in a simplified way:
+    </p>
     <pre>
 Array of { 
   path: string,
   text: string,
   active?: boolean
-} </pre
-    >
+} </pre>
+
+    <h3 class="subtitle">Manual (Static)</h3>
+    <Navigation>
+      <NavigationItem>
+        <a href="#">Layout</a>
+        <Navigation>
+          <NavigationItem>
+            <a href="#">Flexbox Grid</a>
+          </NavigationItem>
+          <NavigationItem active>
+            <a href="#">Navbar</a>
+            <Navigation>
+              <NavigationItem>
+                <a href="#">Breadcrumb</a>
+              </NavigationItem>
+            </Navigation>
+          </NavigationItem>
+        </Navigation>
+      </NavigationItem>
+    </Navigation>
+    <prism language="html" :code="manualHtml" />
 
     <h3 class="subtitle">Advanced</h3>
-    <navigation :items="items" level="1">
+    <Navigation :items="items" level="1">
       <span slot-scope="{ item }">
-        <icon type="right" />
+        <Icon type="right" />
         {{ item.text }}
       </span>
-    </navigation>
+    </Navigation>
     <prism language="html" :code="advancedHtml" />
     <p>
       <code>items</code> could be any iterable structure. In this case, you have to define how to display each item
@@ -60,7 +82,7 @@ export default Vue.extend({
       },
       { path: '#components', text: 'Components' },
     ],
-    baseHtml: '<navigation :items="items" />',
+    baseHtml: '<Navigation :items="items" />',
     baseJs: `export default {
   data: () => ({
     items: [
@@ -76,12 +98,30 @@ export default Vue.extend({
     ],
   })
 }`,
-    advancedHtml: `<navigation :items="items" level="1">
+    manualHtml: `<Navigation>
+  <NavigationItem>
+    <a href="#">Layout</a>
+    <Navigation>
+      <NavigationItem>
+        <a href="#">Flexbox Grid</a>
+      </NavigationItem>
+      <NavigationItem active>
+        <a href="#">Navbar</a>
+        <Navigation>
+          <NavigationItem>
+            <a href="#">Breadcrumb</a>
+          </NavigationItem>
+        </Navigation>
+      </NavigationItem>
+    </Navigation>
+  </NavigationItem>
+</Navigation>`,
+    advancedHtml: `<Navigation :items="items" level="1">
   <span slot-scope="{item, index}">
-    <icon type="right"/>
+    <Icon type="right"/>
     {{ item.text }}
   </span>
-</navigation>`,
+</Navigation>`,
   }),
 });
 </script>

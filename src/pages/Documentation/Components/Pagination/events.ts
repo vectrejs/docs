@@ -1,7 +1,7 @@
 import { EventDefinitions } from '@kitchen/component/Events';
 
 export const events: EventDefinitions = {
-  'update:current': {
+  change: {
     description: 'Thrown when the current page changes',
     payload: '[current_page]',
   },
