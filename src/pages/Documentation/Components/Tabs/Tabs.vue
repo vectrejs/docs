@@ -6,7 +6,7 @@
     <h3 class="subtitle">Basic use</h3>
     <columns>
       <column col="5" sm="8" xs="12">
-        <tabs :current.sync="current" :items="['Music', 'Radio', 'Podcasts']" />
+        <Tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
         Current Tab: {{ current }}
       </column>
     </columns>
@@ -20,7 +20,7 @@
     </p>
     <columns>
       <column col="5" sm="8" xs="12">
-        <tabs block :current.sync="blockCurrent" :items="['Music', 'Radio', 'Podcasts']" />
+        <Tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
         Current Tab: {{ blockCurrent }}
       </column>
     </columns>
@@ -29,58 +29,94 @@
     <h3 class="subtitle">Advanced</h3>
     <columns>
       <column col="6" xl="8" xs="12">
-        <tabs :current.sync="advancedCurrent">
-          <tab key="music" :badge="badge">Music</tab>
-          <tab>Radio</tab>
-          <tab>Podcasts</tab>
-          <tab-actions v-if="advancedCurrent != 'music'">
-            <btn size="sm" @click="badge--, (advancedCurrent = 'music')">To music</btn>
-          </tab-actions>
-        </tabs>
+        <Tabs v-model="advancedCurrent">
+          <Tab :badge="badge">Music</Tab>
+          <Tab>Radio</Tab>
+          <Tab>Podcasts</Tab>
+          <TabAction v-if="advancedCurrent != 0">
+            <Btn size="sm" @click="goToFirst">To music</Btn>
+          </TabAction>
+        </Tabs>
         Current Tab: {{ advancedCurrent }}
       </column>
     </columns>
     <prism language="html" :code="advancedHtml" />
     <prism language="javascript" :code="advancedJs" />
+    <p>
+      <code>items</code> prop should have a certain structure to be used in advanced mode:
+    </p>
+    <pre>
+Array of {
+  name: string,
+  badge?: string | number
+}</pre>
   </component-view>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import { props } from './props';
+import { slots } from './slots';
 
 export default Vue.extend({
   name: 'TabsPage',
-
   data: () => ({
+    props,
+    slots,
     badge: 999,
     current: 'Radio',
     blockCurrent: 'Music',
-    advancedCurrent: 'music',
-    basicHtml: `<tabs :current.sync="current" :items="['Music', 'Radio', 'Podcasts']" />
+    advancedCurrent: 0,
+    basicHtml: `<Tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
 Current Tab: {{ current }}`,
     basicJs: `export default {
   data: () => ({
     current: 'Radio',
   }),
 };`,
-    blockHtml: `<tabs block :current.sync="current" :items="['Music', 'Radio', 'Podcasts']" />
+    blockHtml: `<Tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
  Current Tab: {{ current }}`,
-    advancedHtml: `<tabs :current.sync="current">
-  <tab key="music" :badge="badge">Music</tab>
-  <tab>Radio</tab>
-  <tab>Podcasts</tab>
-  <tab-actions v-if="current != 'music'">
-    <btn @click="badge--, current = 'music'" size="sm">
-        To music
-    </btn>
-  </tab-actions>
-</tabs>`,
+    advancedHtml: `<Tabs
+  v-model="current"
+  :items="[{ name: 'Music', badge }, { name: 'Radio' }, { name: 'Podcast' }]"
+>
+  <template #tab="{ item }">
+    {{ item.name }}
+  </template>
+  <TabAction v-if="advancedCurrent != 0" slot="action">
+    <Btn size="sm" @click="goToFirst">To music</Btn>
+  </TabAction>
+</Tabs>
+
+<!-- OR -->
+
+<Tabs v-model="current">
+  <Tab :badge="badge">Music</Tab>
+  <Tab>Radio</Tab>
+  <Tab>Podcasts</Tab>
+  <TabAction v-if="advancedCurrent != 0">
+    <Btn size="sm" @click="goToFirst">To music</Btn>
+  </TabAction>
+</Tabs>
+`,
     advancedJs: `export default {
   data: () => ({
-    current: 'music',
+    current: 0,
     badge: 999,
   }),
+  methods: {
+    goToFirst() {
+      this.badge -= 1;
+      this.advancedCurrent = 0;
+    },
+  },
 };`,
   }),
+  methods: {
+    goToFirst() {
+      this.badge -= 1;
+      this.advancedCurrent = 0;
+    },
+  },
 });
 </script>

@@ -11,7 +11,7 @@ export const props: PropsLists = [
   {
     name: 'Step',
     props: {
-      active: { type: 'Number', description: 'Current step', default: 1 },
+      active: { type: 'Boolean', description: 'Marks a step as active', default: false },
       tooltip: { type: 'String', description: 'Displayed on hover' },
     },
   },
