@@ -55,12 +55,14 @@ Array of {
 
 <script lang="ts">
 import Vue from 'vue';
+import { events } from './events';
 import { props } from './props';
 import { slots } from './slots';
 
 export default Vue.extend({
   name: 'TabsPage',
   data: () => ({
+    events,
     props,
     slots,
     badge: 999,

@@ -1,6 +1,9 @@
 <template>
   <div class="props table-responsive">
-    <h3 class="subtitle">{{ name }} Props</h3>
+    <h3 class="subtitle">
+      {{ name }}
+      <tag rounded type="primary">Props</tag>
+    </h3>
 
     <table class="table">
       <col style="width: 20%;" />
@@ -19,7 +22,10 @@
       </thead>
       <tbody>
         <tr v-for="(prop, key) in props" :key="key">
-          <td>{{ key }}<sup v-if="prop.required">*</sup></td>
+          <td>
+            {{ key }}
+            <sup v-if="prop.required">*</sup>
+          </td>
           <td v-html="prop.description"></td>
           <td>{{ typeof prop.default != 'undefined' ? prop.default : '-' }}</td>
           <td v-html="prop.accepted || '-'"></td>
