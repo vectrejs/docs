@@ -46,7 +46,7 @@ import { setTimeout } from 'timers';
 
 export default Vue.extend({
   data: () => ({
-    loading: null,
+    loading: false,
     request: null,
     result: '',
 
