@@ -29,9 +29,7 @@
             slot-scope="{ item: anchor, index: title }"
             :to="rootPath + parent.path + '#' + anchor"
             @click.native="onSelect(), goToAnchor(rootPath + parent.path, anchor)"
-          >
-            {{ title }}
-          </router-link>
+          >{{ title }}</router-link>
         </vertical-menu>
 
         <!-- Submenu items from children -->
@@ -40,9 +38,7 @@
             slot-scope="{ item: child }"
             :to="rootPath + parent.path + '/' + child.path"
             @click.native="onSelect"
-          >
-            {{ child.meta.title }}
-          </router-link>
+          >{{ child.meta.title }}</router-link>
         </vertical-menu>
       </template>
     </accordion>
@@ -91,7 +87,9 @@ export default Vue.extend({
       this.$emit('select');
     },
     goToAnchor(path: RawLocation, anchor: string): void {
-      this.$router.push(`${path}#${anchor}`);
+      this.$router.push(`${path}#${anchor}`).catch(() => {
+        /* NOOP */
+      });
     },
   },
 });

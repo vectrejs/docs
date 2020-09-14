@@ -46,6 +46,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Toast } from '@vectrejs/vectre';
 import { events } from './events';
 import { slots } from './slots';
 import { props } from './props';
@@ -116,8 +117,8 @@ export default Vue.extend({
 };`,
   }),
   methods: {
-    close() {
-      this.$refs.toast.close();
+    close(): void {
+      (this.$refs.toast as Toast).close();
     },
   },
 });

@@ -1,6 +1,6 @@
 <template>
   <container grid="xl">
-    <off-canvas ref="offCanvas">
+    <off-canvas id="docs" ref="offCanvas">
       <template slot="sidebar">
         <div class="logo">
           <router-link to="/">
@@ -42,7 +42,7 @@ export default class extends vue {
   public rootPath: string;
 
   public closeSidebar(): void {
-    ((this.$refs.offCanvas as unknown) as OffCanvas).hideSidebar();
+    (this.$refs.offCanvas as OffCanvas).hideSidebar();
   }
 }
 </script>
@@ -53,10 +53,10 @@ export default class extends vue {
 }
 
 @media (max-width: 960px) {
-  /deep/ .off-canvas {
+  /deep/ #docs.off-canvas {
     display: inherit;
 
-    &-content {
+    & > .off-canvas-content {
       padding: 0rem;
     }
   }
@@ -68,8 +68,8 @@ export default class extends vue {
   }
 }
 
-/deep/ .off-canvas {
-  &-toggle {
+/deep/ #docs.off-canvas {
+  & > .off-canvas-toggle {
     top: 0;
     left: 0;
     padding: 0.5rem 1rem;
@@ -92,7 +92,7 @@ export default class extends vue {
     }
   }
 
-  &-sidebar {
+  & > .off-canvas-sidebar {
     min-height: 100vh;
     width: 12rem;
 
@@ -134,7 +134,7 @@ export default class extends vue {
     }
   }
 
-  &-content {
+  & > .off-canvas-content {
     padding-top: 0.85rem;
   }
 }

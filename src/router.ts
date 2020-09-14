@@ -17,7 +17,7 @@ const router = new vueRouter({
 });
 
 router.beforeEach(({ meta: { title = '' } }, from, next) => {
-  document.title = 'vectre' + (title ? ` - ${title}` : 'vectre');
+  document.title = 'vectre' + (title ? ` - ${title}` : '');
   next();
 });
 
