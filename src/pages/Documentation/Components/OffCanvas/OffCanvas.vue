@@ -14,7 +14,13 @@
     <!-- <h3 class="subtitle">Basic usage</h3> -->
     <columns>
       <column col="12">
-        <OffCanvas id="off-canvas-example" :sidebar="false" overlay="0.6" icon="apps" close-on-overlay>
+        <OffCanvas
+          id="off-canvas-example"
+          :sidebar="false"
+          overlay="0.6"
+          icon="apps"
+          close-on-overlay
+        >
           <template #sidebar>Sidebar</template>
           <template #content>
             <h4>Lorem ipsum</h4>
@@ -76,8 +82,7 @@ export default Vue.extend({
   </OffCanvasContent>
 </OffCanvas>
 `,
-    baseJs: `// ONLY for composition case
-
+    baseJs: `// case of composition
 export default {
   data: () => ({
     active: false,

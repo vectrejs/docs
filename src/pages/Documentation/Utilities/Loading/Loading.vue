@@ -3,7 +3,7 @@
     <h2 class="title">Loading</h2>
     <p>
       Loading indicator is used for loading or updating. You can add
-      <kbd>v-loading</kbd> directive to an element for loadingstatus.
+      <kbd>v-loading</kbd> directive to an element for loading status.
     </p>
     <div v-loading />
     <prism language="html" code="<div v-loading></div>" />
@@ -45,6 +45,7 @@ import Vue from 'vue';
 import { setTimeout } from 'timers';
 
 export default Vue.extend({
+  name: 'LoadingPage',
   data: () => ({
     loading: false,
     request: null,
