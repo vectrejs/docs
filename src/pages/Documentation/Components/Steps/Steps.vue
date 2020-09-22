@@ -4,13 +4,13 @@
     <p>Steps are progress indicators of a sequence of task steps.</p>
     <columns>
       <column col="9" xs="12">
-        <Steps :active="active">
-          <Step>Step 1</Step>
-          <Step>Step 2</Step>
-          <Step>Step 3</Step>
-          <Step>Step 4</Step>
-          <Step tooltip="Finish">Step 5</Step>
-        </Steps>
+        <steps :active="active">
+          <step>Step 1</step>
+          <step>Step 2</step>
+          <step>Step 3</step>
+          <step>Step 4</step>
+          <step tooltip="Finish">Step 5</step>
+        </steps>
       </column>
       <column col="3" xs="2" mx>
         <btn @click="next">Next</btn>
@@ -46,18 +46,18 @@ export default Vue.extend({
       { name: 'Step 4' },
       { name: 'Step 5', tooltip: 'Finish' },
     ],
-    html: `<Steps :items="items" :active="active" />
+    html: `<steps :items="items" :active="active" />
 <Btn @click="next">Next</Btn>
 
 <!-- OR Composition -->
 
-<Steps :active="active">
-  <Step>Step 1</Step>
-  <Step>Step 2</Step>
-  <Step>Step 3</Step>
-  <Step>Step 4</Step>
-  <Step tooltip="'Finish'">Step 5</Step>
-</Steps>`,
+<steps :active="active">
+  <step>Step 1</step>
+  <step>Step 2</step>
+  <step>Step 3</step>
+  <step>Step 4</step>
+  <step tooltip="'Finish'">Step 5</step>
+</steps>`,
     js: `export default {
   methods: {
     next() {

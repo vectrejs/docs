@@ -6,20 +6,20 @@
     <!-- <h3 class="subtitle">Basic usage</h3> -->
     <columns>
       <column col="8" xl="9" sm="12">
-        <Toast content="The <b>simplest</b> toast" />
+        <toast content="The <b>simplest</b> toast" />
       </column>
       <column col="8" xl="9" sm="12">
-        <Toast type="success" icon="check">
+        <toast type="success" icon="check">
           <template #content>Keep it up!</template>
-        </Toast>
+        </toast>
       </column>
       <column col="8" xl="9" sm="12">
-        <Toast type="warning" icon="flag" content="The last milestone has been passed." />
+        <toast type="warning" icon="flag" content="The last milestone has been passed." />
       </column>
       <column col="8" xl="9" sm="12">
-        <Toast type="error" icon="time" closeable>
+        <toast type="error" icon="time" closeable>
           <template #content>Wake up! The time has come.</template>
-        </Toast>
+        </toast>
       </column>
     </columns>
     <prism language="html" :code="baseHtml" />
@@ -27,15 +27,15 @@
     <h3 class="subtitle">Advanced</h3>
     <columns>
       <column col="8" xl="9" sm="12">
-        <Toast type="primary" icon="people" closeable>
+        <toast type="primary" icon="people" closeable>
           <template #title>Who was the voice of Mickey Mouse?</template>
           <template #content>
             <small>Originally, Walt Disney himself was the voice of Mickey Mouse, followed by Jim MacDonald, and later Wayne Allwine provided Mickey's distinctive voice. Mickey's new voice has not been offically announced.</small>
           </template>
           <template #action>
-            <Btn action type="link" size="sm" icon="bookmark" v-tooltip.left="'bookmark'" />
+            <btn action type="link" size="sm" icon="bookmark" v-tooltip.left="'bookmark'" />
           </template>
-        </Toast>
+        </toast>
       </column>
     </columns>
 
@@ -48,6 +48,7 @@
 import Vue from 'vue';
 import { Toast } from '@vectrejs/vectre';
 import { events } from './events';
+import { methods } from './methods';
 import { slots } from './slots';
 import { props } from './props';
 
@@ -56,24 +57,25 @@ export default Vue.extend({
 
   data: () => ({
     events,
+    methods,
     props,
     slots,
-    baseHtml: `<Toast content="The <b>simplest</b> toast" />
+    baseHtml: `<toast content="The <b>simplest</b> toast" />
 
-<Toast type="success" icon="check">
+<toast type="success" icon="check">
   <template #content>Keep it up!</template>
-</Toast>
+</toast>
 
-<Toast 
+<toast 
   type="warning" 
   icon="flag" 
   content="The last milestone has been passed." 
 />
 
-<Toast type="error" icon="time" closeable>
+<toast type="error" icon="time" closeable>
   <template #content>Wake up! The time has come.</template>
-</Toast>`,
-    advancedHtml: `<Toast type="primary" icon="people" closeable>
+</toast>`,
+    advancedHtml: `<toast type="primary" icon="people" closeable>
   <template #title>Who was the voice of Mickey Mouse?</template>
   <template #content>
     <small>
@@ -81,37 +83,37 @@ export default Vue.extend({
     </small>
   </template>
   <template #action>
-    <Btn action type="link" 
+    <btn action type="link" 
       icon="bookmark" size="sm"
       v-tooltip.left="'bookmark'" 
     />
   </template>
-</Toast>
+</toast>
 
 <!-- OR Composition -->
 
-<Toast type="primary" icon="people" ref="toast">
-  <ToastIcon icon="people" large />
-  <ToastBody>
-    <ToastTitle>Who was the voice of Mickey Mouse?</ToastTitle>
-    <ToastContent>
+<toast type="primary" icon="people" ref="toast">
+  <toast-icon icon="people" large />
+  <toast-body>
+    <toastTitle>Who was the voice of Mickey Mouse?</toastTitle>
+    <toastContent>
       <small>
         Originally, Walt Disney himself was the voice of Mickey Mouse...
       </small>
-    </ToastContent>
-  </ToastBody>
-  <ToastAction>
-    <Btn class="btn-clear" @click="close" />
-    <Btn action type="link" 
+    </toastContent>
+  </toast-body>
+  <toast-action>
+    <btn class="btn-clear" @click="close" />
+    <btn action type="link" 
       size="sm" icon="bookmark" 
       v-tooltip.left="'bookmark'" 
     />
-  </ToastAction>
-</Toast>`,
+  </toast-action>
+</toast>`,
     advancedJs: `export default {
   methods: {
     close() {
-      this.$refs.toast.toggle();
+      this.$refs.toast.close();
     },
   },
 };`,

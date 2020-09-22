@@ -4,7 +4,7 @@
     <p>Simple way to show navigation as a vertical hierarchical list</p>
 
     <h3 class="subtitle">Base use</h3>
-    <Navigation :items="items" />
+    <navigation :items="items" />
     <prism language="html" :code="baseHtml" />
     <prism language="js" :code="baseJs" />
 
@@ -19,33 +19,33 @@ Array of {
 } </pre>
 
     <h3 class="subtitle">Manual (Static)</h3>
-    <Navigation>
-      <NavigationItem>
+    <navigation>
+      <navigation-item>
         <a href="#">Layout</a>
-        <Navigation>
-          <NavigationItem>
+        <navigation>
+          <navigation-item>
             <a href="#">Flexbox Grid</a>
-          </NavigationItem>
-          <NavigationItem active>
+          </navigation-item>
+          <navigation-item active>
             <a href="#">Navbar</a>
-            <Navigation>
-              <NavigationItem>
+            <navigation>
+              <navigation-item>
                 <a href="#">Breadcrumb</a>
-              </NavigationItem>
-            </Navigation>
-          </NavigationItem>
-        </Navigation>
-      </NavigationItem>
-    </Navigation>
+              </navigation-item>
+            </navigation>
+          </navigation-item>
+        </navigation>
+      </navigation-item>
+    </navigation>
     <prism language="html" :code="manualHtml" />
 
     <h3 class="subtitle">Advanced</h3>
-    <Navigation :items="items" level="1">
+    <navigation :items="items" level="1">
       <span slot-scope="{ item }">
         <Icon type="right" />
         {{ item.text }}
       </span>
-    </Navigation>
+    </navigation>
     <prism language="html" :code="advancedHtml" />
     <p>
       <code>items</code> could be any iterable structure. In this case, you have to define how to display each item
@@ -82,7 +82,7 @@ export default Vue.extend({
       },
       { path: '#components', text: 'Components' },
     ],
-    baseHtml: '<Navigation :items="items" />',
+    baseHtml: '<navigation :items="items" />',
     baseJs: `export default {
   data: () => ({
     items: [
@@ -98,30 +98,30 @@ export default Vue.extend({
     ],
   })
 }`,
-    manualHtml: `<Navigation>
-  <NavigationItem>
+    manualHtml: `<navigation>
+  <navigation-item>
     <a href="#">Layout</a>
-    <Navigation>
-      <NavigationItem>
+    <navigation>
+      <navigation-item>
         <a href="#">Flexbox Grid</a>
-      </NavigationItem>
-      <NavigationItem active>
+      </navigation-item>
+      <navigation-item active>
         <a href="#">Navbar</a>
-        <Navigation>
-          <NavigationItem>
+        <navigation>
+          <navigation-item>
             <a href="#">Breadcrumb</a>
-          </NavigationItem>
-        </Navigation>
-      </NavigationItem>
-    </Navigation>
-  </NavigationItem>
-</Navigation>`,
-    advancedHtml: `<Navigation :items="items" level="1">
+          </navigation-item>
+        </navigation>
+      </navigation-item>
+    </navigation>
+  </navigation-item>
+</navigation>`,
+    advancedHtml: `<navigation :items="items" level="1">
   <span slot-scope="{item, index}">
     <Icon type="right"/>
     {{ item.text }}
   </span>
-</Navigation>`,
+</navigation>`,
   }),
 });
 </script>

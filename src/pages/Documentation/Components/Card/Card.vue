@@ -3,56 +3,56 @@
     <h2 class="title">Cards</h2>
     <p>
       Cards are flexible content containers.
-      <code>&lt;Card/&gt;</code>,
-      <code>&lt;CardHeader/&gt;</code>,
-      <code>&lt;CardBody/&gt;</code>,
-      <code>&lt;CardFooter/&gt;</code> and
-      <code>&lt;CardImage/&gt;</code>
+      <code>&lt;card/&gt;</code>,
+      <code>&lt;card-header/&gt;</code>,
+      <code>&lt;card-body/&gt;</code>,
+      <code>&lt;card-footer/&gt;</code> and
+      <code>&lt;card-image/&gt;</code>
       are available for composing
     </p>
     <columns>
       <column col="6" xs="12" xl="6" lg="6">
-        <Card>
-          <CardImage img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
-          <CardHeader>
+        <card>
+          <card-image img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
+          <card-header>
             <h4>Microsoft</h4>
             <div class="text-gray">Hardware and software</div>
-          </CardHeader>
-          <CardBody>Empower every person and every organization on the planet to achieve more.</CardBody>
-          <CardFooter>
-            <Btn type="primary">Details</Btn>
-          </CardFooter>
-        </Card>
+          </card-header>
+          <card-body>Empower every person and every organization on the planet to achieve more.</card-body>
+          <card-footer>
+            <btn type="primary">Details</btn>
+          </card-footer>
+        </card>
       </column>
 
       <column col="6" xs="12" xl="6" lg="6">
-        <Card>
-          <CardHeader>
+        <card>
+          <card-header>
             <h4>Microsoft</h4>
             <div class="text-gray">Hardware and software</div>
-          </CardHeader>
-          <CardBody>Empower every person and every organization on the planet to achieve more.</CardBody>
-          <CardFooter>
-            <Btn type="primary">Details</Btn>
-          </CardFooter>
-          <CardImage img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
-        </Card>
+          </card-header>
+          <card-body>Empower every person and every organization on the planet to achieve more.</card-body>
+          <card-footer>
+            <btn type="primary">Details</btn>
+          </card-footer>
+          <card-image img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
+        </card>
       </column>
 
       <column col="6" xs="12" xl="6" lg="6">
-        <Card>
-          <CardHeader>
+        <card>
+          <card-header>
             <h4>Microsoft</h4>
             <div class="text-gray">Hardware and software</div>
-          </CardHeader>
-          <CardImage img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
-          <CardBody>
+          </card-header>
+          <card-image img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
+          <card-body>
             <span>Empower every person and every organization on the planet to achieve more.</span>
-          </CardBody>
-          <CardFooter>
-            <Btn type="primary">Details</Btn>
-          </CardFooter>
-        </Card>
+          </card-body>
+          <card-footer>
+            <btn type="primary">Details</btn>
+          </card-footer>
+        </card>
       </column>
     </columns>
 
@@ -69,43 +69,43 @@ export default Vue.extend({
 
   data: () => ({
     props,
-    code: `<Card>
-  <CardImage img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
-  <CardHeader>
+    code: `<card>
+  <card-image img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
+  <card-header>
     <h4>Microsoft</h4>
     <div class="text-gray">Hardware and software</div>
-  </CardHeader>
-  <CardBody>Empower every person and every organization on the planet to achieve more.</CardBody>
-  <CardFooter>
-    <Btn type="primary">Details</Btn>
-  </CardFooter>
-</Card>
+  </card-header>
+  <card-body>Empower every person and every organization on the planet to achieve more.</card-body>
+  <card-footer>
+    <btn type="primary">Details</btn>
+  </card-footer>
+</card>
 
-<Card>
-  <CardHeader>
+<card>
+  <card-header>
     <h4>Microsoft</h4>
     <div class="text-gray">Hardware and software</div>
-  </CardHeader>
-  <CardBody>Empower every person and every organization on the planet to achieve more.</CardBody>
-  <CardFooter>
-    <Btn type="primary">Details</Btn>
-  </CardFooter>
-  <CardImage img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
-</Card>
+  </card-header>
+  <card-body>Empower every person and every organization on the planet to achieve more.</card-body>
+  <card-footer>
+    <btn type="primary">Details</btn>
+  </card-footer>
+  <card-image img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
+</card>
 
-<Card>
-  <CardHeader>
+<card>
+  <card-header>
     <h4>Microsoft</h4>
     <div class="text-gray">Hardware and software</div>
-  </CardHeader>
-  <CardImage img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
-  <CardBody>
+  </card-header>
+  <card-image img="https://picturepan2.github.io/spectre/img/osx-el-capitan.jpg" />
+  <card-body>
     <span>Empower every person and every organization on the planet to achieve more.</span>
-  </CardBody>
-  <CardFooter>
-    <Btn type="primary">Details</Btn>
-  </CardFooter>
-</Card>
+  </card-body>
+  <card-footer>
+    <btn type="primary">Details</btn>
+  </card-footer>
+</card>
 `,
   }),
 });

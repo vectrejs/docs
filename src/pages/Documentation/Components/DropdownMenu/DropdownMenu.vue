@@ -4,7 +4,7 @@
     <p>The dropdown is a combination of button and menu.</p>
 
     <h3 class="subtitle">Base use</h3>
-    <DropdownMenu
+    <dropdown-menu
       btn-text="Click"
       :items="[
         { path: '#', text: 'Slack' },
@@ -16,7 +16,7 @@
 
     <h3 class="subtitle">Advanced use</h3>
     <p>As in the case of the menu, you can specify how to display the menu items</p>
-    <DropdownMenu
+    <dropdown-menu
       btn-text="Menu"
       btn-type="primary"
       btn-icon="menu"
@@ -26,12 +26,12 @@
         message: { icon: 'message', path: '#message', text: 'Messages' },
       }"
     >
-      <RouterLink slot-scope="{ item }" :to="item.path">
-        <VerticalMenuItemBadge v-if="item.badge" type="primary">{{ item.badge }}</VerticalMenuItemBadge>
-        <Icon :type="item.icon" />
+      <router-link slot-scope="{ item }" :to="item.path">
+        <vertical-menu-item-badge v-if="item.badge" type="primary">{{ item.badge }}</vertical-menu-item-badge>
+        <icon :type="item.icon" />
         {{ item.text }}
-      </RouterLink>
-    </DropdownMenu>
+      </router-link>
+    </dropdown-menu>
     <prism language="html" :code="advanced" />
   </component-view>
 </template>
@@ -47,16 +47,15 @@ export default Vue.extend({
   data: () => ({
     events,
     props,
-    base: `<DropdownMenu
+    base: `<dropdown-menu
   btn-text="Click"
-
   :items="[
     { path: '#', text: 'Slack' },
     { path: '#hipchat', text: 'Hipchat' },
     { path: '#skype', text: 'Skype' },
   ]"
 />`,
-    advanced: `<DropdownMenu
+    advanced: `<dropdown-menu
   text="Menu"
   type="primary"
   icon="menu"
@@ -66,12 +65,12 @@ export default Vue.extend({
     message: { icon: 'message', path: '#message', text: 'Messages' },
   }"
 >
-  <RouterLink slot-scope="{ item }" :to="item.path">
-    <VerticalMenuItemBadge v-if="item.badge" type="primary">{{ item.badge }}</VerticalMenuItemBadge>
-    <Icon :type="item.icon" />
+  <router-link slot-scope="{ item }" :to="item.path">
+    <vertical-menu-item-badge v-if="item.badge" type="primary">{{ item.badge }}</vertical-menu-item-badge>
+    <icon :type="item.icon" />
     {{ item.text }}
-  </RouterLink>
-</DropdownMenu>`,
+  </router-link>
+</dropdown-menu>`,
   }),
 });
 </script>

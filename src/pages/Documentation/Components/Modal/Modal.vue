@@ -3,48 +3,48 @@
     <h3 class="subtitle">Modals</h3>
     <p>Modals are flexible dialog prompts.</p>
 
-    <Btn @click="modal = true">Default</Btn>
-    <Btn type="error" @click="small = true">Small</Btn>
-    <Btn type="primary" @click="large = true">Large</Btn>
-    <Btn type="link" @click="composed = true">Composed</Btn>
+    <btn @click="modal = true">Default</btn>
+    <btn type="error" @click="small = true">Small</btn>
+    <btn type="primary" @click="large = true">Large</btn>
+    <btn type="link" @click="composed = true">Composed</btn>
 
-    <Modal v-model="modal">
+    <modal v-model="modal">
       <h5 slot="header">Default modal</h5>
       <p slot="body">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
         feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
       </p>
-      <Btn slot="footer" type="primary" @click="modal = false">Ok</Btn>
-    </Modal>
+      <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
+    </modal>
 
-    <Modal v-model="small" size="sm" :close-overlay="false">
+    <modal v-model="small" size="sm" :close-overlay="false">
       <h5 slot="header">Small without overlay close</h5>
       <p slot="body">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
         feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
       </p>
-    </Modal>
+    </modal>
 
-    <Modal v-model="large" size="lg" :close-btn="false">
+    <modal v-model="large" size="lg" :close-btn="false">
       <h2 slot="header" class="title">Big without close button</h2>
       <p slot="body">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
         feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
       </p>
-    </Modal>
+    </modal>
 
-    <Modal v-model="composed" size="lg">
-      <ModalHeader>
+    <modal v-model="composed" size="lg">
+      <modal-header>
         <h3>Composed modal</h3>
-      </ModalHeader>
-      <ModalHeader>
+      </modal-header>
+      <modal-header>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
         feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
-      </ModalHeader>
-      <ModalFooter>
-        <Btn slot="footer" type="error" @click="composed = false">Got it!</Btn>
-      </ModalFooter>
-    </Modal>
+      </modal-header>
+      <modal-footer>
+        <btn slot="footer" type="error" @click="composed = false">Got it!</btn>
+      </modal-footer>
+    </modal>
 
     <prism language="html" :code="html" />
     <prism language="javascript" :code="js" />
@@ -69,39 +69,39 @@ export default Vue.extend({
     large: false,
     composed: false,
     // tslint:disable:max-line-length
-    html: `<Btn @click="modal = true">Default</Btn>
-<Btn @click="small = true">Small</Btn>
-<Btn @click="large = true">Large</Btn>
-<Btn @click="composed = true">Composed</Btn>
+    html: `<btn @click="modal = true">Default</btn>
+<btn @click="small = true">Small</btn>
+<btn @click="large = true">Large</btn>
+<btn @click="composed = true">Composed</btn>
 
-<Modal v-model="modal">
+<modal v-model="modal">
   <h5 slot="header">Default modal</h5>
   <p slot="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-  <Btn slot="footer" type="primary" @click="modal = false">Ok</Btn>
-</Modal>
+  <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
+</modal>
 
-<Modal v-model="small" size="sm" :close-overlay="false">
+<modal v-model="small" size="sm" :close-overlay="false">
   <!-- Modal without overlay closet  -->
-</Modal>
+</modal>
 
-<Modal :show="large" size="lg" @close="large = false" :closeBtn="false">
+<modal :show="large" size="lg" @close="large = false" :closebtn="false">
   <!-- Big without close button  -->
-</Modal>
+</modal>
 
 <!-- Or with composition -->
 
-<Modal v-model="composed" size="lg">
-  <ModalHeader>
+<modal v-model="composed" size="lg">
+  <modal-header>
     <h3>Composed modal</h3>
-  </ModalHeader>
-  <ModalHeader>
+  </modal-header>
+  <modal-header>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
     feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
-  </ModalHeader>
-  <ModalFooter>
-    <Btn slot="footer" type="error" @click="composed = false">Got it!</Btn>
-  </ModalFooter>
-</Modal>
+  </modal-header>
+  <modal-footer>
+    <btn slot="footer" type="error" @click="composed = false">Got it!</btn>
+  </modal-footer>
+</modal>
 `,
     // tslint:enable:max-line-length
     js: `export default {

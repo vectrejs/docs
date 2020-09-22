@@ -6,54 +6,54 @@
       <code>popover</code> component. The first element
       will be shown the rest will be placed in the overlay
     </p>
-    <Popover side="right">
-      <Btn>Right</Btn>
-      <Card>
-        <CardHeader>
+    <popover side="right">
+      <btn>Right</btn>
+      <card>
+        <card-header>
           <h4>Microsoft</h4>
-        </CardHeader>
-        <CardBody>
+        </card-header>
+        <card-body>
           <span>Empower every person and every organization on the planet to achieve more.</span>
-        </CardBody>
-        <CardFooter>
+        </card-body>
+        <card-footer>
           <a class="btn btn-primary" href="#cards">Do</a>
-        </CardFooter>
-      </Card>
-    </Popover>
-    <Popover>
-      <Btn>Top</Btn>
-      <Card>
-        <CardBody>Top Popover</CardBody>
-      </Card>
-    </Popover>
-    <Popover side="bottom">
-      <Btn>Bottom</Btn>
-      <Card>
-        <CardHeader>
+        </card-footer>
+      </card>
+    </popover>
+    <popover>
+      <btn>Top</btn>
+      <card>
+        <card-body>Top Popover</card-body>
+      </card>
+    </popover>
+    <popover side="bottom">
+      <btn>Bottom</btn>
+      <card>
+        <card-header>
           <h4>Microsoft</h4>
-        </CardHeader>
-        <CardBody>
+        </card-header>
+        <card-body>
           <span>Empower every person and every organization on the planet to achieve more.</span>
-        </CardBody>
-        <CardFooter>
+        </card-body>
+        <card-footer>
           <a class="btn btn-primary" href="#cards">Do</a>
-        </CardFooter>
-      </Card>
-    </Popover>
-    <Popover side="left">
-      <Btn>Left</Btn>
-      <Card>
-        <CardHeader>
+        </card-footer>
+      </card>
+    </popover>
+    <popover side="left">
+      <btn>Left</btn>
+      <card>
+        <card-header>
           <h4>Microsoft</h4>
-        </CardHeader>
-        <CardBody>
+        </card-header>
+        <card-body>
           <span>Empower every person and every organization on the planet to achieve more.</span>
-        </CardBody>
-        <CardFooter>
+        </card-body>
+        <card-footer>
           <a class="btn btn-primary" href="#cards">Do</a>
-        </CardFooter>
-      </Card>
-    </Popover>
+        </card-footer>
+      </card>
+    </popover>
     <prism language="html" :code="code" />
   </component-view>
 </template>
@@ -66,27 +66,27 @@ export default Vue.extend({
 
   data: () => ({
     props,
-    code: `<Popover>
-  <Btn>Top</Btn>
-  <Card>
-    <CardBody>Top Popover</CardBody>
-  </Card>
-</Popover>
+    code: `<popover>
+  <btn>Top</btn>
+  <card>
+    <card-body>Top Popover</card-body>
+  </card>
+</popover>
 
-<Popover side="bottom">
-  <Btn>Bottom</Btn>
-  <Card>...</Card>
-</Popover>
+<popover side="bottom">
+  <btn>Bottom</btn>
+  <card>...</card>
+</popover>
 
-<Popover side="left">
-  <Btn>Left</Btn>
-  <Card>...</Card>
-</Popover>
+<popover side="left">
+  <btn>Left</btn>
+  <card>...</card>
+</popover>
 
-<Popover side="right">
-  <Btn>Right</Btn>
-  <Card>...</Card>
-</Popover>`,
+<popover side="right">
+  <btn>Right</btn>
+  <card>...</card>
+</popover>`,
   }),
 });
 </script>

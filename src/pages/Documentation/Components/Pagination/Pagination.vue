@@ -2,13 +2,13 @@
   <component-view>
     <h2 class="title">Pagination</h2>
     <h3 class="subtitle">Classic</h3>
-    <Pagination v-model="current" :pages="20" :show="6" />
+    <pagination v-model="current" :pages="20" :show="6" />
     <prism language="html" :code="basicHtml" />
     <prism language="javascript" :code="basicJs" />
 
     <h3 class="subtitle">Simple</h3>
     <p>You could use previous and next pagination to navigate.</p>
-    <Pagination v-model="page" :pages="pages" />
+    <pagination v-model="page" :pages="pages" />
     <prism language="html" :code="simpleHtml" />
     <prism language="javascript" :code="simpleJs" />
   </component-view>
@@ -28,13 +28,13 @@ export default Vue.extend({
     current: 1,
     pages: ['Accordion', 'Avatar', 'Bar', 'Breadcrumb', 'Cards', 'Chips'],
     page: 'Accordion',
-    basicHtml: '<Pagination v-model="current" :pages="20" :show="6" />',
+    basicHtml: '<pagination v-model="current" :pages="20" :show="6" />',
     basicJs: `export default {
   data: () => ({
     current: 1,
   })
 }`,
-    simpleHtml: '<Pagination v-model="current" :pages="pages" />',
+    simpleHtml: '<pagination v-model="current" :pages="pages" />',
     simpleJs: `export default {
   data: () => ({
     pages: ['Accordion', 'Avatar', 'Bar', 'Breadcrumb', 'Cards', 'Chips'],

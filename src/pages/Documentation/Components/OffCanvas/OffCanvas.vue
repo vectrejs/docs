@@ -14,7 +14,7 @@
     <!-- <h3 class="subtitle">Basic usage</h3> -->
     <columns>
       <column col="12">
-        <OffCanvas
+        <off-canvas
           id="off-canvas-example"
           :sidebar="false"
           overlay="0.6"
@@ -33,7 +33,7 @@
               rub face on everything hopped up on goofballs.
             </p>
           </template>
-        </OffCanvas>
+        </off-canvas>
       </column>
     </columns>
     <prism language="html" :code="baseHtml" />
@@ -49,7 +49,7 @@ import { props } from './props';
 import { methods } from './methods';
 
 export default Vue.extend({
-  name: 'OffCanvasPage',
+  name: 'off-canvasPage',
 
   data: () => ({
     events,
@@ -57,7 +57,7 @@ export default Vue.extend({
     slots,
     methods,
     active: false,
-    baseHtml: `<OffCanvas
+    baseHtml: `<off-canvas
   :sidebar="false"
   icon="apps"
   overlay="0.6"
@@ -68,19 +68,19 @@ export default Vue.extend({
     <h4>Lorem ipsum</h4>
     ...
   </template>
-</OffCanvas>
+</off-canvas>
 
 <!-- OR Composition -->
 
-<OffCanvas>
-  <OffCanvasToggle icon="apps" @click="active = true" />
-  <OffCanvasSidebar :active="active">Sidebar</OffCanvasSidebar>
-  <OffCanvasOverlay opacity="0.6" @click="active = false" />
-  <OffCanvasContent>
+<off-canvas>
+  <off-canvas-toggle icon="apps" @click="active = true" />
+  <off-canvas-sidebar :active="active">Sidebar</off-canvas-sidebar>
+  <off-canvas-overlay opacity="0.6" @click="active = false" />
+  <off-canvas-content>
     <h4>Lorem ipsum</h4>
     ...
-  </OffCanvasContent>
-</OffCanvas>
+  </off-canvas-content>
+</off-canvas>
 `,
     baseJs: `// case of composition
 export default {

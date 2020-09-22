@@ -4,9 +4,9 @@
     <p>Panels are flexible view container with auto-expand content section.</p>
     <columns>
       <column col="6" xl="6" sm="12">
-        <Panel>
+        <panel>
           <h5 slot="header">Recently Watched</h5>
-          <Tile
+          <tile
             v-for="(tile, i) in tiles"
             slot="body"
             :key="i"
@@ -15,33 +15,33 @@
             :subtitle="tile.subtitle"
           />
           <btn slot="footer" size="block" type="primary">Hide</btn>
-        </Panel>
+        </panel>
       </column>
       <column col="6" sm="12">
-        <Panel>
-          <PanelHeader class="text-center">
-            <Avatar size="lg" src="https://picturepan2.github.io/spectre/img/avatar-2.png" />
+        <panel>
+          <panel-header class="text-center">
+            <avatar size="lg" src="https://picturepan2.github.io/spectre/img/avatar-2.png" />
             <div class="panel-title h5 mt-10">Bruce Banner</div>
             <div class="panel-subtitle">THE HULK</div>
-          </PanelHeader>
-          <PanelNav>
-            <Tabs current="Profile" block :items="['Profile', 'Files', 'Tasks']" />
-          </PanelNav>
-          <PanelBody>
-            <Tile compact title="E-mail" subtitle="bruce.banner@hulk.com">
-              <Btn slot="actions" v-tooltip.left="'Edit E-mail'" icon="edit" action type="link" />
-            </Tile>
-            <Tile compact title="Skype" subtitle="bruce.banner">
-              <Btn slot="actions" v-tooltip.left="'Edit Skype'" icon="edit" action type="link" />
-            </Tile>
-            <Tile compact title="Location" subtitle="Dayton, Ohio">
-              <Btn slot="actions" icon="edit" action type="link" />
-            </Tile>
-          </PanelBody>
-          <PanelFooter>
-            <Btn size="block">Save</Btn>
-          </PanelFooter>
-        </Panel>
+          </panel-header>
+          <panel-nav>
+            <tabs current="Profile" block :items="['Profile', 'Files', 'Tasks']" />
+          </panel-nav>
+          <panel-body>
+            <tile compact title="E-mail" subtitle="bruce.banner@hulk.com">
+              <btn slot="actions" v-tooltip.left="'Edit E-mail'" icon="edit" action type="link" />
+            </tile>
+            <tile compact title="Skype" subtitle="bruce.banner">
+              <btn slot="actions" v-tooltip.left="'Edit Skype'" icon="edit" action type="link" />
+            </tile>
+            <tile compact title="Location" subtitle="Dayton, Ohio">
+              <btn slot="actions" icon="edit" action type="link" />
+            </tile>
+          </panel-body>
+          <panel-footer>
+            <btn size="block">Save</btn>
+          </panel-footer>
+        </panel>
       </column>
     </columns>
     <prism language="html" :code="html" />
@@ -78,49 +78,49 @@ export default Vue.extend({
           'Two mutants come to a private academy for their kind whose resident superhero team must oppose a terrorist organization with similar powers.',
       },
     ],
-    html: `<Panel>
+    html: `<panel>
   <h5 slot="header">Recently Watched</h5>
-  <Tile slot="body"
+  <tile slot="body"
     v-for="(tile, i) in tiles"
     :key="i"
     :avatar="tile.avatar"
     :title="tile.title"
     :subtitle="tile.subtitle"
   />
-  <Btn slot="footer" size="block" type="primary">Hide</Btn>
-</Panel>
+  <btn slot="footer" size="block" type="primary">Hide</btn>
+</panel>
 
 <!-- OR Composition -->
 
-<Panel>
+<panel>
 
-  <PanelHeader class="text-center">
-    <Avatar size="lg" src="img/avatar-2.png" />
+  <panel-header class="text-center">
+    <avatar size="lg" src="img/avatar-2.png" />
     <div class="panel-title h5 mt-10">Bruce Banner</div>
     <div class="panel-subtitle">THE HULK</div>
-  </PanelHeader>
+  </panel-header>
 
-  <PanelNav>
-    <Tabs current="Profile" block :items="['Profile', 'Files', 'Tasks']" />
-  </PanelNav>
+  <panel-nav>
+    <tabs current="Profile" block :items="['Profile', 'Files', 'Tasks']" />
+  </panel-nav>
 
-  <PanelBody>
-    <Tile compact title="E-mail" subtitle="bruce.banner@hulk.com">
-      <Btn slot="actions" v-tooltip.left="'Edit E-mail'" icon="edit" action type="link" />
-    </Tile>
-    <Tile compact title="Skype" subtitle="bruce.banner">
-      <Btn slot="actions" v-tooltip.left="'Edit Skype'" icon="edit" action type="link" />
-    </Tile>
-    <Tile compact title="Location" subtitle="Dayton, Ohio">
-      <Btn slot="actions" icon="edit" action type="link" />
-    </Tile>
-  </PanelBody>
+  <panel-body>
+    <tile compact title="E-mail" subtitle="bruce.banner@hulk.com">
+      <btn slot="actions" v-tooltip.left="'Edit E-mail'" icon="edit" action type="link" />
+    </tile>
+    <tile compact title="Skype" subtitle="bruce.banner">
+      <btn slot="actions" v-tooltip.left="'Edit Skype'" icon="edit" action type="link" />
+    </tile>
+    <tile compact title="Location" subtitle="Dayton, Ohio">
+      <btn slot="actions" icon="edit" action type="link" />
+    </tile>
+  </panel-body>
 
-  <PanelFooter>
-    <Btn size="block">Save</Btn>
-  </PanelFooter>
+  <panel-footer>
+    <btn size="block">Save</btn>
+  </panel-footer>
 
-</Panel>
+</panel>
 `,
     js: `export default {
   data: () => ({

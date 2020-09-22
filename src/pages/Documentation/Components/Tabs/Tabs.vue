@@ -6,7 +6,7 @@
     <h3 class="subtitle">Basic use</h3>
     <columns>
       <column col="5" sm="8" xs="12">
-        <Tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
+        <tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
         Current Tab: {{ current }}
       </column>
     </columns>
@@ -20,7 +20,7 @@
     </p>
     <columns>
       <column col="5" sm="8" xs="12">
-        <Tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
+        <tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
         Current Tab: {{ blockCurrent }}
       </column>
     </columns>
@@ -29,14 +29,14 @@
     <h3 class="subtitle">Advanced</h3>
     <columns>
       <column col="6" xl="8" xs="12">
-        <Tabs v-model="advancedCurrent">
-          <Tab :badge="badge">Music</Tab>
-          <Tab>Radio</Tab>
-          <Tab>Podcasts</Tab>
-          <TabAction v-if="advancedCurrent != 0">
-            <Btn size="sm" @click="goToFirst">To music</Btn>
-          </TabAction>
-        </Tabs>
+        <tabs v-model="advancedCurrent">
+          <tab :badge="badge">Music</tab>
+          <tab>Radio</tab>
+          <tab>Podcasts</tab>
+          <tab-action v-if="advancedCurrent != 0">
+            <btn size="sm" @click="goToFirst">To music</btn>
+          </tab-action>
+        </tabs>
         Current Tab: {{ advancedCurrent }}
       </column>
     </columns>
@@ -69,37 +69,37 @@ export default Vue.extend({
     current: 'Radio',
     blockCurrent: 'Music',
     advancedCurrent: 0,
-    basicHtml: `<Tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
+    basicHtml: `<tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
 Current Tab: {{ current }}`,
     basicJs: `export default {
   data: () => ({
     current: 'Radio',
   }),
 };`,
-    blockHtml: `<Tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
+    blockHtml: `<tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
  Current Tab: {{ current }}`,
-    advancedHtml: `<Tabs
+    advancedHtml: `<tabs
   v-model="current"
   :items="[{ name: 'Music', badge }, { name: 'Radio' }, { name: 'Podcast' }]"
 >
   <template #tab="{ item }">
     {{ item.name }}
   </template>
-  <TabAction v-if="advancedCurrent != 0" slot="action">
-    <Btn size="sm" @click="goToFirst">To music</Btn>
-  </TabAction>
-</Tabs>
+  <tab-action v-if="advancedCurrent != 0" slot="action">
+    <btn size="sm" @click="goToFirst">To music</btn>
+  </tab-action>
+</tabs>
 
 <!-- OR -->
 
-<Tabs v-model="current">
-  <Tab :badge="badge">Music</Tab>
-  <Tab>Radio</Tab>
-  <Tab>Podcasts</Tab>
-  <TabAction v-if="advancedCurrent != 0">
-    <Btn size="sm" @click="goToFirst">To music</Btn>
-  </TabAction>
-</Tabs>
+<tabs v-model="current">
+  <tab :badge="badge">Music</tab>
+  <tab>Radio</tab>
+  <tab>Podcasts</tab>
+  <tab-action v-if="advancedCurrent != 0">
+    <btn size="sm" @click="goToFirst">To music</btn>
+  </tab-action>
+</tabs>
 `,
     advancedJs: `export default {
   data: () => ({

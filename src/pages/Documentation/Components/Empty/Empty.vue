@@ -5,24 +5,24 @@
 
     <columns>
       <column col="7" xs="12" mx>
-        <Empty
+        <empty
           icon="mail"
           title="You have no new messages"
           sub="Click the button to start a conversation"
         >
           <btn slot="action">Send a message</btn>
-        </Empty>
+        </empty>
       </column>
 
       <column col="7" xs="12" mx>
-        <Empty>
-          <EmptyIcon icon="people" />
-          <EmptyTitle>You are not following anyone</EmptyTitle>
-          <EmptySubtitle>Start to meet new friends</EmptySubtitle>
-          <EmptyAction>
-            <Btn>Search</Btn>
-          </EmptyAction>
-        </Empty>
+        <empty>
+          <empty-icon icon="people" />
+          <empty-title>You are not following anyone</empty-title>
+          <empty-subtitle>Start to meet new friends</empty-subtitle>
+          <empty-action>
+            <btn>Search</btn>
+          </empty-action>
+        </empty>
       </column>
     </columns>
 
@@ -41,24 +41,24 @@ export default Vue.extend({
   data: () => ({
     props,
     slots,
-    code: `<Empty
+    code: `<empty
   icon="mail"
   title="You have no new messages"
   sub="Click the button to start a conversation"
 >
   <btn slot="action">Send a message</btn>
-</Empty>
+</empty>
 
 <!-- Or with composition -->
 
-<Empty>
-  <EmptyIcon icon="people" />
-  <EmptyTitle>You are not following anyone</EmptyTitle>
-  <EmptySubtitle>Start to meet new friends</EmptySubtitle>
-  <EmptyAction>
-    <Btn>Search</Btn>
-  </EmptyAction>
-</Empty>
+<empty>
+  <empty-icon icon="people" />
+  <empty-title>You are not following anyone</empty-title>
+  <empty-subtitle>Start to meet new friends</empty-subtitle>
+  <empty-action>
+    <btn>Search</btn>
+  </empty-action>
+</empty>
 `,
   }),
 });
