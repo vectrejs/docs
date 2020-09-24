@@ -3,13 +3,11 @@
     <header>
       <container grid="lg" class="text-center">
         <h1>
-          <img :src="require('../img/logo.svg')" alt="VectreJs" />
+          <img :src="require('../img/logo.svg')" alt="VectreJS" />
         </h1>
         <h2>
           A
-          <u>Lightweight</u>,
-          <u>Simple</u> and
-          <u>Responsive</u> Component Framework
+          <u>Lightweight</u>, <u>Simple</u> and <u>Responsive</u> Component Framework
         </h2>
         <p>
           <router-link class="btn btn-lg" to="pages/getting-started">Docs</router-link>&nbsp;
@@ -51,7 +49,7 @@
             </p>
           </column>
           <column col="10" sm="12" mx>
-            <a class="btn">Getting Started</a>
+            <router-link class="btn btn-lg" to="pages/getting-started">Getting Started</router-link>
           </column>
         </columns>
       </container>
@@ -59,8 +57,11 @@
     <footer>
       <container grid="lg">
         <p>
-          <router-link to="pages">Documentation</router-link>·
+          <router-link to="pages">Documentation</router-link>
+          ·
           <a href="https://github.com/vectrejs/vectre">GitHub</a>
+          ·
+          <a href="https://discord.gg/4YTfpB">Discord</a>
           ·
           <a href="https://twitter.com/vectrejs">Twitter</a>
           ·
