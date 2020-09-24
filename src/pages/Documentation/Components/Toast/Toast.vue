@@ -30,7 +30,10 @@
         <toast type="primary" icon="people" closeable>
           <template #title>Who was the voice of Mickey Mouse?</template>
           <template #content>
-            <small>Originally, Walt Disney himself was the voice of Mickey Mouse, followed by Jim MacDonald, and later Wayne Allwine provided Mickey's distinctive voice. Mickey's new voice has not been offically announced.</small>
+            <small
+              >Originally, Walt Disney himself was the voice of Mickey Mouse, followed by Jim MacDonald, and later Wayne
+              Allwine provided Mickey's distinctive voice. Mickey's new voice has not been offically announced.</small
+            >
           </template>
           <template #action>
             <btn action type="link" size="sm" icon="bookmark" v-tooltip.left="'bookmark'" />
@@ -120,7 +123,7 @@ export default Vue.extend({
   }),
   methods: {
     close(): void {
-      (this.$refs.toast as Toast).close();
+      (this.$refs.toast as InstanceType<typeof Toast>).close();
     },
   },
 });

@@ -42,7 +42,7 @@ export default class extends vue {
   public rootPath: string;
 
   public closeSidebar(): void {
-    (this.$refs.offCanvas as OffCanvas).hideSidebar();
+    (this.$refs.offCanvas as InstanceType<typeof OffCanvas>).hideSidebar();
   }
 }
 </script>
