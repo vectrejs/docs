@@ -1,6 +1,6 @@
 <template>
   <container>
-    <h2 class="title">Responsive</h2>
+    <h2 class="subtitle">Responsive</h2>
     <p>
       Spectre provides a responsive layout grid 
       system and responsive visibility utilities.

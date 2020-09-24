@@ -1,14 +1,13 @@
 <template>
   <div>
-    <h2 v-if="title">{{title}}</h2>
+    <h2 v-if="title">{{ title }}</h2>
     <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop } from 'vue-property-decorator';
-import Vue, { VueConstructor } from 'vue';
-import { RouteConfig } from 'vue-router';
+import Vue from 'vue';
 
 @Component
 export default class extends Vue {

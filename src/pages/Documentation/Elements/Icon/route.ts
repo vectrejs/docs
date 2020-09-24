@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Icon from './Icon.vue';
 
 export const route = {
+  name: 'IconPage',
   path: 'icon',
-  title: 'Icons',
-  component: Icon,
+  component: () => import(/* webpackChunkName: "icon" */ './Icon.vue'),
+  meta: {
+    title: 'Icons',
+  },
 } as RouteConfig;

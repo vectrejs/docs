@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Nav from './Nav.vue';
 
 export const NavRoute = {
-  path: 'nav',
-  title: 'Navigation',
-  component: Nav,
+  name: 'NavigationPage',
+  path: 'navigation',
+  component: () => import(/* webpackChunkName: "nav" */ './Nav.vue'),
+  meta: {
+    title: 'Navigation',
+  },
 } as RouteConfig;

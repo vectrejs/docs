@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Panel from './Panel.vue';
 
 export const PanelRoute = {
+  name: 'PanelPage',
   path: 'panel',
-  title: 'Panels',
-  component: Panel,
+  component: () => import(/* webpackChunkName: "panel" */ './Panel.vue'),
+  meta: {
+    title: 'Panels',
+  },
 } as RouteConfig;

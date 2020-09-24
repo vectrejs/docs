@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Textarea from './Textarea.vue';
 
 export const route = {
+  name: 'TextareaPage',
   path: 'textarea',
-  title: 'Textarea',
-  component: Textarea,
+  component: () => import(/* webpackChunkName: "textarea" */ './Textarea.vue'),
+  meta: {
+    title: 'Textarea',
+  },
 } as RouteConfig;

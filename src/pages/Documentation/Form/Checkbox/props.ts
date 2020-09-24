@@ -2,7 +2,7 @@ import { PropsLists } from '@kitchen/component/Props';
 
 export const props: PropsLists = [
   {
-    name: 'Checkbox',
+    name: 'FormCheckbox',
     props: {
       checked: {
         type: 'Boolean',
@@ -31,8 +31,7 @@ export const props: PropsLists = [
       },
       value: {
         type: 'Any',
-        // tslint:disable-next-line:max-line-length
-        description:'The value of checkbox when it\'s checked. Can act as a label if it is not set',
+        description: "The value of checkbox when it's checked. Can act as a label if it is not set",
         default: true,
       },
       size: {
@@ -48,7 +47,7 @@ export const props: PropsLists = [
   },
 
   {
-    name: 'Checkbox Group',
+    name: 'FormCheckboxGroup',
     props: {
       options: {
         type: 'Object | Any[]',

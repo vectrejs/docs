@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Input from './Input.vue';
 
 export const FormInputRoute = {
+  name: 'InputPage',
   path: 'input',
-  title: 'Input',
-  component: Input,
+  component: () => import(/* webpackChunkName: "input" */ './Input.vue'),
+  meta: {
+    title: 'Input',
+  },
 } as RouteConfig;

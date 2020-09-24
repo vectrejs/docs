@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Avatar from './Avatar.vue';
 
 export const AvatarRoute = {
+  name: 'AvatarPage',
   path: 'avatar',
-  component: Avatar,
-  title: 'Avatar',
+  component: () => import(/* webpackChunkName: 'avatar' */ './Avatar.vue'),
+  meta: {
+    title: 'Avatar',
+  },
 } as RouteConfig;

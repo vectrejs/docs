@@ -2,11 +2,11 @@
   <component-view>
     <h2 class="title">Textarea</h2>
     <p>A multi-line text input control. The main difference from the native is <b>v-model</b> support</p>
-    
+
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-textarea v-model="message">Text...</form-textarea>
-        Your message: {{message}}
+        Your message: {{ message }}
       </column>
     </columns>
     <prism language="html" :code="basicHtml" />
@@ -19,6 +19,8 @@ import Vue from 'vue';
 import { slots } from './slots';
 
 export default Vue.extend({
+  name: 'TextareaPage',
+
   data: () => ({
     slots,
     message: '',

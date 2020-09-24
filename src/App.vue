@@ -7,7 +7,7 @@ import vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
 import './assets/';
-import router, { routes } from './router';
+import router from './router';
 
 @Component({
   router,

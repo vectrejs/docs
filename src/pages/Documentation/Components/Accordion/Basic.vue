@@ -2,14 +2,8 @@
   <div class="section">
     <h3 class="subtitle">Basic use</h3>
     <columns>
-      <column col=4 xs=8>
-        <accordion
-          :items="items"
-          :checked="checked"
-          @check="checked = $event"
-          icon="icon-arrow-right"
-          multiple
-        />
+      <column col="4" xs="8">
+        <accordion :items="items" :checked="checked" icon="icon-arrow-right" multiple />
       </column>
     </columns>
     <prism language="html" :code="html" />
@@ -18,11 +12,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-// import { IconNavigation } from 'vectre';
 
 export default Vue.extend({
   data: () => ({
-    checked: ['Fact 1'],
+    checked: 'Fact 1',
     icon: 'right',
     html: `<accordion
   :items="{'Fact 1': '...', 'Fact 2': '...', 'Fact 3': '...'}"

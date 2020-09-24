@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Accordion from './Accordion.vue';
 
 export const AccordionRoute = {
+  name: 'AccordionPage',
   path: 'accordion',
-  component: Accordion,
-  title: 'Accordion',
+  component: () => import(/* webpackChunkName: "accordion" */ './Accordion.vue'),
+  meta: {
+    title: 'Accordion',
+  },
 } as RouteConfig;

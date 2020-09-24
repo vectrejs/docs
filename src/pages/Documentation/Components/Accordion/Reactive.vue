@@ -2,7 +2,7 @@
   <div class="section">
     <h3 class="subtitle">Stateless component</h3>
     <columns>
-      <column col=6 xs=8>
+      <column col="6" xs="8">
         <accordion :items="items" :checked="checkedFact" @check="checkedFact = $event" />
       </column>
     </columns>

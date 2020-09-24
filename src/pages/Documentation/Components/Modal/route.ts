@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Modal from './Modal.vue';
 
 export const ModalRoute = {
+  name: 'ModalPage',
   path: 'modal',
-  title: 'Modals',
-  component: Modal,
+  component: () => import(/* webpackChunkName: "modal" */ './Modal.vue'),
+  meta: {
+    title: 'Modals',
+  },
 } as RouteConfig;

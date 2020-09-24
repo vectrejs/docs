@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Checkbox from './Checkbox.vue';
 
 export const FormCheckboxRoute = {
+  name: 'CheckboxPage',
   path: 'checkbox',
-  title: 'Checkbox',
-  component: Checkbox,
+  component: () => import(/* webpackChunkName: "checkbox" */ './Checkbox.vue'),
+  meta: {
+    title: 'Checkbox',
+  },
 } as RouteConfig;

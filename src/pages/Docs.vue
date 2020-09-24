@@ -1,14 +1,16 @@
 <template>
   <container grid="xl">
-    <off-canvas ref="offCanvas">
+    <off-canvas id="docs" ref="offCanvas">
       <template slot="sidebar">
         <div class="logo">
-          <img :src="require('@kitchen/img/logo.svg')">
+          <router-link to="/">
+            <img :src="require('@kitchen/img/logo.svg')" />
+          </router-link>
         </div>
-        <mnu :routes="routes" :rootPath="rootPath" @select="closeSidebar"/>
+        <mnu :routes="routes" :root-path="rootPath" @select="closeSidebar" />
       </template>
 
-      <router-view slot="content"/>
+      <router-view slot="content" />
     </off-canvas>
   </container>
 </template>
@@ -19,7 +21,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { RouteConfig } from 'vue-router';
 
 import ComponentView from '@kitchen/component/Component.vue';
-import { VectrePlugin } from 'vectre';
+import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
 
 // Register common components
 vue.component('component-view', ComponentView);
@@ -39,8 +41,8 @@ export default class extends vue {
   @Prop({ default: '', type: String })
   public rootPath: string;
 
-  public closeSidebar() {
-    (this.$refs.offCanvas as any).hideSidebar();
+  public closeSidebar(): void {
+    (this.$refs.offCanvas as OffCanvas).hideSidebar();
   }
 }
 </script>
@@ -51,10 +53,10 @@ export default class extends vue {
 }
 
 @media (max-width: 960px) {
-  /deep/ .off-canvas {
+  /deep/ #docs.off-canvas {
     display: inherit;
 
-    &-content {
+    & > .off-canvas-content {
       padding: 0rem;
     }
   }
@@ -66,8 +68,8 @@ export default class extends vue {
   }
 }
 
-/deep/ .off-canvas {
-  &-toggle {
+/deep/ #docs.off-canvas {
+  & > .off-canvas-toggle {
     top: 0;
     left: 0;
     padding: 0.5rem 1rem;
@@ -76,7 +78,7 @@ export default class extends vue {
     background: rgba(248, 249, 250, 0.65);
     z-index: 100;
 
-    background-image: url("../img/logo.svg");
+    background-image: url('../img/logo.svg');
     background-repeat: no-repeat;
     background-size: 90px;
     background-position-y: 7px;
@@ -90,7 +92,7 @@ export default class extends vue {
     }
   }
 
-  &-sidebar {
+  & > .off-canvas-sidebar {
     min-height: 100vh;
     width: 12rem;
 
@@ -120,6 +122,10 @@ export default class extends vue {
       position: fixed;
       margin-top: 0.85rem;
 
+      a:focus {
+        box-shadow: unset;
+      }
+
       img {
         display: inline-block;
         height: auto;
@@ -128,7 +134,7 @@ export default class extends vue {
     }
   }
 
-  &-content {
+  & > .off-canvas-content {
     padding-top: 0.85rem;
   }
 }

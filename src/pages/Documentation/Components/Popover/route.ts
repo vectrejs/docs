@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Popover from './Popover.vue';
 
 export const PopoverRoute = {
+  name: 'PopoverPage',
   path: 'popover',
-  title: 'Popovers',
-  component: Popover,
+  component: () => import(/* webpackChunkName: "popover" */ './Popover.vue'),
+  meta: {
+    title: 'Popovers',
+  },
 } as RouteConfig;

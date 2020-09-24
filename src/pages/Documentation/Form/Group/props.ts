@@ -2,7 +2,7 @@ import { PropsLists } from '@kitchen/component/Props';
 
 export const props: PropsLists = [
   {
-    name: 'Group',
+    name: 'FormGroup',
     props: {
       disabled: { description: 'Makes all nested form components disabled', type: 'Boolean' },
       error: { description: 'Shows the current group as invalid', type: 'Boolean' },
@@ -15,13 +15,13 @@ export const props: PropsLists = [
     },
   },
   {
-    name: 'Label',
+    name: 'FormLabel',
     props: {
       size: { type: 'String', description: 'Specifies the size of label', accepted: 'sm, lg' },
     },
   },
   {
-    name: 'Hint',
+    name: 'FormHint',
     props: {
       success: {
         type: 'Boolean',

@@ -1,53 +1,59 @@
 <template>
   <div class="main-menu">
-    <accordion :items="routes" :checked="checked" @check="checked = $event" multiple>
+    <accordion :items="routes" :checked="checked" multiple @check="checked = $event">
       <!-- Menu item -->
-      <div slot="header" slot-scope="{item: route, index}">
+      <div slot="header" slot-scope="{ item: route }">
         <router-link
           v-if="!route.children && !route.anchors"
           :to="rootPath + route.path"
-          @click.native="onSelect"
           tag="div"
           class="router-link"
           exact
-        >{{route.title}}</router-link>
+          @click.native="onSelect"
+        >
+          <!-- {{ route }} -->
+          {{ route.meta.title }}
+        </router-link>
 
-        <template v-else>{{ route.title }}</template>
+        <template v-else>
+          <!-- {{ route }} -->
+          {{ route.meta.title }}
+        </template>
       </div>
 
-      <template slot-scope="{item: parent, index}" slot="body">
+      <template slot="body" slot-scope="{ item: parent }">
         <!-- Submenu items with anchors -->
-        <vs-menu v-if="parent.anchors" :items="parent.anchors" class="menu-nav">
+        <vertical-menu v-if="parent.anchors" :items="parent.anchors" class="menu-nav">
           <router-link
-            slot-scope="{item: anchor, index: title}"
             :key="title"
+            slot-scope="{ item: anchor, index: title }"
             :to="rootPath + parent.path + '#' + anchor"
             @click.native="onSelect(), goToAnchor(rootPath + parent.path, anchor)"
           >{{ title }}</router-link>
-        </vs-menu>
+        </vertical-menu>
 
         <!-- Submenu items from children -->
-        <vs-menu v-if="parent.children" :items="parent.children" class="menu-nav">
+        <vertical-menu v-if="parent.children" :items="parent.children" class="menu-nav">
           <router-link
-            slot-scope="{item: child, index}"
+            slot-scope="{ item: child }"
             :to="rootPath + parent.path + '/' + child.path"
             @click.native="onSelect"
-          >{{ child.title }}</router-link>
-        </vs-menu>
+          >{{ child.meta.title }}</router-link>
+        </vertical-menu>
       </template>
     </accordion>
   </div>
 </template>
 
 <script lang="ts">
-import Vue, { VueConstructor } from 'vue';
-import { Route, RawLocation } from 'vue-router';
-import { Component, RouteConfig } from 'vue-router/types/router';
+import Vue from 'vue';
+import { RawLocation } from 'vue-router';
+import { RouteConfig } from 'vue-router/types/router';
 
 export default Vue.extend({
   props: {
     rootPath: { type: String, default: '' },
-    routes: [Object, Array],
+    routes: { type: [Object, Array], default: (): [] => [] },
   },
 
   data: () => ({
@@ -59,16 +65,17 @@ export default Vue.extend({
 
     for (const i in this.routes) {
       if (this.routes[i].children) {
-        const isCurrent = this.routes[i].children
-          .some((child: RouteConfig) =>
-            matched.includes(child.component!),
+        const isCurrent = this.routes[i].children.some((child: RouteConfig) =>
+          matched.some((match: any) => child.name && match.extendOptions.name === child.name),
         );
 
         if (isCurrent) {
           this.checked = [+i];
           return;
         }
-      } else if (matched.includes(this.routes[i].component)) {
+      } else if (
+        matched.some((match: any) => this.routes[i].name && match.extendOptions.name === this.routes[i].name)
+      ) {
         this.checked = [+i];
         return;
       }
@@ -79,8 +86,10 @@ export default Vue.extend({
     onSelect(): void {
       this.$emit('select');
     },
-    goToAnchor(path: RawLocation, anchor: string) {
-      this.$router.push(`${path}#${anchor}`);
+    goToAnchor(path: RawLocation, anchor: string): void {
+      this.$router.push(`${path}#${anchor}`).catch(() => {
+        /* NOOP */
+      });
     },
   },
 });
@@ -93,4 +102,3 @@ export default Vue.extend({
   }
 }
 </style>
-

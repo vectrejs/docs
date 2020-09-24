@@ -5,82 +5,120 @@
 
     <h3 class="subtitle">Basic use</h3>
     <columns>
-      <column col=5 sm=8 xs=12>
-        <tabs :current.sync="current" :items="['Music', 'Radio', 'Podcasts']" />
+      <column col="5" sm="8" xs="12">
+        <tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
         Current Tab: {{ current }}
       </column>
     </columns>
-    <prism language="html" :code="basic" />
-
+    <prism language="html" :code="basicHtml" />
+    <prism language="javascript" :code="basicJs" />
 
     <h5 class="subtitle">Block</h5>
-    <p>You can add the <code>block</code> property for a full-width tab.</p>
+    <p>
+      You can add the
+      <code>block</code> property for a full-width tab.
+    </p>
     <columns>
-      <column col=5 sm=8 xs=12>
-        <tabs block :current.sync="blockCurrent" :items="['Music', 'Radio', 'Podcasts']" />
+      <column col="5" sm="8" xs="12">
+        <tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
         Current Tab: {{ blockCurrent }}
       </column>
     </columns>
-    <prism language="html" :code="block" />
+    <prism language="html" :code="blockHtml" />
 
     <h3 class="subtitle">Advanced</h3>
     <columns>
-      <column col=6 xl=8 xs=12>
-        <tabs :current.sync="advancedCurrent">
-          <tab key="music" :badge="badge">Music</tab>
+      <column col="6" xl="8" xs="12">
+        <tabs v-model="advancedCurrent">
+          <tab :badge="badge">Music</tab>
           <tab>Radio</tab>
           <tab>Podcasts</tab>
-          <tab-actions v-if="advancedCurrent != 'music'">
-            <btn @click="badge--, advancedCurrent = 'music'" size="sm">To music</btn>
-          </tab-actions>
+          <tab-action v-if="advancedCurrent != 0">
+            <btn size="sm" @click="goToFirst">To music</btn>
+          </tab-action>
         </tabs>
         Current Tab: {{ advancedCurrent }}
       </column>
     </columns>
-    <prism language="html" :code="advanced" />
-  
+    <prism language="html" :code="advancedHtml" />
+    <prism language="javascript" :code="advancedJs" />
+    <p>
+      <code>items</code> prop should have a certain structure to be used in advanced mode:
+    </p>
+    <pre>
+Array of {
+  name: string,
+  badge?: string | number
+}</pre>
   </component-view>
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue';
+import { events } from './events';
+import { props } from './props';
+import { slots } from './slots';
+
+export default Vue.extend({
+  name: 'TabsPage',
   data: () => ({
+    events,
+    props,
+    slots,
     badge: 999,
     current: 'Radio',
     blockCurrent: 'Music',
-    advancedCurrent: 'music',
-    basic: `<tabs :current.sync="current" :items="['Music', 'Radio', 'Podcasts']" />
-Current Tab: {{ current }}
-
-<script>
-export default {
+    advancedCurrent: 0,
+    basicHtml: `<tabs v-model="current" :items="['Music', 'Radio', 'Podcasts']" />
+Current Tab: {{ current }}`,
+    basicJs: `export default {
   data: () => ({
     current: 'Radio',
   }),
-};
-<\/script>
-`,
-    block: `<tabs block :current.sync="current" :items="['Music', 'Radio', 'Podcasts']" />
+};`,
+    blockHtml: `<tabs v-model="blockCurrent" block :items="['Music', 'Radio', 'Podcasts']" />
  Current Tab: {{ current }}`,
-    advanced: `<tabs :current.sync="current">
-  <tab key="music" :badge="badge">Music</tab>
-  <tab>Radio</tab>
-  <tab>Podcasts</tab>
-  <tab-actions v-if="current != 'music'">
-    <btn @click="badge--, current = 'music'" size="sm">
-        To music
-    </btn>
-  </tab-actions>
+    advancedHtml: `<tabs
+  v-model="current"
+  :items="[{ name: 'Music', badge }, { name: 'Radio' }, { name: 'Podcast' }]"
+>
+  <template #tab="{ item }">
+    {{ item.name }}
+  </template>
+  <tab-action v-if="advancedCurrent != 0" slot="action">
+    <btn size="sm" @click="goToFirst">To music</btn>
+  </tab-action>
 </tabs>
 
-<script>
-export default {
+<!-- OR -->
+
+<tabs v-model="current">
+  <tab :badge="badge">Music</tab>
+  <tab>Radio</tab>
+  <tab>Podcasts</tab>
+  <tab-action v-if="advancedCurrent != 0">
+    <btn size="sm" @click="goToFirst">To music</btn>
+  </tab-action>
+</tabs>
+`,
+    advancedJs: `export default {
   data: () => ({
-    current: 'music',
+    current: 0,
     badge: 999,
   }),
-};
-<\/script>`,
+  methods: {
+    goToFirst() {
+      this.badge -= 1;
+      this.advancedCurrent = 0;
+    },
+  },
+};`,
   }),
-};
+  methods: {
+    goToFirst() {
+      this.badge -= 1;
+      this.advancedCurrent = 0;
+    },
+  },
+});
 </script>

@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Switch from './Switch.vue';
 
 export const FormSwitchRoute = {
+  name: 'SwitchPage',
   path: 'switch',
-  title: 'Switch',
-  component: Switch,
+  component: () => import(/* webpackChunkName: "switch" */ './Switch.vue'),
+  meta: {
+    title: 'Switch',
+  },
 } as RouteConfig;

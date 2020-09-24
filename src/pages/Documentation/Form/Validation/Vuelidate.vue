@@ -1,49 +1,38 @@
 <template>
   <div>
-    
     <h3 class="subtitle">
-      Vuelidate 
+      Vuelidate
       <a href="https://monterail.github.io/vuelidate/" title="Go to documentation" target="_blank">
-        <sup><icon type="link"/></sup>
+        <sup><icon type="link" /></sup>
       </a>
     </h3>
     <p>
       Another approach to data validation in Vue.js.
     </p>
     <p>
-      The most significant difference is the validations are completely decoupled 
-      from the template. It means that instead of providing rules for 
-      different inputs inside a template, you declare those rules for your 
-      data model.
+      The most significant difference is the validations are completely decoupled from the template. It means that
+      instead of providing rules for different inputs inside a template, you declare those rules for your data model.
     </p>
 
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-group :error="$v.password.$error">
           <form-label>Password</form-label>
 
-          <form-input 
-            type="password" 
-            placeholder="Password" 
-            v-model.trim="$v.password.$model" 
-          />
+          <form-input v-model.trim="$v.password.$model" type="password" placeholder="Password" />
 
           <form-hint v-if="!$v.password.required" error>
             Required!
           </form-hint>
-        
+
           <form-hint v-if="!$v.password.minLength" error>
-            Password must have at least {{$v.password.$params.minLength.min}} letters
+            Password must have at least {{ $v.password.$params.minLength.min }} letters
           </form-hint>
         </form-group>
 
         <form-group :error="$v.repeatPassword.$error">
-          <form-input 
-            type="password" 
-            placeholder="Repeat" 
-            v-model.trim="$v.repeatPassword.$model" 
-          />
-        
+          <form-input v-model.trim="$v.repeatPassword.$model" type="password" placeholder="Repeat" />
+
           <form-hint v-if="!$v.repeatPassword.sameAsPassword" error>
             Passwords must be identical
           </form-hint>

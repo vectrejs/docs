@@ -1,7 +1,7 @@
 <template>
   <component-view>
     <h2 class="title">Avatars</h2>
-    <p>Avatars are user profile pictures. </p>
+    <p>Avatars are user profile pictures.</p>
     <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" size="xl" />
     <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" size="lg" />
     <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" />
@@ -19,8 +19,16 @@
     <prism language="html" :code="initialsHtml" />
 
     <h3 class="subtitle">Icon</h3>
-    <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" icon="https://picturepan2.github.io/spectre/img/avatar-2.png" size="xl" />
-    <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" icon="https://picturepan2.github.io/spectre/img/avatar-3.png" size="lg" />
+    <avatar
+      src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+      icon="https://picturepan2.github.io/spectre/img/avatar-2.png"
+      size="xl"
+    />
+    <avatar
+      src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+      icon="https://picturepan2.github.io/spectre/img/avatar-3.png"
+      size="lg"
+    />
     <avatar icon="https://picturepan2.github.io/spectre/img/avatar-1.png" initials="XZ" />
     <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" size="sm" />
     <avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" size="xs" />
@@ -42,7 +50,7 @@ import Vue from 'vue';
 import { props } from './props';
 
 export default Vue.extend({
-  components: { props },
+  name: 'AvatarPage',
   data: () => ({
     props,
     baseHtml: `<avatar src="img/avatar-1.png" size="xl" />

@@ -23,17 +23,18 @@ import { slots } from './slots';
 import { events } from './events';
 
 export default Vue.extend({
-  data: () => ({
-    events,
-    slots,
-    props,
-  }),
+  name: 'AccordionPage',
   components: {
     Basic,
     Checked,
     Reactive,
     Multiple,
   },
+  data: () => ({
+    events,
+    slots,
+    props,
+  }),
 });
 </script>
 
@@ -54,4 +55,3 @@ export default Vue.extend({
   }
 }
 </style>
-

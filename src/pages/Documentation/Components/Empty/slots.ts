@@ -1,10 +1,15 @@
-import { SlotDefinitions } from '@kitchen/component/Slots';
+import { SlotsLists } from '@kitchen/component/Slots';
 
-export const slots: SlotDefinitions = {
-  default: {
-    description: 'Any additional content. E.g., can be used instead of subtitle',
+export const slots: SlotsLists = [
+  {
+    name: 'Empty',
+    slots: {
+      content: {
+        description: 'Any additional content. E.g., can be used instead of subtitle',
+      },
+      action: {
+        description: 'The section with actions after default section',
+      },
+    },
   },
-  action: {
-    description: 'The section with actions after default section',
-  },
-};
+];

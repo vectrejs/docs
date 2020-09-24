@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Group from './Group.vue';
 
 export const FormGroupRoute = {
+  name: 'GroupPage',
   path: 'group',
-  component: Group,
-  title: 'Group',
+  component: () => import(/* webpackChunkName: "group" */ './Group.vue'),
+  meta: {
+    title: 'Group',
+  },
 } as RouteConfig;

@@ -1,8 +1,10 @@
 import { RouteConfig } from 'vue-router';
-import Validation from './Validation.vue';
 
 export const FormValidationRoute = {
+  name: 'ValidationPage',
   path: 'validations',
-  component: Validation,
-  title: 'Validation',
+  component: () => import(/* webpackChunkName: "validation" */ './Validation.vue'),
+  meta: {
+    title: 'Validation',
+  },
 } as RouteConfig;

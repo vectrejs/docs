@@ -12,21 +12,11 @@
     "sourceMap": true,
     "baseUrl": ".",
     "strictPropertyInitialization": false,
-    "types": [
-      "webpack-env",
-      "node"
-    ],
+    "types": ["webpack-env", "node"],
     "paths": {
-      "@kitchen/*": [
-        "src/*"
-      ]
+      "@kitchen/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": [
     "src/**/*.ts",
@@ -35,7 +25,5 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules/*"]
 }

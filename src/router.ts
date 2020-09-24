@@ -1,12 +1,13 @@
 import vue from 'vue';
 import vueRouter from 'vue-router';
 import { routes } from './pages';
+import { PositionResult } from 'vue-router/types/router';
 
 vue.use(vueRouter);
 
-export default new vueRouter({
+const router = new vueRouter({
   routes,
-  scrollBehavior: (to) => {
+  scrollBehavior(to): PositionResult {
     if (to.hash) {
       return { selector: to.hash, offset: { x: 0, y: 50 } };
     }
@@ -15,6 +16,11 @@ export default new vueRouter({
   },
 });
 
-export {
-  routes,
-};
+router.beforeEach(({ meta: { title = '' } }, from, next) => {
+  document.title = 'vectre' + (title ? ` - ${title}` : '');
+  next();
+});
+
+export default router;
+
+export { routes };

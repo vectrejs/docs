@@ -1,8 +1,8 @@
-import { EventDefinitions, EventsLists } from '@kitchen/component/Events';
+import { EventsLists } from '@kitchen/component/Events';
 
 export const events: EventsLists = [
   {
-    name: 'Select',
+    name: 'FormSelect',
     events: {
       input: {
         description: 'Fires after an option has been selected',

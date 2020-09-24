@@ -3,17 +3,44 @@
     <h2 class="title">Panels</h2>
     <p>Panels are flexible view container with auto-expand content section.</p>
     <columns>
-      <column col=5 xl=6 sm=12>
+      <column col="6" xl="6" sm="12">
         <panel>
           <h5 slot="header">Recently Watched</h5>
-          <tile slot="body"
+          <tile
             v-for="(tile, i) in tiles"
+            slot="body"
             :key="i"
             :avatar="tile.avatar"
             :title="tile.title"
             :subtitle="tile.subtitle"
           />
           <btn slot="footer" size="block" type="primary">Hide</btn>
+        </panel>
+      </column>
+      <column col="6" sm="12">
+        <panel>
+          <panel-header class="text-center">
+            <avatar size="lg" src="https://picturepan2.github.io/spectre/img/avatar-2.png" />
+            <div class="panel-title h5 mt-10">Bruce Banner</div>
+            <div class="panel-subtitle">THE HULK</div>
+          </panel-header>
+          <panel-nav>
+            <tabs current="Profile" block :items="['Profile', 'Files', 'Tasks']" />
+          </panel-nav>
+          <panel-body>
+            <tile compact title="E-mail" subtitle="bruce.banner@hulk.com">
+              <btn slot="actions" v-tooltip.left="'Edit E-mail'" icon="edit" action type="link" />
+            </tile>
+            <tile compact title="Skype" subtitle="bruce.banner">
+              <btn slot="actions" v-tooltip.left="'Edit Skype'" icon="edit" action type="link" />
+            </tile>
+            <tile compact title="Location" subtitle="Dayton, Ohio">
+              <btn slot="actions" icon="edit" action type="link" />
+            </tile>
+          </panel-body>
+          <panel-footer>
+            <btn size="block">Save</btn>
+          </panel-footer>
         </panel>
       </column>
     </columns>
@@ -23,17 +50,33 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import { slots } from './slots';
 
-export default {
+export default Vue.extend({
+  name: 'PanelPage',
+
   data: () => ({
     slots,
     tiles: [
-      // tslint:disable:max-line-length
-      { avatar: 'https://picturepan2.github.io/spectre/img/avatar-1.png', title: 'Academy Awards', subtitle: 'A set of 25 awards for artistic and technical merit in the American film industry, given annually by the Academy of Motion Picture Arts and Sciences (AMPAS)...' },
-      { avatar: 'https://picturepan2.github.io/spectre/img/avatar-2.png', title: 'Avengers: Infinity War', subtitle: 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos ...' },
-      { avatar: 'https://picturepan2.github.io/spectre/img/avatar-3.png', title: 'X-Men', subtitle: 'Two mutants come to a private academy for their kind whose resident superhero team must oppose a terrorist organization with similar powers.' },
-      // tslint:enable:max-line-length
+      {
+        avatar: 'https://picturepan2.github.io/spectre/img/avatar-1.png',
+        title: 'Academy Awards',
+        subtitle:
+          'A set of 25 awards for artistic and technical merit in the American film industry, given annually by the Academy of Motion Picture Arts and Sciences (AMPAS)...',
+      },
+      {
+        avatar: 'https://picturepan2.github.io/spectre/img/avatar-2.png',
+        title: 'Avengers: Infinity War',
+        subtitle:
+          'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos ...',
+      },
+      {
+        avatar: 'https://picturepan2.github.io/spectre/img/avatar-3.png',
+        title: 'X-Men',
+        subtitle:
+          'Two mutants come to a private academy for their kind whose resident superhero team must oppose a terrorist organization with similar powers.',
+      },
     ],
     html: `<panel>
   <h5 slot="header">Recently Watched</h5>
@@ -45,7 +88,40 @@ export default {
     :subtitle="tile.subtitle"
   />
   <btn slot="footer" size="block" type="primary">Hide</btn>
-</panel>`,
+</panel>
+
+<!-- OR Composition -->
+
+<panel>
+
+  <panel-header class="text-center">
+    <avatar size="lg" src="img/avatar-2.png" />
+    <div class="panel-title h5 mt-10">Bruce Banner</div>
+    <div class="panel-subtitle">THE HULK</div>
+  </panel-header>
+
+  <panel-nav>
+    <tabs current="Profile" block :items="['Profile', 'Files', 'Tasks']" />
+  </panel-nav>
+
+  <panel-body>
+    <tile compact title="E-mail" subtitle="bruce.banner@hulk.com">
+      <btn slot="actions" v-tooltip.left="'Edit E-mail'" icon="edit" action type="link" />
+    </tile>
+    <tile compact title="Skype" subtitle="bruce.banner">
+      <btn slot="actions" v-tooltip.left="'Edit Skype'" icon="edit" action type="link" />
+    </tile>
+    <tile compact title="Location" subtitle="Dayton, Ohio">
+      <btn slot="actions" icon="edit" action type="link" />
+    </tile>
+  </panel-body>
+
+  <panel-footer>
+    <btn size="block">Save</btn>
+  </panel-footer>
+
+</panel>
+`,
     js: `export default {
   data: () => ({
     tiles: [
@@ -67,7 +143,7 @@ export default {
   }),
 }`,
   }),
-};
+});
 </script>
 
 <style scoped>
@@ -75,5 +151,9 @@ export default {
   .panel {
     height: 55vh;
   }
+}
+
+.panel-body .tile {
+  margin: 0.75rem 0;
 }
 </style>

@@ -3,24 +3,23 @@
     <h3 class="subtitle">
       VeeValidate
       <a href="https://baianat.github.io/vee-validate/" title="Go to documentation" target="_blank">
-        <sup><icon type="link"/></sup>
+        <sup><icon type="link" /></sup>
       </a>
     </h3>
     <p>
-      A validation library inspired by Laravel's validation framework.
-      It is feature-rich and simple to work with, including a multitude of 
-      validations out of the box.
+      A validation library inspired by Laravel's validation framework. It is feature-rich and simple to work with,
+      including a multitude of validations out of the box.
     </p>
     <columns>
-      <column col=7 xl=8 lg=9 xs=11>
+      <column col="7" xl="8" lg="9" xs="11">
         <form-group :error="errors.has('password')">
           <form-label>Password</form-label>
 
-          <form-input 
-            v-validate="'required|min:6'"
-            v-model="password"
-            name="password"
+          <form-input
             ref="password"
+            v-model="password"
+            v-validate="'required|min:6'"
+            name="password"
             type="password"
             placeholder="Password"
           />
@@ -32,8 +31,8 @@
 
         <form-group :error="errors.has('repeat_password')">
           <form-input
-            v-validate="'required|confirmed:password'"
             v-model="repeatPassword"
+            v-validate="'required|confirmed:password'"
             name="repeat_password"
             type="password"
             placeholder="Repeat"
@@ -46,8 +45,8 @@
       </column>
     </columns>
 
-    <prism language="html" :code="html"/>
-    <prism language="javascript" :code="js"/>
+    <prism language="html" :code="html" />
+    <prism language="javascript" :code="js" />
   </div>
 </template>
 

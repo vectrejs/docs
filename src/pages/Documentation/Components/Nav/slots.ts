@@ -1,5 +1,16 @@
-import { SlotDefinitions } from '@kitchen/component/Slots';
+import { SlotsLists } from '@kitchen/component/Slots';
 
-export const slots: SlotDefinitions = {
-  default: { description: 'Used to show "custom" items', scope: '{ item, index }' },
-};
+export const slots: SlotsLists = [
+  {
+    name: 'Navigation',
+    slots: {
+      default: { description: 'Used to show "custom" items or composition', scope: '{ item, index, level }' },
+    },
+  },
+  {
+    name: 'NavigationItem',
+    slots: {
+      default: { description: 'Item content' },
+    },
+  },
+];
