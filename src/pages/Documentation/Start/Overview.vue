@@ -67,7 +67,7 @@
       or Safari 9
     </p>
     <div>
-      <img src="browsers.png" class="img-responsive" style="max-height: 100px" />
+      <img :src="require('../../../img/browsers.png')" class="img-responsive" style="max-height: 100px" />
     </div>
   </div>
 </template>
