@@ -21,4 +21,4 @@ const configureWebpack = {
   },
 };
 
-module.exports = { configureWebpack, baseUrl: '/docs/', outputDir: 'docs', productionSourceMap: false };
+module.exports = { configureWebpack, publicPath: '/docs/', outputDir: 'docs', productionSourceMap: false };
