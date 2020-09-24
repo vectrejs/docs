@@ -2,65 +2,65 @@
   <component-view>
     <h2 class="title">Icons</h2>
     <p>Icons are single-element, responsive and pure CSS icons</p>
-    <prism language="html" code='<icon type="up">' />
+    <prism language="html" code='<icon name="up">' />
 
     <h5 class="subtitle">Navigation icons</h5>
 
     <columns class="gal text-center">
       <column col="3" md="6">
-        <icon type="up" />
+        <icon name="up" />
         <p>up</p>
       </column>
       <column col="3" md="6">
-        <icon type="right" />
+        <icon name="right" />
         <p>right</p>
       </column>
       <column col="3" md="6">
-        <icon type="down" />
+        <icon name="down" />
         <p>down</p>
       </column>
       <column col="3" md="6">
-        <icon type="left" />
+        <icon name="left" />
         <p>left</p>
       </column>
       <column col="3" md="6">
-        <icon type="upward" />
+        <icon name="upward" />
         <p>upward</p>
       </column>
       <column col="3" md="6">
-        <icon type="forward" />
+        <icon name="forward" />
         <p>forward</p>
       </column>
       <column col="3" md="6">
-        <icon type="downward" />
+        <icon name="downward" />
         <p>downward</p>
       </column>
       <column col="3" md="6">
-        <icon type="back" />
+        <icon name="back" />
         <p>back</p>
       </column>
       <column col="3" md="6">
-        <icon type="back" />
+        <icon name="back" />
         <p>back</p>
       </column>
       <column col="3" md="6">
-        <icon type="caret" />
+        <icon name="caret" />
         <p>caret</p>
       </column>
       <column col="3" md="6">
-        <icon type="menu" />
+        <icon name="menu" />
         <p>menu</p>
       </column>
       <column col="3" md="6">
-        <icon type="apps" />
+        <icon name="apps" />
         <p>apps</p>
       </column>
       <column col="3" md="6">
-        <icon type="hMore" />
+        <icon name="hMore" />
         <p>hMore</p>
       </column>
       <column col="3" md="6">
-        <icon type="vMore" />
+        <icon name="vMore" />
         <p>vMore</p>
       </column>
     </columns>
@@ -68,71 +68,71 @@
     <h5 class="subtitle">Action icons</h5>
     <columns class="gal text-center">
       <column col="3" md="6">
-        <icon type="hResize" />
+        <icon name="hResize" />
         <p>hResize</p>
       </column>
       <column col="3" md="6">
-        <icon type="vResize" />
+        <icon name="vResize" />
         <p>vResize</p>
       </column>
       <column col="3" md="6">
-        <icon type="plus" />
+        <icon name="plus" />
         <p>plus</p>
       </column>
       <column col="3" md="6">
-        <icon type="minus" />
+        <icon name="minus" />
         <p>minus</p>
       </column>
       <column col="3" md="6">
-        <icon type="cross" />
+        <icon name="cross" />
         <p>cross</p>
       </column>
       <column col="3" md="6">
-        <icon type="check" />
+        <icon name="check" />
         <p>check</p>
       </column>
       <column col="3" md="6">
-        <icon type="stop" />
+        <icon name="stop" />
         <p>stop</p>
       </column>
       <column col="3" md="6">
-        <icon type="shutdown" />
+        <icon name="shutdown" />
         <p>shutdown</p>
       </column>
       <column col="3" md="6">
-        <icon type="refresh" />
+        <icon name="refresh" />
         <p>refresh</p>
       </column>
       <column col="3" md="6">
-        <icon type="search" />
+        <icon name="search" />
         <p>search</p>
       </column>
       <column col="3" md="6">
-        <icon type="flag" />
+        <icon name="flag" />
         <p>flag</p>
       </column>
       <column col="3" md="6">
-        <icon type="bookmark" />
+        <icon name="bookmark" />
         <p>bookmark</p>
       </column>
       <column col="3" md="6">
-        <icon type="edit" />
+        <icon name="edit" />
         <p>edit</p>
       </column>
       <column col="3" md="6">
-        <icon type="delete" />
+        <icon name="delete" />
         <p>delete</p>
       </column>
       <column col="3" md="6">
-        <icon type="share" />
+        <icon name="share" />
         <p>share</p>
       </column>
       <column col="3" md="6">
-        <icon type="download" />
+        <icon name="download" />
         <p>download</p>
       </column>
       <column col="3" md="6">
-        <icon type="upload" />
+        <icon name="upload" />
         <p>upload</p>
       </column>
     </columns>
@@ -140,35 +140,35 @@
     <h5 class="subtitle">Object icons</h5>
     <columns class="gal text-center">
       <column col="3" md="6">
-        <icon type="mail" />
+        <icon name="mail" />
         <p>mail</p>
       </column>
       <column col="3" md="6">
-        <icon type="people" />
+        <icon name="people" />
         <p>people</p>
       </column>
       <column col="3" md="6">
-        <icon type="message" />
+        <icon name="message" />
         <p>message</p>
       </column>
       <column col="3" md="6">
-        <icon type="photo" />
+        <icon name="photo" />
         <p>photo</p>
       </column>
       <column col="3" md="6">
-        <icon type="time" />
+        <icon name="time" />
         <p>time</p>
       </column>
       <column col="3" md="6">
-        <icon type="location" />
+        <icon name="location" />
         <p>location</p>
       </column>
       <column col="3" md="6">
-        <icon type="link" />
+        <icon name="link" />
         <p>link</p>
       </column>
       <column col="3" md="6">
-        <icon type="emoji" />
+        <icon name="emoji" />
         <p>emoji</p>
       </column>
     </columns>
@@ -181,23 +181,23 @@
 
     <columns class="text-center">
       <column col="2" md="6">
-        <icon type="mail" />
+        <icon name="mail" />
         <p>default</p>
       </column>
       <column col="2" md="6">
-        <icon type="mail" size="x2" />
+        <icon name="mail" size="x2" />
         <p>x2 (32px)</p>
       </column>
       <column col="2" md="6">
-        <icon type="mail" size="x3" />
+        <icon name="mail" size="x3" />
         <p>x3 (48px)</p>
       </column>
       <column col="2" md="6">
-        <icon type="mail" size="x4" />
+        <icon name="mail" size="x4" />
         <p>x4 (64px)</p>
       </column>
       <column col="2" md="6">
-        <icon type="mail" size="4rem" />
+        <icon name="mail" size="4rem" />
         <p>custom</p>
       </column>
     </columns>
@@ -215,11 +215,11 @@ export default Vue.extend({
   data: () => ({
     props,
 
-    sizesHtml: `<icon type="mail" />
-<icon type="mail" size="x2" />
-<icon type="mail" size="x3" />
-<icon type="mail" size="x4" />
-<icon type="mail" size="4rem" />`,
+    sizesHtml: `<icon name="mail" />
+<icon name="mail" size="x2" />
+<icon name="mail" size="x3" />
+<icon name="mail" size="x4" />
+<icon name="mail" size="4rem" />`,
   }),
 });
 </script>

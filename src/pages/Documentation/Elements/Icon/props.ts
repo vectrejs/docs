@@ -1,7 +1,7 @@
 import { PropDefinitions } from '@kitchen/component/Props';
 
 export const props: PropDefinitions = {
-  type: {
+  name: {
     description: 'Specifies which icon will be displayed',
     required: true,
     type: 'String',
