@@ -2,7 +2,7 @@
   <div>
     <h3 class="subtitle">
       VeeValidate
-      <a href="https://baianat.github.io/vee-validate/" title="Go to documentation" target="_blank">
+      <a href="https://vuelidate.js.org/" title="Go to documentation" target="_blank">
         <sup><icon type="link" /></sup>
       </a>
     </h3>

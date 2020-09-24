@@ -6,8 +6,10 @@
     <h3 class="pt-2">NPM or Yarn</h3>
     <p>
       Great for development using
-      <a>webpack</a>,
-      <a>rollup</a> bundlers with their own advantages.
+      <a href="https://webpack.js.org/" title="Go to official site" target="_blank">webpack</a>,
+      <a href="https://rollupjs.org/guide/en/" title="Go to official site" target="_blank">rollup</a> bundlers or
+      <a href="https://cli.vuejs.org/" title="Go to official site" target="_blank">Vue CLI</a> with their own
+      advantages.
     </p>
     <prism :code="npm" language="bash" />
 
@@ -15,7 +17,10 @@
     <prism :code="npmUsage" language="js" />
 
     <h5 class="pt-2">Tree shaking</h5>
-    <p>Using separate components should reduce the size of the final bundle. Just import the components you want and the bundler should do the rest.</p>
+    <p>
+      Using separate components should reduce the size of the final bundle. Just import the components you want and the
+      bundler should do the rest.
+    </p>
     <prism :code="npmTree" language="js" />
 
     <h3 class="pt-2">
@@ -26,13 +31,14 @@
         </small>
       </sup>
     </h3>
-    <p>It's easy to get started with CDN. It doesn't require anything other than import JavaScript and CSS file in your page:</p>
+    <p>
+      It's easy to get started with CDN. It doesn't require anything other than import JavaScript and CSS file in your
+      page:
+    </p>
     <div>
       <b>UNPKG</b>
       <ul>
-        <li>
-          <b>Scripts</b> https://unpkg.com/@vectrejs/vectre/dist/vectre.min.js
-        </li>
+        <li><b>Scripts</b> https://unpkg.com/@vectrejs/vectre/dist/vectre.min.js</li>
         <li>
           <b>Styles</b>
           <ul>
@@ -45,9 +51,7 @@
 
       <b>jsDelivr</b>
       <ul>
-        <li>
-          <b>Scripts</b> https://cdn.jsdelivr.net/npm/@vectrejs/vectre/dist/vectre.min.js
-        </li>
+        <li><b>Scripts</b> https://cdn.jsdelivr.net/npm/@vectrejs/vectre/dist/vectre.min.js</li>
         <li>
           <b>Styles</b>
           <ul>
@@ -62,19 +66,22 @@
     <prism :code="cdn" language="html" />
 
     <h3 class="pt-2">Legacy Browsers</h3>
-    <p>As mentioned above, there is a ready-made package with support of older browsers. You just have to import it in the same way as in the case of CDN:</p>
+    <p>
+      As mentioned above, there is a ready-made package with support of older browsers. You just have to import it in
+      the same way as in the case of CDN:
+    </p>
 
     <ul>
-      <li>
-        <b>jsDelivr</b> https://cdn.jsdelivr.net/npm/@vectrejs/vectre/dist/vectre.legacy.min.js
-      </li>
-      <li>
-        <b>UNPKG</b> https://unpkg.com/@vectrejs/vectre/dist/vectre.legacy.min.js
-      </li>
+      <li><b>jsDelivr</b> https://cdn.jsdelivr.net/npm/@vectrejs/vectre/dist/vectre.legacy.min.js</li>
+      <li><b>UNPKG</b> https://unpkg.com/@vectrejs/vectre/dist/vectre.legacy.min.js</li>
     </ul>
 
     <h3 class="pt-2">Name collision</h3>
-    <p>Vectre is developed with the thought in mind about the minimum effort spent on development. Therefore, component names are as simple as possible and do not conflict with standard html5 tags. But there is always a chance that you might run into a name conflict.</p>
+    <p>
+      Vectre is developed with the thought in mind about the minimum effort spent on development. Therefore, component
+      names are as simple as possible and do not conflict with standard html5 tags. But there is always a chance that
+      you might run into a name conflict.
+    </p>
     <p>You can set a prefix to avoid conflict when using the plugin with all components.</p>
     <prism :code="npmConflict" language="js" />Or in the case of CDN
     <prism :code="cdnConflict" language="html" />
@@ -116,3 +123,9 @@ Vue.use(VectrePlugin, { prefix: 'my' });`,
   }),
 };
 </script>
+
+<style lang="scss" scoped>
+/deep/ li {
+  word-wrap: break-word;
+}
+</style>
