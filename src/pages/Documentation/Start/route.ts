@@ -10,7 +10,7 @@ const StartRoute: RouteConfig = {
   anchors: {
     Introduction: 'introduction',
     Installation: 'installation',
-    'Quick Start': 'quickstart',
+    // 'Quick Start': 'quickstart',
   },
 } as RouteConfig;
 

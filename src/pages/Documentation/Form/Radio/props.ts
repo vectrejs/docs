@@ -2,7 +2,7 @@ import { PropsLists } from '@kitchen/component/Props';
 
 export const props: PropsLists = [
   {
-    name: 'Radio',
+    name: 'FormRadio',
     props: {
       label: {
         type: 'String',
@@ -44,7 +44,7 @@ export const props: PropsLists = [
   },
 
   {
-    name: 'Radio Group',
+    name: 'FormRadioGroup',
     props: {
       options: {
         type: 'Object | Any[]',

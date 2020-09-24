@@ -2,7 +2,7 @@ import { PropsLists } from '@kitchen/component/Props';
 
 export const props: PropsLists = [
   {
-    name: 'Select',
+    name: 'FormSelect',
     props: {
       options: {
         type: 'Object, String[], Number[]',
@@ -48,7 +48,7 @@ export const props: PropsLists = [
     },
   },
   {
-    name: 'Option',
+    name: 'FormSelectOption',
     props: {
       value: { type: 'String', description: 'the value to be assigned to the v-model' },
       label: { type: 'String', description: 'Specifies a label for an option' },

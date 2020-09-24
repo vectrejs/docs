@@ -4,7 +4,11 @@
     <p>Compoent represents a control that provides a menu of options</p>
     <columns>
       <column col="5" xl="5" lg="6" xs="8">
-        <form-select v-model="basic" placeholder="Choose your option" :options="['Slack', 'Skype', 'Hipchat']" />
+        <form-select
+          v-model="basic"
+          placeholder="Choose your option"
+          :options="['Slack', 'Skype', 'Hipchat']"
+        />
       </column>
     </columns>
     Selected: {{ basic }}
@@ -13,7 +17,8 @@
 
     <h5 class="subtitle">Multiple</h5>
     <p>
-      The component has <code>multiple</code> property to specify whether multiple options can be selected and
+      The component has
+      <code>multiple</code> property to specify whether multiple options can be selected and
       <code>size</code> to specify how many options should be shown at one.
     </p>
 
@@ -28,7 +33,6 @@
       </column>
     </columns>
     Selected: {{ multiple }}
-
     <prism language="html" :code="multipleHtml" />
     <prism language="javascript" :code="multipleJs" />
 
@@ -36,7 +40,11 @@
     <p>Use an object when you need to separate values from labels</p>
     <columns>
       <column col="5" xl="5" lg="6" xs="8">
-        <form-select v-model="obj" :options="{ one: 1, two: 2, three: 3, four: 4, five: 5 }" scale="lg" />
+        <form-select
+          v-model="obj"
+          :options="{ one: 1, two: 2, three: 3, four: 4, five: 5 }"
+          scale="lg"
+        />
       </column>
     </columns>
     Selected: {{ obj }}
@@ -44,27 +52,28 @@
     <prism language="javascript" :code="objJs" />
 
     <h5 class="subtitle">Nested options</h5>
-    <p>
-      It's a good way to customize or attach an event listener for any option of the select.
-    </p>
+    <p>It's a good way to customize or attach an event listener for any option of the select.</p>
 
     <columns>
       <column col="5" xl="5" lg="6" xs="8">
         <form-select v-model="nested" multiple>
-          <form-option disabled value="1">One</form-option>
-          <form-option value="2" label="Two" />
-          <form-option @click.native="alert('You click Three')">Three</form-option>
-          <form-option :value="4">Four</form-option>
+          <form-select-option disabled value="1">One</form-select-option>
+          <form-select-option value="2" label="Two" />
+          <form-select-option @click.native="alert('You click Three')">Three</form-select-option>
+          <form-select-option :value="4">Four</form-select-option>
         </form-select>
       </column>
     </columns>
     Selected value: {{ nested }}
-
     <prism language="html" :code="nestedHtml" />
     <prism language="javascript" :code="nestedJs" />
 
     <h3 class="subtitle">Validation state</h3>
-    <p>The component has <code>success</code> and <code>error</code> properties to indicate the state of validatiion</p>
+    <p>
+      The component has
+      <code>success</code> and
+      <code>error</code> properties to indicate the state of validatiion
+    </p>
 
     <columns>
       <column col="5" xl="5" lg="6" xs="8">
@@ -129,10 +138,10 @@ export default Vue.extend({
   }),
 }`,
     nestedHtml: `<form-select multiple v-model="selected">
-  <form-option disabled value="1">One</form-option>
-  <form-option value="2" label="Two" />
-  <form-option @click.native="alert('You click Three')">Three</form-option>
-  <form-option :value=4>Four</form-option>
+  <form-select-option disabled value="1">One</form-select-option>
+  <form-select-option value="2" label="Two" />
+  <form-select-option @click.native="alert('You click Three')">Three</form-select-option>
+  <form-select-option :value=4>Four</form-select-option>
 </form-select>`,
     nestedJs: `export default {
   methods: {

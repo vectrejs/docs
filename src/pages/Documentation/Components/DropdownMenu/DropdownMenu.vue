@@ -1,6 +1,6 @@
 <template>
   <component-view>
-    <h2 class="title">DropdownMenu</h2>
+    <h2 class="title">Dropdown Menu</h2>
     <p>The dropdown is a combination of button and menu.</p>
 
     <h3 class="subtitle">Base use</h3>

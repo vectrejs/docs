@@ -1,6 +1,6 @@
 <template>
   <component-view>
-    <h2 class="title">VerticalMenu</h2>
+    <h2 class="title">Vertical Menu</h2>
     <p>Vertical menu is a list of links for navigation.</p>
 
     <h3 class="subtitle">Base use</h3>

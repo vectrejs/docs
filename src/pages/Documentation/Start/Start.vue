@@ -1,8 +1,16 @@
 <template>
   <container>
-    <Overview id="introduction" />
-    <Installation id="installation" />
-    <h2 class="title">Quick Start</h2>
+    <columns>
+      <column col="10" md="12" xs="12">
+        <Overview id="introduction" />
+      </column>
+      <column col="10" md="12" xs="12">
+        <Installation id="installation" />
+      </column>
+      <!-- <column col="10" md="12" xs="12">
+        <h2 class="title">Quick Start</h2>
+      </column>-->
+    </columns>
   </container>
 </template>
 

@@ -2,7 +2,7 @@ import { SlotsLists } from '@kitchen/component/Slots';
 
 export const slots: SlotsLists = [
   {
-    name: 'Select',
+    name: 'FormSelect',
     slots: {
       default: {
         description:
@@ -11,7 +11,7 @@ export const slots: SlotsLists = [
     },
   },
   {
-    name: 'Option',
+    name: 'FormSelectOption',
     slots: {
       default: { description: 'Serves as a label' },
     },

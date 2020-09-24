@@ -7,18 +7,19 @@
         </h1>
         <h2>
           A
-          <u>Lightweight</u>, <u>Simple</u> and <u>Responsive</u> Component Framework
+          <u>Lightweight</u>,
+          <u>Simple</u> and
+          <u>Responsive</u> Component Framework
         </h2>
         <p>
-          <router-link class="btn btn-lg" to="pages/getting-started">Docs</router-link>
-          &nbsp;
+          <router-link class="btn btn-lg" to="pages/getting-started">Docs</router-link>&nbsp;
           <a class="btn btn-lg" href="https://github.com/vectrejs/vectre">GitHub</a>
         </p>
         <columns>
           <column col="4" xs="12">
             <card>
               <span slot="header">Lightweight</span>
-              <div slot="body">30+ components less than 30KB (gzipped)</div>
+              <div slot="body">30+ components less than 14KB (gzipped)</div>
             </card>
           </column>
           <column col="4" xs="12">
@@ -58,8 +59,7 @@
     <footer>
       <container grid="lg">
         <p>
-          <router-link to="pages">Documentation</router-link>
-          ·
+          <router-link to="pages">Documentation</router-link>·
           <a href="https://github.com/vectrejs/vectre">GitHub</a>
           ·
           <a href="https://twitter.com/vectrejs">Twitter</a>

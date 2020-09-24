@@ -2,7 +2,7 @@ import { PropsLists } from '@kitchen/component/Props';
 
 export const props: PropsLists = [
   {
-    name: 'Checkbox',
+    name: 'FormCheckbox',
     props: {
       checked: {
         type: 'Boolean',
@@ -47,7 +47,7 @@ export const props: PropsLists = [
   },
 
   {
-    name: 'Checkbox Group',
+    name: 'FormCheckboxGroup',
     props: {
       options: {
         type: 'Object | Any[]',
