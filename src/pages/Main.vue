@@ -16,19 +16,19 @@
         <columns>
           <column col="4" xs="12">
             <card>
-              <span slot="header">Lightweight</span>
+              <span slot="header"><b>Lightweight</b></span>
               <div slot="body">30+ components less than 14KB (gzipped)</div>
             </card>
           </column>
           <column col="4" xs="12">
             <card>
-              <span slot="header">Simple</span>
+              <span slot="header"><b>Simple</b></span>
               <div slot="body">Easy to use in development, convenient to use on the page</div>
             </card>
           </column>
           <column col="4" xs="12">
             <card>
-              <span slot="header">Responsive</span>
+              <span slot="header"><b>Responsive</b></span>
               <div slot="body">Flexbox-based, responsive and mobile-friendly layout</div>
             </card>
           </column>
@@ -61,11 +61,11 @@
           ·
           <a href="https://github.com/vectrejs/vectre">GitHub</a>
           ·
-          <a href="https://discord.gg/4YTfpB">Discord</a>
+          <a href="https://discord.gg/5a6Y8X2">Discord</a>
           ·
           <a href="https://twitter.com/vectrejs">Twitter</a>
           ·
-          <span class="text-gray">Version 0.1.0</span>
+          <span class="text-gray">Version {{ version }}</span>
         </p>
       </container>
     </footer>
@@ -78,7 +78,7 @@ import { Container, Columns, Column, Card } from '@vectrejs/vectre';
 
 export default Vue.extend({
   components: { Container, Columns, Column, Card },
-  data: () => ({ r: undefined, d: undefined, a: undefined }),
+  data: () => ({ version: process.env.VUE_APP_VERSION }),
 });
 </script>
 

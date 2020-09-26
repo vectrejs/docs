@@ -1,3 +1,5 @@
+process.env.VUE_APP_VERSION = require('./package-lock.json').dependencies['@vectrejs/vectre'].version;
+
 const configureWebpack = {
   devServer: {
     historyApiFallback: true,
