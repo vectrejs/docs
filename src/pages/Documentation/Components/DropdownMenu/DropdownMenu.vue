@@ -28,7 +28,7 @@
     >
       <router-link slot-scope="{ item }" :to="item.path">
         <vertical-menu-item-badge v-if="item.badge" type="primary">{{ item.badge }}</vertical-menu-item-badge>
-        <icon :type="item.icon" />
+        <icon :name="item.icon" />
         {{ item.text }}
       </router-link>
     </dropdown-menu>
@@ -67,7 +67,7 @@ export default Vue.extend({
 >
   <router-link slot-scope="{ item }" :to="item.path">
     <vertical-menu-item-badge v-if="item.badge" type="primary">{{ item.badge }}</vertical-menu-item-badge>
-    <icon :type="item.icon" />
+    <icon :name="item.icon" />
     {{ item.text }}
   </router-link>
 </dropdown-menu>`,
