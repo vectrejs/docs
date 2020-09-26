@@ -8,15 +8,14 @@
     <prism language="html" :code="baseHtml" />
     <prism language="js" :code="baseJs" />
 
-    <p>
-      <code>items</code> prop should have a certain structure to be used in a simplified way:
-    </p>
+    <p><code>items</code> prop should have a certain structure to be used in a simplified way:</p>
     <pre>
 Array of { 
   path: string,
   text: string,
   active?: boolean
-} </pre>
+} </pre
+    >
 
     <h3 class="subtitle">Manual (Static)</h3>
     <navigation>
@@ -42,7 +41,7 @@ Array of {
     <h3 class="subtitle">Advanced</h3>
     <navigation :items="items" level="1">
       <span slot-scope="{ item }">
-        <Icon type="right" />
+        <Icon name="right" />
         {{ item.text }}
       </span>
     </navigation>
@@ -118,7 +117,7 @@ export default Vue.extend({
 </navigation>`,
     advancedHtml: `<navigation :items="items" level="1">
   <span slot-scope="{item, index}">
-    <Icon type="right"/>
+    <Icon name="right"/>
     {{ item.text }}
   </span>
 </navigation>`,

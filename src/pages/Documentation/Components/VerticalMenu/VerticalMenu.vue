@@ -19,27 +19,22 @@
       </column>
     </columns>
     <prism language="html" :code="basic" />
-    <p>
-      <code>items</code> prop should have a certain structure to be used in a simplified way:
-    </p>
+    <p><code>items</code> prop should have a certain structure to be used in a simplified way:</p>
     <pre>
 Array of { 
   path: string, 
   text: string, 
   badge?: string | number, 
   divider?: string|boolean 
-}</pre>
+}</pre
+    >
     <i>Note: dividers can not be active but they are used in index count</i>
 
     <h3 class="subtitle">Manual (Static)</h3>
     <columns>
       <column col="4" md="12">
         <vertical-menu>
-          <tile
-            compact
-            avatar="https://picturepan2.github.io/spectre/img/avatar-1.png"
-            title="<b>John Smith</b>"
-          />
+          <tile compact avatar="https://picturepan2.github.io/spectre/img/avatar-1.png" title="<b>John Smith</b>" />
           <vertical-menu-divider />
           <vertical-menu-item>
             <router-link to="#">Slack</router-link>
@@ -75,7 +70,7 @@ Array of {
         >
           <vertical-menu-item slot-scope="{ item, index }">
             <router-link :to="item.path" :class="index == 'message' ? 'active' : null">
-              <icon :type="item.icon" />
+              <icon :name="item.icon" />
               {{ item.text }}
               <vertical-menu-item-badge v-if="item.badge" :value="item.badge" />
             </router-link>
@@ -139,7 +134,7 @@ export default Vue.extend({
 >
   <vertical-menu-item slot-scope="{ item, index }">
     <router-link :to="item.path" :class="index == 'message' ? 'active' : null">
-      <icon :type="item.icon" />
+      <icon :name="item.icon" />
       {{ item.text }}
       <vertical-menu-item-badge v-if="item.badge" :value="item.badge" />
     </router-link>
