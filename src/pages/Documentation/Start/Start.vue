@@ -7,9 +7,9 @@
       <column col="10" md="12" xs="12">
         <Installation id="installation" />
       </column>
-      <!-- <column col="10" md="12" xs="12">
-        <h2 class="title">Quick Start</h2>
-      </column>-->
+      <column col="10" md="12" xs="12">
+        <Playgrounds id="playgrounds" />
+      </column>
     </columns>
   </container>
 </template>
@@ -18,12 +18,14 @@
 import Vue from 'vue';
 import Installation from './Installation.vue';
 import Overview from './Overview.vue';
+import Playgrounds from './Playgrounds.vue';
 
 export default Vue.extend({
   name: 'StartPage',
   components: {
     Installation,
     Overview,
+    Playgrounds,
   },
 });
 </script>
