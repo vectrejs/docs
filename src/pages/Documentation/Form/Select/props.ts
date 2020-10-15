@@ -26,11 +26,11 @@ export const props: PropsLists = [
         description: 'Specifies that a drop-down list should be disabled',
         default: false,
       },
-      size: {
+      rows: {
         type: 'Number',
         description: 'Represents the number of rows in the list that should be visible at one time.',
       },
-      scale: {
+      size: {
         type: 'String',
         description: 'Specifies the size of input',
         accepted: 'sm, lg',
