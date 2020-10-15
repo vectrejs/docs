@@ -15,8 +15,10 @@ export const props: PropsLists = [
         accepted: 'lg, sm',
       },
       overlay: {
-        type: 'Boolean',
-        description: "Show overlay. Don't disable it for large modals.",
+        type: 'Boolean, String, Number',
+        description:
+          "Show overlay. Сan take the opacity level as a number (default is <b>75</b>). Don't disable it for large modals.",
+        accepted: 'from <b>0</b> to <b>99</b>',
         default: true,
       },
       closeBtn: {
@@ -27,6 +29,11 @@ export const props: PropsLists = [
       closeOverlay: {
         type: 'Boolean',
         description: 'Сlose the modal when clicking on the overlay',
+        default: true,
+      },
+      noScroll: {
+        type: 'Boolean',
+        description: 'Disable background scrolling when modal opens',
         default: true,
       },
     },

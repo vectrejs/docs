@@ -1,4 +1,4 @@
-import { SlotDefinitions, SlotsLists } from '@kitchen/component/Slots';
+import { SlotsLists } from '@kitchen/component/Slots';
 
 export const slots: SlotsLists = [
   {

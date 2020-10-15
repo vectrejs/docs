@@ -9,38 +9,40 @@
     <btn type="link" @click="composed = true">Composed</btn>
 
     <modal v-model="modal">
-      <h5 slot="header">Default modal</h5>
+      <h5 slot="header">History of Daylight Saving Time</h5>
       <p slot="body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
-        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+        The concept of setting the clocks ahead in the spring in order to make better use of natural daylight was first
+        introduced by US inventor Benjamin Franklin in 1784.
       </p>
       <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
     </modal>
 
-    <modal v-model="small" size="sm" :close-overlay="false">
-      <h5 slot="header">Small without overlay close</h5>
+    <modal v-model="small" size="sm" :overlay="50" :close-overlay="false" :no-scroll="false">
+      <h5 slot="header">What is Linear B?</h5>
       <p slot="body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
-        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+        Linear B is a syllabic script that was used for writing Mycenaean Greek, the earliest attested form of Greek.
+        The script predates the Greek alphabet by several centuries.
       </p>
     </modal>
 
     <modal v-model="large" size="lg" :close-btn="false">
       <h2 slot="header" class="title">Big without close button</h2>
       <p slot="body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
-        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+        Left-handedness is less common than right-handedness. Left-handed people are more skillful with their left hands
+        when performing tasks. Studies suggest that approximately 10% of the world population is left-handed.
+        Mixed-handedness is the change of hand preference between tasks.
       </p>
     </modal>
 
     <modal v-model="composed" size="lg">
       <modal-header>
-        <h3>Composed modal</h3>
+        <h3>Do yellow jackets die after they sting you?</h3>
       </modal-header>
-      <modal-header>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
-        feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
-      </modal-header>
+      <modal-body>
+        Yellowjackets are more aggressive than other stinging insects such as wasps, hornets, mud daubers or bees.
+        Yellowjackets can sting and bite. Since they don't lose their stinger, they can sting numerous times, and will
+        do so unprovoked.
+      </modal-body>
       <modal-footer>
         <btn slot="footer" type="error" @click="composed = false">Got it!</btn>
       </modal-footer>
@@ -80,11 +82,11 @@ export default Vue.extend({
   <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
 </modal>
 
-<modal v-model="small" size="sm" :close-overlay="false">
+<modal v-model="small" size="sm" :overlay="50" :close-overlay="false" :no-scroll="false">
   <!-- Modal without overlay closet  -->
 </modal>
 
-<modal :show="large" size="lg" @close="large = false" :closebtn="false">
+<modal :show="large" size="lg" @close="large = false" :close-btn="false">
   <!-- Big without close button  -->
 </modal>
 
@@ -94,10 +96,10 @@ export default Vue.extend({
   <modal-header>
     <h3>Composed modal</h3>
   </modal-header>
-  <modal-header>
+  <modal-body>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet,
     feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
-  </modal-header>
+  </modal-body>
   <modal-footer>
     <btn slot="footer" type="error" @click="composed = false">Got it!</btn>
   </modal-footer>
