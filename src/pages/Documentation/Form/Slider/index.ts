@@ -1,0 +1,1 @@
+export { FormSliderRoute } from './route';
