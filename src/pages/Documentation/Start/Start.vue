@@ -1,17 +1,11 @@
 <template>
-  <container>
-    <columns>
-      <column col="10" md="12" xs="12">
-        <Overview id="introduction" />
-      </column>
-      <column col="10" md="12" xs="12">
-        <Installation id="installation" />
-      </column>
-      <column col="10" md="12" xs="12">
-        <Playgrounds id="playgrounds" />
-      </column>
-    </columns>
-  </container>
+  <div>
+    <column col="10" xl="10" lg="9" md="12" mr>
+      <Overview id="introduction" />
+      <Installation id="installation" />
+      <Playgrounds id="playgrounds" />
+    </column>
+  </div>
 </template>
 
 <script lang="ts">

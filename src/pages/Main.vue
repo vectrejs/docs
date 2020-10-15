@@ -16,20 +16,20 @@
         <columns>
           <column col="4" xs="12">
             <card>
-              <span slot="header"><b>Lightweight</b></span>
-              <div slot="body">30+ components less than 14KB (gzipped)</div>
+              <card-header>Lightweight</card-header>
+              <card-body>30+ components less than 14KB (gzipped)</card-body>
             </card>
           </column>
           <column col="4" xs="12">
             <card>
-              <span slot="header"><b>Simple</b></span>
-              <div slot="body">Easy to use in development, convenient to use on the page</div>
+              <card-header>Simple</card-header>
+              <card-body>Easy to use in development, convenient to use on the page</card-body>
             </card>
           </column>
           <column col="4" xs="12">
             <card>
-              <span slot="header"><b>Responsive</b></span>
-              <div slot="body">Flexbox-based, responsive and mobile-friendly layout</div>
+              <card-header>Responsive</card-header>
+              <card-body>Flexbox-based, responsive and mobile-friendly layout</card-body>
             </card>
           </column>
         </columns>
@@ -54,30 +54,17 @@
         </columns>
       </container>
     </section>
-    <footer>
-      <container grid="lg">
-        <p>
-          <router-link to="pages">Documentation</router-link>
-          ·
-          <a href="https://github.com/vectrejs/vectre">GitHub</a>
-          ·
-          <a href="https://discord.gg/5a6Y8X2">Discord</a>
-          ·
-          <a href="https://twitter.com/vectrejs">Twitter</a>
-          ·
-          <span class="text-gray">Version {{ version }}</span>
-        </p>
-      </container>
-    </footer>
+    <Footer />
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { Container, Columns, Column, Card } from '@vectrejs/vectre';
+import Footer from '../component/Footer.vue';
+import { Container, Columns, Column, Card, CardHeader, CardBody } from '@vectrejs/vectre';
 
 export default Vue.extend({
-  components: { Container, Columns, Column, Card },
+  components: { Container, Columns, Column, Card, CardHeader, CardBody, Footer },
   data: () => ({ version: process.env.VUE_APP_VERSION }),
 });
 </script>
@@ -87,10 +74,6 @@ export default Vue.extend({
   header,
   section {
     padding: 3rem 0;
-  }
-
-  footer {
-    padding: 2rem 0 0.25rem;
   }
 
   header {
@@ -104,8 +87,9 @@ export default Vue.extend({
     }
     h2 {
       font-size: 0.9rem;
-      margin: 1rem 0 1.2rem;
+      margin: 1rem 0 3rem;
       line-height: 1.5rem;
+      // font-weight: 700;
 
       u {
         border-bottom: 0.1rem solid currentColor;
@@ -128,11 +112,13 @@ export default Vue.extend({
       border: 0;
 
       &-header {
+        font-size: 1rem;
         font-weight: 700;
+        margin-bottom: 0;
       }
 
       &-body {
-        font-weight: lighter;
+        // font-weight: lighter;
       }
     }
   }
@@ -154,8 +140,22 @@ export default Vue.extend({
   }
 
   footer {
+    max-width: 960px;
+    margin: 3rem auto 1rem;
+
     a {
       color: #000;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  #main-page {
+    margin-top: 0.5rem;
+
+    #overview {
+      max-width: 960px;
+      margin: 0 auto;
     }
   }
 }

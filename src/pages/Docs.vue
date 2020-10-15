@@ -2,36 +2,44 @@
   <container grid="xl">
     <off-canvas id="docs" ref="offCanvas">
       <template slot="sidebar">
-        <div class="logo">
-          <router-link to="/">
-            <img :src="require('@kitchen/img/logo.svg')" />
-          </router-link>
-        </div>
-        <mnu :routes="routes" :root-path="rootPath" @select="closeSidebar" />
+        <nav>
+          <div class="logo">
+            <router-link to="/">
+              <img :src="require('@kitchen/img/logo.svg')" />
+            </router-link>
+          </div>
+          <mnu :routes="routes" :root-path="rootPath" @select="closeSidebar" />
+        </nav>
       </template>
 
-      <router-view slot="content" />
+      <template slot="content">
+        <main>
+          <router-view />
+        </main>
+        <Footer />
+      </template>
     </off-canvas>
   </container>
 </template>
 
 <script lang="ts">
 import vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
 import { RouteConfig } from 'vue-router';
+import { Component, Prop } from 'vue-property-decorator';
+import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
 
 import ComponentView from '@kitchen/component/Component.vue';
-import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
+import Footer from '@kitchen/component/Footer.vue';
+import Mnu from '@kitchen/component/Menu.vue';
 
 // Register common components
 vue.component('component-view', ComponentView);
 vue.use(VectrePlugin);
 
-import Mnu from '@kitchen/component/Menu.vue';
-
 @Component({
   components: {
     Mnu,
+    Footer,
   },
 })
 export default class extends vue {
@@ -50,6 +58,18 @@ export default class extends vue {
 <style lang="scss" scoped>
 .container {
   margin-left: 0;
+}
+
+main {
+  min-height: calc(100vh - 160px);
+}
+
+/deep/ footer {
+  margin: 3rem 0 1rem;
+
+  .container {
+    padding: 0;
+  }
 }
 
 @media (max-width: 960px) {

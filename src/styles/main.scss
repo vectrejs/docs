@@ -1,5 +1,5 @@
 .column {
-  padding: .4rem;
+  padding: 0.4rem;
 }
 
 .table-responsive {
@@ -15,14 +15,15 @@
   margin: 2.5rem 0 0.5rem;
 }
 
-code[class*="language-"] {
+code[class*='language-'] {
   padding: 0;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   margin-top: 1.2rem;
-  border-radius: .5em;
+  border-radius: 0.5em;
+  overflow: scroll;
 }
 
 @media (max-width: 960px) {
@@ -32,8 +33,8 @@ pre[class*="language-"] {
 }
 
 @media (max-width: 480px) {
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*='language-'],
+  pre[class*='language-'] {
     font-size: 0.5rem;
     line-height: 1.2;
   }

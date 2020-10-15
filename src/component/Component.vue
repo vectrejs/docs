@@ -1,41 +1,21 @@
 <template>
-  <column col="10" lg="10" sm="11" xs="12" mr>
+  <column col="10" xl="12" mr>
     <slot />
 
     <template v-if="props">
-      <props-list
-        v-for="(list, k) in props"
-        :key="'props' + k"
-        :props="list.props"
-        :name="list.name"
-      />
+      <props-list v-for="(list, k) in props" :key="'props' + k" :props="list.props" :name="list.name" />
     </template>
 
     <template v-if="methods">
-      <MethodList
-        v-for="(list, k) in methods"
-        :key="'methods' + k"
-        :methods="list.methods"
-        :name="list.name"
-      />
+      <MethodList v-for="(list, k) in methods" :key="'methods' + k" :methods="list.methods" :name="list.name" />
     </template>
 
     <template v-if="events">
-      <events-list
-        v-for="(list, k) in events"
-        :key="'events' + k"
-        :name="list.name"
-        :events="list.events"
-      />
+      <events-list v-for="(list, k) in events" :key="'events' + k" :name="list.name" :events="list.events" />
     </template>
 
     <template v-if="slots">
-      <slots-list
-        v-for="(list, k) in slots"
-        :key="'slots' + k"
-        :slots="list.slots"
-        :name="list.name"
-      />
+      <slots-list v-for="(list, k) in slots" :key="'slots' + k" :slots="list.slots" :name="list.name" />
     </template>
   </column>
 </template>
