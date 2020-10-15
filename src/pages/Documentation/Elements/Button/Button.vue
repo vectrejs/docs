@@ -24,9 +24,8 @@
     <h5 class="subtitle">Action button</h5>
     <p>
       You could use the
-      <kbd>action</kbd> prop for a square button, and also set
-      <kbd>circle</kbd> prop for a round
-      button, which is often used as a Float Action Button (FAB).
+      <kbd>action</kbd> prop for a square button, and also set <kbd>circle</kbd> prop for a round button, which is often
+      used as a Float Action Button (FAB).
     </p>
 
     <columns>
@@ -82,9 +81,7 @@
     <h5 class="subtitle">Button groups</h5>
     <p>
       If you want to use buttons as a group, wrap buttons with
-      <code>&lt;btn-group&gt;</code> component. The component
-      can be full-width with
-      <kbd>block</kbd> prop
+      <code>&lt;btn-group&gt;</code> component. The component can be full-width with <kbd>block</kbd> prop
     </p>
 
     <btn-group>

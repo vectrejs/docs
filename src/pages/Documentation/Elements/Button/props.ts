@@ -37,6 +37,12 @@ export const props: PropsLists = [
         description: 'Turns a square action button into a round button',
         default: false,
       },
+      htmlTag: {
+        type: 'String',
+        description: 'Allows to render component as link or button',
+        default: 'button',
+        accepted: 'button, a',
+      },
     },
   },
 
