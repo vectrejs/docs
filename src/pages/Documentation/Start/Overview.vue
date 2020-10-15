@@ -29,7 +29,7 @@
       <dd>
         Vectre continued the Spectre CSS philosophy to remain lightweigth without compromising quality. The current
         implementation is about
-        <b>13kb</b> (compressed) which allows for uncompromising application sizes of only about <b>60kb</b>. In
+        <b>14kb</b> (compressed) which allows for uncompromising application sizes of only about <b>60kb</b>. In
         addition, the framework has tree shaking out of the box which can make your final bundle even smaller.
       </dd>
 
