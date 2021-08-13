@@ -1,18 +1,15 @@
-import vue from 'vue';
-import vueRouter from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import { routes } from './pages';
-import { PositionResult } from 'vue-router/types/router';
 
-vue.use(vueRouter);
-
-const router = new vueRouter({
+const router = createRouter({
+  history: createWebHashHistory('/docs/'),
   routes,
-  scrollBehavior(to): PositionResult {
+  async scrollBehavior(to) {
     if (to.hash) {
-      return { selector: to.hash, offset: { x: 0, y: 50 } };
+      return { el: to.hash, left: 0, top: 50, behavior: 'smooth' };
     }
 
-    return { x: 0, y: 0 };
+    return { left: 0, top: 0 };
   },
 });
 

@@ -1,0 +1,4 @@
+{
+  "presets": [],
+  "plugins": ["@vue/babel-plugin-jsx", "@babel/plugin-syntax-dynamic-import"]
+}

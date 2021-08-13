@@ -1,15 +1,11 @@
-import vue, { VNode } from 'vue';
+import { createApp } from 'vue';
+import Prism from './component/Prism';
 import AppVue from './App.vue';
+import router from './router';
 
-if (process.env.NODE_ENV === 'production') {
-  vue.config.devtools = false;
-  vue.config.silent = true;
-} else {
-  vue.config.devtools = true;
-  vue.config.performance = true;
-}
+const app = createApp(AppVue);
 
-export default new vue({
-  el: '#app',
-  render: (h): VNode => h(AppVue),
-});
+app.use(router);
+app.component('prism', Prism);
+
+app.mount('#app');

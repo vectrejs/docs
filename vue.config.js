@@ -17,10 +17,31 @@ const configureWebpack = {
   },
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.runtime.esm.js',
+      // vue$: '@vue/compat',
       '@vectrejs/vectre$': '@vectrejs/vectre/dist/vectre.esm.js',
     },
   },
 };
 
-module.exports = { configureWebpack, publicPath: '/docs/', outputDir: 'docs', productionSourceMap: false };
+module.exports = {
+  configureWebpack,
+  publicPath: '/docs/',
+  outputDir: 'docs',
+  productionSourceMap: false,
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  chainWebpack: (config) => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap((options) => {
+        return {
+          ...options,
+          compilerOptions: {
+            compatConfig: {
+              MODE: 3,
+            },
+          },
+        };
+      });
+  },
+};

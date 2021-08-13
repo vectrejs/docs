@@ -1,6 +1,6 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-const StartRoute: RouteConfig = {
+const StartRoute = {
   name: 'StartPage',
   path: 'getting-started',
   component: () => import(/* webpackChunkName: "start" */ './Start.vue'),
@@ -12,6 +12,6 @@ const StartRoute: RouteConfig = {
     Installation: 'installation',
     Playgrounds: 'playgrounds',
   },
-} as RouteConfig;
+} as RouteRecordRaw;
 
 export { StartRoute };

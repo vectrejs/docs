@@ -1,7 +1,7 @@
 <template>
   <container grid="xl">
     <off-canvas id="docs" ref="offCanvas">
-      <template slot="sidebar">
+      <template #sidebar>
         <nav>
           <div class="logo">
             <router-link to="/">
@@ -12,7 +12,7 @@
         </nav>
       </template>
 
-      <template slot="content">
+      <template #content>
         <main>
           <router-view />
         </main>
@@ -23,36 +23,53 @@
 </template>
 
 <script lang="ts">
-import vue from 'vue';
-import { RouteConfig } from 'vue-router';
-import { Component, Prop } from 'vue-property-decorator';
-import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
+import { RouteRecordRaw } from 'vue-router';
+import { Container, OffCanvas } from '@vectrejs/vectre';
+// import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
 
-import ComponentView from '@kitchen/component/Component.vue';
 import Footer from '@kitchen/component/Footer.vue';
 import Mnu from '@kitchen/component/Menu.vue';
 
-// Register common components
-vue.component('component-view', ComponentView);
-vue.use(VectrePlugin);
+// // Register common components
+// vue.component('component-view', ComponentView);
+// vue.use(VectrePlugin);
 
-@Component({
+export default defineComponent({
   components: {
+    Container,
+    OffCanvas,
     Mnu,
     Footer,
   },
-})
-export default class extends vue {
-  @Prop(Array)
-  public routes: RouteConfig[];
+  props: {
+    routes: { type: Object as () => RouteRecordRaw[] },
+    rootPath: { type: String },
+  },
+  methods: {
+    closeSidebar() {
+      (this.$refs.offCanvas as InstanceType<typeof OffCanvas>).hideSidebar();
+    },
+  },
+});
 
-  @Prop({ default: '', type: String })
-  public rootPath: string;
+// @Component({
+//   components: {
+//     Mnu,
+//     Footer,
+//   },
+// })
+// export default class extends vue {
+//   @Prop(Array)
+//   public routes: RouteConfig[];
 
-  public closeSidebar(): void {
-    (this.$refs.offCanvas as InstanceType<typeof OffCanvas>).hideSidebar();
-  }
-}
+//   @Prop({ default: '', type: String })
+//   public rootPath: string;
+
+//   public closeSidebar(): void {
+//     (this.$refs.offCanvas as InstanceType<typeof OffCanvas>).hideSidebar();
+//   }
+// }
 </script>
 
 <style lang="scss" scoped>
@@ -64,7 +81,7 @@ main {
   min-height: calc(100vh - 160px);
 }
 
-/deep/ footer {
+:deep() footer {
   margin: 3rem 0 1rem;
 
   .container {
@@ -73,7 +90,7 @@ main {
 }
 
 @media (max-width: 960px) {
-  /deep/ #docs.off-canvas {
+  :deep() #docs.off-canvas {
     display: inherit;
 
     & > .off-canvas-content {
@@ -83,12 +100,12 @@ main {
 }
 
 @media (min-width: 960px) {
-  /deep/ h2.title {
+  :deep() h2.title {
     margin-top: 0.5rem;
   }
 }
 
-/deep/ #docs.off-canvas {
+:deep() #docs.off-canvas {
   & > .off-canvas-toggle {
     top: 0;
     left: 0;

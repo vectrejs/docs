@@ -10,7 +10,7 @@
           <u>Lightweight</u>, <u>Simple</u> and <u>Responsive</u> Component Framework
         </h2>
         <p>
-          <router-link class="btn btn-lg" to="pages/getting-started">Docs</router-link>&nbsp;
+          <router-link class="btn btn-lg" to="/pages/getting-started">Docs</router-link>&nbsp;
           <a class="btn btn-lg" href="https://github.com/vectrejs/vectre">GitHub</a>
         </p>
         <columns>
@@ -49,7 +49,7 @@
             </p>
           </column>
           <column col="10" sm="12" mx>
-            <router-link class="btn btn-lg" to="pages/getting-started">Getting Started</router-link>
+            <router-link class="btn btn-lg" to="/pages/getting-started">Getting Started</router-link>
           </column>
         </columns>
       </container>
@@ -59,11 +59,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import Footer from '../component/Footer.vue';
 import { Container, Columns, Column, Card, CardHeader, CardBody } from '@vectrejs/vectre';
+import { defineComponent } from '@vue/runtime-core';
 
-export default Vue.extend({
+export default defineComponent({
   components: { Container, Columns, Column, Card, CardHeader, CardBody, Footer },
   data: () => ({ version: process.env.VUE_APP_VERSION }),
 });

@@ -3,14 +3,8 @@
 </template>
 
 <script lang="ts">
-import vue from 'vue';
-import { Component } from 'vue-property-decorator';
-
+import { defineComponent } from 'vue';
 import './assets/';
-import router from './router';
 
-@Component({
-  router,
-})
-export default class App extends vue {}
+export default defineComponent({});
 </script>

@@ -93,9 +93,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { cdn, cdnConflict } from './cdn';
-export default {
+import { Tag } from '@vectrejs/vectre';
+import { defineComponent } from '@vue/runtime-core';
+
+export default defineComponent({
+  components: { Tag },
   data: () => ({
     cdn,
     cdnConflict,
@@ -121,7 +125,7 @@ import { VectrePlugin } from '@vectrejs/vectre';
 
 Vue.use(VectrePlugin, { prefix: 'my' });`,
   }),
-};
+});
 </script>
 
 <style lang="scss" scoped>
