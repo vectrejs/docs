@@ -62,17 +62,20 @@ Array of {
     <columns>
       <column col="4" sm="12">
         <vertical-menu
+          #item="{ item, index }"
           :items="{
             people: { icon: 'people', path: '#people', text: 'Contacts', badge: 2 },
             mail: { icon: 'mail', path: '#hipchat', text: 'Mails' },
             message: { icon: 'message', path: '#message', text: 'Messages' },
           }"
         >
-          <vertical-menu-item slot-scope="{ item, index }">
+          <vertical-menu-item>
             <router-link :to="item.path" :class="index == 'message' ? 'active' : null">
               <icon :name="item.icon" />
               {{ item.text }}
-              <vertical-menu-item-badge v-if="item.badge" :value="item.badge" />
+              <vertical-menu-item-badge v-if="item.badge">
+                {{ item.badge }}
+              </vertical-menu-item-badge>
             </router-link>
           </vertical-menu-item>
         </vertical-menu>
@@ -86,13 +89,32 @@ Array of {
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import {
+  Column,
+  Columns,
+  Icon,
+  Tile,
+  VerticalMenu,
+  VerticalMenuDivider,
+  VerticalMenuItem,
+  VerticalMenuItemBadge,
+} from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'VerticalMenuPage',
-
+  components: {
+    Column,
+    Columns,
+    Icon,
+    Tile,
+    VerticalMenu,
+    VerticalMenuDivider,
+    VerticalMenuItem,
+    VerticalMenuItemBadge,
+  },
   data: () => ({
     props,
     slots,
@@ -126,17 +148,20 @@ export default Vue.extend({
   </vertical-menu-item>
 </vertical-menu>`,
     advanced: `<vertical-menu
+  #item="{ item, index }"
   :items="{
     people: { icon: 'people', path: '#people', text: 'Contacts', badge: 2 },
     mail: { icon: 'mail', path: '#hipchat', text: 'Mails' },
     message: { icon: 'message', path: '#message', text: 'Messages' },
   }"
 >
-  <vertical-menu-item slot-scope="{ item, index }">
+  <vertical-menu-item>
     <router-link :to="item.path" :class="index == 'message' ? 'active' : null">
       <icon :name="item.icon" />
       {{ item.text }}
-      <vertical-menu-item-badge v-if="item.badge" :value="item.badge" />
+      <vertical-menu-item-badge v-if="item.badge">
+        {{ item.badge }}
+      </vertical-menu-item-badge>
     </router-link>
   </vertical-menu-item>
 </vertical-menu>`,

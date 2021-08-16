@@ -103,12 +103,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, Btn } from '@vectrejs/vectre';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'ButtonPage',
-
+  components: { Columns, Column, Btn },
   data: () => ({
     props,
 

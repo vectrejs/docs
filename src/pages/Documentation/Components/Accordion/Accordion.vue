@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 
 import Basic from './Basic.vue';
 import Checked from './Checked.vue';
@@ -22,7 +22,7 @@ import { props } from './props';
 import { slots } from './slots';
 import { events } from './events';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'AccordionPage',
   components: {
     Basic,

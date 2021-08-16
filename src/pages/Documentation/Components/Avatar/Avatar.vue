@@ -46,11 +46,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Avatar } from '@vectrejs/vectre';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'AvatarPage',
+  components: { Avatar },
   data: () => ({
     props,
     baseHtml: `<avatar src="img/avatar-1.png" size="xl" />

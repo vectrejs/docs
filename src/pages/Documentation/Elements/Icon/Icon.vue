@@ -206,11 +206,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Columns, Column, Icon } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'IconPage',
+  components: { Columns, Column, Icon },
 
   data: () => ({
     props,

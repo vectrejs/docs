@@ -18,9 +18,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Columns, Column, Accordion } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Accordion, Columns, Column },
   data: () => ({
     indexHtml: `<accordion :items="{'Fact 7': '...', 'Fact 8': '...'}" checked="1" />`,
     keyHtml: `<accordion :items="{'Fact 7': 'Uno', 'Fact 8': '...'}" checked="Fact 7" />`,

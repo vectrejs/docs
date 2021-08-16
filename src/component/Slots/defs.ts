@@ -8,4 +8,4 @@ export interface SlotDefinitions {
   [key: string]: SlotDefinition;
 }
 
-export type SlotsLists = { name: string; slots: SlotDefinitions }[];
+export type SlotsLists = { name?: string; slots: SlotDefinitions }[];

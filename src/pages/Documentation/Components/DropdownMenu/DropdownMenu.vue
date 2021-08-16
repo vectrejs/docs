@@ -17,6 +17,7 @@
     <h3 class="subtitle">Advanced use</h3>
     <p>As in the case of the menu, you can specify how to display the menu items</p>
     <dropdown-menu
+      #default="{ item }"
       btn-text="Menu"
       btn-type="primary"
       btn-icon="menu"
@@ -26,7 +27,7 @@
         message: { icon: 'message', path: '#message', text: 'Messages' },
       }"
     >
-      <router-link slot-scope="{ item }" :to="item.path">
+      <router-link :to="item.path">
         <vertical-menu-item-badge v-if="item.badge" type="primary">{{ item.badge }}</vertical-menu-item-badge>
         <icon :name="item.icon" />
         {{ item.text }}
@@ -36,14 +37,15 @@
   </component-view>
 </template>
 
-<script lang="js">
-import Vue from 'vue';
+<script lang="ts">
+import { DropdownMenu, Icon, VerticalMenuItemBadge } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
 import { events } from './events';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'DropdownMenuPage',
-
+  components: { DropdownMenu, Icon, VerticalMenuItemBadge },
   data: () => ({
     events,
     props,

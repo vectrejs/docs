@@ -6,7 +6,7 @@ const router = createRouter({
   routes,
   async scrollBehavior(to) {
     if (to.hash) {
-      return { el: to.hash, left: 0, top: 50, behavior: 'smooth' };
+      return { el: to.hash, left: 0, top: 50 };
     }
 
     return { left: 0, top: 0 };

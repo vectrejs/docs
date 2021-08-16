@@ -1,4 +1,4 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
 const LayoutRoute = {
   name: 'LayoutPage',
@@ -11,6 +11,6 @@ const LayoutRoute = {
     'Flexbox grid': 'flex',
     Responsive: 'responsive',
   },
-} as RouteConfig;
+} as RouteRecordRaw;
 
 export { LayoutRoute };

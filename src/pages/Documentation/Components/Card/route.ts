@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const CardRoute = {
+export const CardRoute: RouteRecordRaw = {
   name: 'CardPage',
   path: 'card',
   component: () => import(/* webpackChunkName: "card" */ './Card.vue'),
   meta: {
     title: 'Cards',
   },
-} as RouteConfig;
+};

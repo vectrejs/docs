@@ -7,4 +7,4 @@ export interface MethodDefinitions {
   [key: string]: MethodDefinition;
 }
 
-export type MethodsLists = { name: string; methods: MethodDefinitions }[];
+export type MethodsLists = { name?: string; methods: MethodDefinitions }[];

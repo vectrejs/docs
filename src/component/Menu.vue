@@ -26,21 +26,20 @@
       <template #body="{ item: parent }">
         <!-- Submenu items with anchors -->
         <vertical-menu v-if="parent.anchors" :items="parent.anchors" class="menu-nav">
-          <template #default="{ item: anchor, index: title }">
-            <router-link
-              :key="title"
-              :to="parent.path + '#' + anchor"
-              @click="onSelect(), goToAnchor(parent.path, anchor)"
-              >{{ title }}</router-link
-            >
+          <template #item="{ item: anchor, index: title }">
+            <router-link :key="title" :to="rootPath + '/' + parent.path + '#' + anchor" @click="onSelect()">
+              {{ title }}
+            </router-link>
           </template>
         </vertical-menu>
 
         <!-- Submenu items from children -->
         <vertical-menu v-if="parent.children" :items="parent.children" class="menu-nav">
-          <router-link #default="{ item: child }" :to="parent.path + '/' + child.path" @click="onSelect">{{
-            child.meta.title
-          }}</router-link>
+          <template #item="{ item: child }">
+            <router-link :to="rootPath + '/' + parent.path + '/' + child.path" @click="onSelect">
+              {{ child.meta.title }}
+            </router-link>
+          </template>
         </vertical-menu>
       </template>
     </accordion>
@@ -69,8 +68,6 @@ export default defineComponent({
     for (const i in this.routes) {
       if (this.routes[i].children) {
         const isCurrent = this.routes[i].children?.some((child: RouteRecordRaw) => {
-          debugger;
-
           return matchedName === child.name;
         });
 

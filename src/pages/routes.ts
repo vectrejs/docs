@@ -7,9 +7,9 @@ export const routes: RouteRecordRaw[] = [
     component: () => import(/* webpackChunkName: "main" */ './Main.vue'),
   },
   {
-    path: '/pages/',
+    path: '/pages',
     component: () => import(/* webpackChunkName: "docs" */ './Docs.vue'),
     children: docRoutes,
-    props: { routes: docRoutes, rootPath: 'pages/' },
+    props: { routes: docRoutes, rootPath: '/pages' },
   },
 ];

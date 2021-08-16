@@ -12,16 +12,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Columns, Column, Accordion } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Columns, Column, Accordion },
   data: () => ({
     html: `<accordion
   :items="items"
   :checked="checkedFact"
   @check="checkedFact = $event"
 />`,
-    js: `export default Vue.extend({
+    js: `export default defineComponent({
   data: () => ({
     checkedFact: ['Fact 9'],
     items: {

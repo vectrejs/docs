@@ -1,26 +1,32 @@
 <template>
   <container>
     <h2 class="subtitle">Responsive</h2>
-    <p>
-      Spectre provides a responsive layout grid 
-      system and responsive visibility utilities.
-    </p>
+    <p>Spectre provides a responsive layout grid system and responsive visibility utilities.</p>
 
     <columns>
-      <column col=10 lg=8 md=6 sm=4>
-        <div class="bg-gray block">col=10 <br> lg=8 <br> md=6 <br> sm=4</div>
+      <column col="10" lg="8" md="6" sm="4">
+        <div class="bg-gray block">
+          col=10 <br />
+          lg=8 <br />
+          md=6 <br />
+          sm=4
+        </div>
       </column>
-      <column col=2 lg=4 md=6 sm=8>
-        <div class="bg-gray block">col=2 <br> lg=4 <br> md=6 <br> sm=8</div>
+      <column col="2" lg="4" md="6" sm="8">
+        <div class="bg-gray block">
+          col=2 <br />
+          lg=4 <br />
+          md=6 <br />
+          sm=8
+        </div>
       </column>
     </columns>
-    
+
     <prism language="html" :code="basic" />
 
     <p>
-      There are <kbd>xs</kbd>, <kbd>sm</kbd>, <kbd>md</kbd>, <kbd>lg</kbd> 
-      and <kbd>xl</kbd> props for flexible grid across mobile, tablet and 
-      desktop viewport usage
+      There are <kbd>xs</kbd>, <kbd>sm</kbd>, <kbd>md</kbd>, <kbd>lg</kbd> and <kbd>xl</kbd> props for flexible grid
+      across mobile, tablet and desktop viewport usage
     </p>
     <ul>
       <li><kbd>xs</kbd> apply to window width smaller than or equal to <strong>480px</strong>.</li>
@@ -33,7 +39,7 @@
 
     <h3 class="subtitle">Responsive container</h3>
     <p>
-      The responsive layout also provides fixed-width containers. Use <kbd>grid</kbd> property of 
+      The responsive layout also provides fixed-width containers. Use <kbd>grid</kbd> property of
       <code>&lt;container&gt;</code> component for a fixed-width container with the specific max-width
     </p>
     <ul>
@@ -45,14 +51,15 @@
     </ul>
 
     <prism language="html" :code="responsiveContainer" />
-
   </container>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, Container } from '@vectrejs/vectre';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Columns, Column, Container },
   data: () => ({
     basic: `<columns>
   <column col=10 lg=8 md=6 sm=4>...</column>
@@ -67,4 +74,3 @@ export default Vue.extend({
   }),
 });
 </script>
-

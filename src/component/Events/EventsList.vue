@@ -6,9 +6,9 @@
     </h3>
 
     <table class="table">
-      <col style="width: 10%;" />
-      <col style="width: 50%;" />
-      <col style="width: 40%;" />
+      <col style="width: 10%" />
+      <col style="width: 50%" />
+      <col style="width: 40%" />
       <thead>
         <tr>
           <th>Event</th>
@@ -28,16 +28,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Tag } from '@vectrejs/vectre';
+import { defineComponent, PropType } from 'vue';
+import { EventDefinitions } from './defs';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Tag },
   props: {
     name: {
       type: String,
       default: '',
     },
     events: {
-      type: Object,
+      type: Object as PropType<EventDefinitions>,
       required: true,
     },
   },

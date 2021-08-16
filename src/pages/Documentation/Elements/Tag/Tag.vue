@@ -23,12 +23,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Tag } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'TagPage',
-
+  components: { Tag },
   data: () => ({
     props,
 

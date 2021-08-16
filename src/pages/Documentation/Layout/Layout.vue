@@ -6,14 +6,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 import FlexboxGrid from './Flexbox.vue';
 import Responsive from './Responsive.vue';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'LayoutPage',
-
   components: {
     FlexboxGrid,
     Responsive,

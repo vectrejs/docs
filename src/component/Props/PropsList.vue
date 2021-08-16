@@ -6,11 +6,11 @@
     </h3>
 
     <table class="table">
-      <col style="width: 20%;" />
-      <col style="width: 30%;" />
-      <col style="width: 20%;" />
-      <col style="width: 20%;" />
-      <col style="width: 10%;" />
+      <col style="width: 20%" />
+      <col style="width: 30%" />
+      <col style="width: 20%" />
+      <col style="width: 20%" />
+      <col style="width: 10%" />
       <thead>
         <tr>
           <th>Property</th>
@@ -37,12 +37,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Tag } from '@vectrejs/vectre';
+import { defineComponent, PropType } from 'vue';
+import { PropDefinitions } from './defs';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Tag },
   props: {
     props: {
-      type: Object,
+      type: Object as PropType<PropDefinitions>,
       required: true,
     },
     name: {

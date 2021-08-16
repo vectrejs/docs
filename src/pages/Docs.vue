@@ -23,20 +23,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, getCurrentInstance } from 'vue';
 import { RouteRecordRaw } from 'vue-router';
 import { Container, OffCanvas } from '@vectrejs/vectre';
-// import { VectrePlugin, OffCanvas } from '@vectrejs/vectre';
 
 import Footer from '@kitchen/component/Footer.vue';
 import Mnu from '@kitchen/component/Menu.vue';
-
-// // Register common components
-// vue.component('component-view', ComponentView);
-// vue.use(VectrePlugin);
+import ComponentView from '@kitchen/component/Component.vue';
 
 export default defineComponent({
   components: {
+    ComponentView,
     Container,
     OffCanvas,
     Mnu,
@@ -46,30 +43,15 @@ export default defineComponent({
     routes: { type: Object as () => RouteRecordRaw[] },
     rootPath: { type: String },
   },
+  setup() {
+    getCurrentInstance()?.appContext.app.component('ComponentView', ComponentView);
+  },
   methods: {
-    closeSidebar() {
+    closeSidebar(): void {
       (this.$refs.offCanvas as InstanceType<typeof OffCanvas>).hideSidebar();
     },
   },
 });
-
-// @Component({
-//   components: {
-//     Mnu,
-//     Footer,
-//   },
-// })
-// export default class extends vue {
-//   @Prop(Array)
-//   public routes: RouteConfig[];
-
-//   @Prop({ default: '', type: String })
-//   public rootPath: string;
-
-//   public closeSidebar(): void {
-//     (this.$refs.offCanvas as InstanceType<typeof OffCanvas>).hideSidebar();
-//   }
-// }
 </script>
 
 <style lang="scss" scoped>

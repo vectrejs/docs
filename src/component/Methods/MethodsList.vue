@@ -28,16 +28,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Tag } from '@vectrejs/vectre';
+import { defineComponent, PropType } from 'vue';
+import { MethodDefinitions } from './defs';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Tag },
   props: {
     name: {
       type: String,
       default: '',
     },
     methods: {
-      type: Object,
+      type: Object as PropType<MethodDefinitions>,
       required: true,
     },
   },

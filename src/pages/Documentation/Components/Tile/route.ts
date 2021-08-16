@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const TileRoute = {
+export const TileRoute: RouteRecordRaw = {
   name: 'TilePage',
   path: 'tile',
   component: () => import(/* webpackChunkName: "tile" */ './Tile.vue'),
   meta: {
     title: 'Tile',
   },
-} as RouteConfig;
+};

@@ -3,9 +3,7 @@
     <h2 class="title">Cards</h2>
     <p>
       Cards are flexible content containers.
-      <code>&lt;card/&gt;</code>,
-      <code>&lt;card-header/&gt;</code>,
-      <code>&lt;card-body/&gt;</code>,
+      <code>&lt;card/&gt;</code>, <code>&lt;card-header/&gt;</code>, <code>&lt;card-body/&gt;</code>,
       <code>&lt;card-footer/&gt;</code> and
       <code>&lt;card-image/&gt;</code>
       are available for composing
@@ -61,12 +59,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Btn, Column, Columns, Card, CardBody, CardFooter, CardHeader, CardImage } from '@vectrejs/vectre';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'CardPage',
-
+  components: { Btn, Column, Columns, Card, CardBody, CardFooter, CardHeader, CardImage },
   data: () => ({
     props,
     code: `<card>

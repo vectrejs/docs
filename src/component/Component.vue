@@ -21,17 +21,18 @@
 </template>
 
 <script lang="ts">
-import vue from 'vue';
-import EventsList, { EventDefinitions } from '@kitchen/component/Events';
-import PropsList, { PropDefinitions } from '@kitchen/component/Props';
-import SlotsList, { SlotDefinitions } from '@kitchen/component/Slots';
-import MethodList, { MethodDefinitions } from '@kitchen/component/Methods';
+import { defineComponent } from 'vue';
+import { Column } from '@vectrejs/vectre';
+import EventsList, { EventDefinitions, EventsLists } from '@kitchen/component/Events';
+import PropsList, { PropDefinitions, PropsLists } from '@kitchen/component/Props';
+import SlotsList, { SlotDefinitions, SlotsLists } from '@kitchen/component/Slots';
+import MethodList, { MethodDefinitions, MethodsLists } from '@kitchen/component/Methods';
 
-export default vue.extend({
-  components: { EventsList, PropsList, SlotsList, MethodList },
+export default defineComponent({
+  components: { Column, EventsList, PropsList, SlotsList, MethodList },
   computed: {
-    props(): PropDefinitions[] | undefined {
-      const props = this.$parent.$data.props;
+    props(): PropsLists | undefined {
+      const props = (this.$parent?.$data as any).props;
       if (this.isMultipleLists(props)) {
         return props;
       }
@@ -39,9 +40,8 @@ export default vue.extend({
       return props ? [{ props }] : void 0;
     },
 
-    slots(): SlotDefinitions[] | undefined {
-      const slots = this.$parent.$data.slots;
-
+    slots(): SlotsLists | undefined {
+      const slots = (this.$parent?.$data as any).slots;
       if (this.isMultipleLists(slots)) {
         return slots;
       }
@@ -49,8 +49,8 @@ export default vue.extend({
       return slots ? [{ slots }] : void 0;
     },
 
-    events(): EventDefinitions[] | undefined {
-      const events = this.$parent.$data.events;
+    events(): EventsLists | undefined {
+      const events = (this.$parent?.$data as any).events;
 
       if (this.isMultipleLists(events)) {
         return events;
@@ -59,8 +59,8 @@ export default vue.extend({
       return events ? [{ events }] : void 0;
     },
 
-    methods(): MethodDefinitions[] | undefined {
-      const methods = this.$parent.$data.methods;
+    methods(): MethodsLists | undefined {
+      const methods = (this.$parent?.$data as any).methods;
 
       if (this.isMultipleLists(methods)) {
         return methods;

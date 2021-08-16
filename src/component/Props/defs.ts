@@ -10,4 +10,4 @@ export interface PropDefinitions {
   [key: string]: PropDefinition;
 }
 
-export type PropsLists = { name: string; props: PropDefinitions }[];
+export type PropsLists = { name?: string; props: PropDefinitions }[];

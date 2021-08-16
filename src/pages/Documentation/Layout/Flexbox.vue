@@ -1,8 +1,6 @@
 <template>
   <container>
-    <h2 class="title">
-      Flexbox grid
-    </h2>
+    <h2 class="title">Flexbox grid</h2>
     <p>Layout includes flexbox based responsive grid system with 12 columns.</p>
 
     <columns>
@@ -13,27 +11,19 @@
 
     <columns>
       <column col="12">
-        <div class="bg-gray block">
-          col=12 (100%)
-        </div>
+        <div class="bg-gray block">col=12 (100%)</div>
       </column>
       <column col="9">
-        <div class="bg-gray block">
-          col=9 (75%)
-        </div>
+        <div class="bg-gray block">col=9 (75%)</div>
       </column>
       <column col="6">
-        <div class="bg-gray block">
-          col=6 (50%)
-        </div>
+        <div class="bg-gray block">col=6 (50%)</div>
       </column>
     </columns>
 
     <columns>
       <column col="3">
-        <div class="bg-gray block">
-          col=3 (25%)
-        </div>
+        <div class="bg-gray block">col=3 (25%)</div>
       </column>
     </columns>
 
@@ -45,48 +35,34 @@
       column by adding <kbd>col</kbd> property
     </p>
 
-    <h5 class="subtitle">
-      Gapless columns
-    </h5>
+    <h5 class="subtitle">Gapless columns</h5>
     <p>You can set <kbd>gapless</kbd> property of <code>columns</code> component to have gapless columns.</p>
     <columns gapless>
       <column col="6">
-        <div class="bg-gray block">
-          col=6
-        </div>
+        <div class="bg-gray block">col=6</div>
       </column>
       <column col="6">
-        <div class="bg-gray block">
-          col=6
-        </div>
+        <div class="bg-gray block">col=6</div>
       </column>
     </columns>
     <prism language="html" :code="gapless" />
 
-    <h5 class="subtitle">
-      One line columns
-    </h5>
+    <h5 class="subtitle">One line columns</h5>
     <p>
       By default, Spectre grid has multi-line flexbox enabled. You can set
       <kbd>oneline</kbd> property of <code>columns</code> to make all its child columns positioned in one line
     </p>
     <columns oneline>
       <column col="8">
-        <div class="bg-gray block">
-          col=8
-        </div>
+        <div class="bg-gray block">col=8</div>
       </column>
       <column col="12">
-        <div class="bg-gray block">
-          col=12
-        </div>
+        <div class="bg-gray block">col=12</div>
       </column>
     </columns>
     <prism language="html" :code="oneline" />
 
-    <h5 id="offset" class="subtitle">
-      Grid offset
-    </h5>
+    <h5 id="offset" class="subtitle">Grid offset</h5>
     <p>
       The Flexbox grid provides margin auto utilities to set offset. There are
       <kbd>mx</kbd>, <kbd>ml</kbd> and <kbd>mr</kbd> properties to set margins between columns without using empty
@@ -94,76 +70,52 @@
     </p>
     <columns>
       <column col="2">
-        <div class="bg-gray block">
-          col=2
-        </div>
+        <div class="bg-gray block">col=2</div>
       </column>
       <column col="4" mx>
-        <div class="bg-gray block">
-          col=4 mx
-        </div>
+        <div class="bg-gray block">col=4 mx</div>
       </column>
     </columns>
     <columns>
       <column col="2">
-        <div class="bg-gray block">
-          col=2
-        </div>
+        <div class="bg-gray block">col=2</div>
       </column>
       <column col="4" ml>
-        <div class="bg-gray block">
-          col=4 ml
-        </div>
+        <div class="bg-gray block">col=4 ml</div>
       </column>
     </columns>
     <columns>
       <column col="4" ml>
-        <div class="bg-gray block">
-          col=4 ml
-        </div>
+        <div class="bg-gray block">col=4 ml</div>
       </column>
       <column col="2">
-        <div class="bg-gray block">
-          col=2
-        </div>
+        <div class="bg-gray block">col=2</div>
       </column>
     </columns>
     <columns>
       <column col="4" mx>
-        <div class="bg-gray block">
-          col=4 mx
-        </div>
+        <div class="bg-gray block">col=4 mx</div>
       </column>
       <column col="2">
-        <div class="bg-gray block">
-          col=2
-        </div>
+        <div class="bg-gray block">col=2</div>
       </column>
     </columns>
     <columns>
       <column col="4" mr>
-        <div class="bg-gray block">
-          col=4 mr
-        </div>
+        <div class="bg-gray block">col=4 mr</div>
       </column>
       <column col="2">
-        <div class="bg-gray block">
-          col=2
-        </div>
+        <div class="bg-gray block">col=2</div>
       </column>
     </columns>
     <columns>
       <column col="4" mx>
-        <div class="bg-gray block">
-          col=4 mx
-        </div>
+        <div class="bg-gray block">col=4 mx</div>
       </column>
     </columns>
     <prism language="html" :code="gridoffset" />
 
-    <h5 class="subtitle">
-      Grid nesting
-    </h5>
+    <h5 class="subtitle">Grid nesting</h5>
     <p>
       To nest grids, add the new <code>&lt;columns&gt;</code> and <code>&lt;column&gt;</code> structure within an
       existing column.
@@ -171,26 +123,18 @@
 
     <columns>
       <column col="6">
-        <div class="bg-gray block">
-          col=6
-        </div>
+        <div class="bg-gray block">col=6</div>
         <columns>
           <column col="6">
-            <div class="bg-primary block">
-              col=6
-            </div>
+            <div class="bg-primary block">col=6</div>
           </column>
           <column col="6">
-            <div class="bg-primary block">
-              col=6
-            </div>
+            <div class="bg-primary block">col=6</div>
           </column>
         </columns>
       </column>
       <column col="6">
-        <div class="bg-gray block">
-          col=6
-        </div>
+        <div class="bg-gray block">col=6</div>
       </column>
     </columns>
     <prism language="html" :code="nested" />
@@ -198,9 +142,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Container, Columns, Column } from '@vectrejs/vectre';
 
-export default Vue.extend({
+export default defineComponent({
+  components: { Container, Columns, Column },
   data: () => ({
     basic: `<container>
 

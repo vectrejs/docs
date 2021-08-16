@@ -6,11 +6,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop } from 'vue-property-decorator';
-import Vue from 'vue';
+import { defineComponent } from '@vue/runtime-core';
 
-@Component
-export default class extends Vue {
-  @Prop(String) private title!: string;
-}
+export default defineComponent({
+  props: {
+    title: { type: String, required: false },
+  },
+});
 </script>
