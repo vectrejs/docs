@@ -13,7 +13,7 @@ export { OffCanvasRoute } from './OffCanvas';
 export { OverlayRoute } from './Overlay';
 export { PaginationRoute } from './Pagination';
 export { PanelRoute } from './Panel';
-// export { PopoverRoute } from './Popover';
+export { PopoverRoute } from './Popover';
 // export { StepsRoute } from './Steps';
 // export { TabsRoute } from './Tabs';
 export { TileRoute } from './Tile';

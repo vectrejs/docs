@@ -3,8 +3,7 @@
     <h2 class="title">Popovers</h2>
     <p>
       Popovers are small overlay content containers. Wrap elements by
-      <code>popover</code> component. The first element
-      will be shown the rest will be placed in the overlay
+      <code>popover</code> component. The first element will be shown the rest will be placed in the overlay
     </p>
     <popover side="right">
       <btn>Right</btn>
@@ -58,12 +57,13 @@
   </component-view>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Popover, Btn, Card, CardHeader, CardBody, CardFooter } from '@vectrejs/vectre';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'PopoverPage',
-
+  components: { Popover, Btn, Card, CardHeader, CardBody, CardFooter },
   data: () => ({
     props,
     code: `<popover>
