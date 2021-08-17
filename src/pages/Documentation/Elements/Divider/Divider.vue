@@ -8,7 +8,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat
       tempus tellus.
     </p>
-    <divider>OR</divider>
+    <divider content="OR"></divider>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat
       tempus tellus.
@@ -44,13 +44,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Column, Columns, Btn, Divider } from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'DividerPage',
-
+  components: { Column, Columns, Btn, Divider },
   data: () => ({
     props,
     slots,
