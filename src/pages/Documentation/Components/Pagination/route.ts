@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const PaginationRoute = {
+export const PaginationRoute: RouteRecordRaw = {
   name: 'PaginationPage',
   path: 'pagination',
   component: () => import(/* webpackChunkName: "pagination" */ './Pagination.vue'),
   meta: {
     title: 'Pagination',
   },
-} as RouteConfig;
+};

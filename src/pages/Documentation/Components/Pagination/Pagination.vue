@@ -15,13 +15,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Pagination } from '@vectrejs/vectre';
 import { props } from './props';
 import { events } from './events';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'PaginationPage',
-
+  components: { Pagination },
   data: () => ({
     props,
     events,
