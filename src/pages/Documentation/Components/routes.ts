@@ -7,7 +7,7 @@ export { ChipRoute } from './Chip';
 export { EmptyRoute } from './Empty';
 export { DropdownMenuRoute } from './DropdownMenu';
 export { VerticalMenuRoute } from './VerticalMenu';
-// export { ModalRoute } from './Modal';
+export { ModalRoute } from './Modal';
 // export { NavRoute } from './Nav';
 // export { OffCanvasRoute } from './OffCanvas';
 export { OverlayRoute } from './Overlay';

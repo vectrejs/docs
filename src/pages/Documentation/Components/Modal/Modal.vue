@@ -9,29 +9,43 @@
     <btn type="link" @click="composed = true">Composed</btn>
 
     <modal v-model="modal">
-      <h5 slot="header">History of Daylight Saving Time</h5>
-      <p slot="body">
-        The concept of setting the clocks ahead in the spring in order to make better use of natural daylight was first
-        introduced by US inventor Benjamin Franklin in 1784.
-      </p>
-      <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
+      <template #header>
+        <h5>History of Daylight Saving Time</h5>
+      </template>
+      <template #body>
+        <p>
+          The concept of setting the clocks ahead in the spring in order to make better use of natural daylight was
+          first introduced by US inventor Benjamin Franklin in 1784.
+        </p>
+      </template>
+      <template #footer>
+        <btn type="primary" @click="modal = false">Ok</btn>
+      </template>
     </modal>
 
     <modal v-model="small" size="sm" :overlay="50" :close-overlay="false" :no-scroll="false">
-      <h5 slot="header">What is Linear B?</h5>
-      <p slot="body">
-        Linear B is a syllabic script that was used for writing Mycenaean Greek, the earliest attested form of Greek.
-        The script predates the Greek alphabet by several centuries.
-      </p>
+      <template #header>
+        <h5>What is Linear B?</h5>
+      </template>
+      <template #body>
+        <p>
+          Linear B is a syllabic script that was used for writing Mycenaean Greek, the earliest attested form of Greek.
+          The script predates the Greek alphabet by several centuries.
+        </p>
+      </template>
     </modal>
 
     <modal v-model="large" size="lg" :close-btn="false">
-      <h2 slot="header" class="title">Big without close button</h2>
-      <p slot="body">
-        Left-handedness is less common than right-handedness. Left-handed people are more skillful with their left hands
-        when performing tasks. Studies suggest that approximately 10% of the world population is left-handed.
-        Mixed-handedness is the change of hand preference between tasks.
-      </p>
+      <template #header>
+        <h2 class="title">Big without close button</h2>
+      </template>
+      <template #body>
+        <p>
+          Left-handedness is less common than right-handedness. Left-handed people are more skillful with their left
+          hands when performing tasks. Studies suggest that approximately 10% of the world population is left-handed.
+          Mixed-handedness is the change of hand preference between tasks.
+        </p>
+      </template>
     </modal>
 
     <modal v-model="composed" size="lg">
@@ -54,14 +68,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Btn, Modal, ModalBody, ModalFooter, ModalHeader } from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 import { events } from './events';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'ModalPage',
-
+  components: { Btn, Modal, ModalBody, ModalFooter, ModalHeader },
   data: () => ({
     props,
     slots,
@@ -77,9 +92,17 @@ export default Vue.extend({
 <btn @click="composed = true">Composed</btn>
 
 <modal v-model="modal">
-  <h5 slot="header">Default modal</h5>
-  <p slot="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-  <btn slot="footer" type="primary" @click="modal = false">Ok</btn>
+  <template #header>
+    <h5>History of Daylight Saving Time</h5>
+  </template>
+  <template #body>
+    <p>
+      The concept of setting the clocks...
+    </p>
+  </template>
+  <template #footer>
+    <btn type="primary" @click="modal = false">Ok</btn>
+  </template>
 </modal>
 
 <modal v-model="small" size="sm" :overlay="50" :close-overlay="false" :no-scroll="false">
