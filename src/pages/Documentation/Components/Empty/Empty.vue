@@ -5,12 +5,10 @@
 
     <columns>
       <column col="7" xs="12" mx>
-        <empty
-          icon="mail"
-          title="You have no new messages"
-          sub="Click the button to start a conversation"
-        >
-          <btn slot="action">Send a message</btn>
+        <empty icon="mail" title="You have no new messages" sub="Click the button to start a conversation">
+          <template #action>
+            <btn>Send a message</btn>
+          </template>
         </empty>
       </column>
 
@@ -31,22 +29,25 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Column, Columns, Btn, Empty, EmptyAction, EmptyIcon, EmptyTitle, EmptySubtitle } from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'EmptyPage',
-
+  components: { Column, Columns, Btn, Empty, EmptyAction, EmptyIcon, EmptyTitle, EmptySubtitle },
   data: () => ({
     props,
     slots,
-    code: `<empty
-  icon="mail"
-  title="You have no new messages"
+    code: `<empty 
+  icon="mail" 
+  title="You have no new messages" 
   sub="Click the button to start a conversation"
 >
-  <btn slot="action">Send a message</btn>
+  <template #action>
+    <btn>Send a message</btn>
+  </template>
 </empty>
 
 <!-- Or with composition -->

@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const EmptyRoute = {
+export const EmptyRoute: RouteRecordRaw = {
   name: 'EmptyPage',
   path: 'empty',
   component: () => import(/* webpackChunkName: "empty" */ './Empty.vue'),
   meta: {
     title: 'Empty States',
   },
-} as RouteConfig;
+};
