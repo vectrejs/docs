@@ -1,6 +1,6 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const OffCanvasRoute: RouteConfig = {
+export const OffCanvasRoute: RouteRecordRaw = {
   name: 'OffCanvasPage',
   path: 'offcanvas',
   component: () => import(/* webpackChunkName: "off-canvas" */ './OffCanvas.vue'),

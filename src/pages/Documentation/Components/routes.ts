@@ -9,7 +9,7 @@ export { DropdownMenuRoute } from './DropdownMenu';
 export { VerticalMenuRoute } from './VerticalMenu';
 export { ModalRoute } from './Modal';
 export { NavRoute } from './Nav';
-// export { OffCanvasRoute } from './OffCanvas';
+export { OffCanvasRoute } from './OffCanvas';
 export { OverlayRoute } from './Overlay';
 // export { PaginationRoute } from './Pagination';
 // export { PanelRoute } from './Panel';

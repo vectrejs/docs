@@ -14,13 +14,7 @@
     <!-- <h3 class="subtitle">Basic usage</h3> -->
     <columns>
       <column col="12">
-        <off-canvas
-          id="off-canvas-example"
-          :sidebar="false"
-          overlay="0.6"
-          icon="apps"
-          close-on-overlay
-        >
+        <off-canvas id="off-canvas-example" :sidebar="false" overlay="0.6" icon="apps" close-on-overlay>
           <template #sidebar>Sidebar</template>
           <template #content>
             <h4>Lorem ipsum</h4>
@@ -42,15 +36,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, OffCanvas, Tag, Tooltip } from '@vectrejs/vectre';
 import { events } from './events';
 import { slots } from './slots';
 import { props } from './props';
 import { methods } from './methods';
 
-export default Vue.extend({
-  name: 'off-canvasPage',
-
+export default defineComponent({
+  name: 'OffCanvasPage',
+  directives: { Tooltip },
+  components: { Columns, Column, OffCanvas, Tag },
   data: () => ({
     events,
     props,
