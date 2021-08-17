@@ -14,13 +14,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Chip } from '@vectrejs/vectre';
 import { events } from './events';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'ChipPage',
-
+  components: { Chip },
   data: () => ({
     props,
     events,

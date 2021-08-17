@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const ChipRoute = {
+export const ChipRoute: RouteRecordRaw = {
   name: 'ChipPage',
   path: 'chip',
   component: () => import(/* webpackChunkName: "chip" */ './Chip.vue'),
   meta: {
     title: 'Chips',
   },
-} as RouteConfig;
+};
