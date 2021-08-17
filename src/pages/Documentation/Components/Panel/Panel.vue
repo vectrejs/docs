@@ -5,16 +5,21 @@
     <columns>
       <column col="6" xl="6" sm="12">
         <panel>
-          <h5 slot="header">Recently Watched</h5>
-          <tile
-            v-for="(tile, i) in tiles"
-            slot="body"
-            :key="i"
-            :avatar="tile.avatar"
-            :title="tile.title"
-            :subtitle="tile.subtitle"
-          />
-          <btn slot="footer" size="block" type="primary">Hide</btn>
+          <template #header>
+            <h5>Recently Watched</h5>
+          </template>
+          <template #body>
+            <tile
+              v-for="(tile, i) in tiles"
+              :key="i"
+              :avatar="tile.avatar"
+              :title="tile.title"
+              :subtitle="tile.subtitle"
+            />
+          </template>
+          <template #footer>
+            <btn size="block" type="primary">Hide</btn>
+          </template>
         </panel>
       </column>
       <column col="6" sm="12">
@@ -50,12 +55,26 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import {
+  Avatar,
+  Tile,
+  Btn,
+  Column,
+  Columns,
+  Panel,
+  PanelHeader,
+  PanelBody,
+  PanelFooter,
+  PanelNav,
+  Tooltip,
+} from '@vectrejs/vectre';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'PanelPage',
-
+  directives: { Tooltip },
+  components: { Avatar, Tile, Btn, Column, Columns, Panel, PanelHeader, PanelBody, PanelFooter, PanelNav },
   data: () => ({
     slots,
     tiles: [
@@ -79,15 +98,21 @@ export default Vue.extend({
       },
     ],
     html: `<panel>
-  <h5 slot="header">Recently Watched</h5>
-  <tile slot="body"
-    v-for="(tile, i) in tiles"
-    :key="i"
-    :avatar="tile.avatar"
-    :title="tile.title"
-    :subtitle="tile.subtitle"
-  />
-  <btn slot="footer" size="block" type="primary">Hide</btn>
+  <template #header>
+    <h5>Recently Watched</h5>
+  </template>
+  <template #body>
+    <tile
+      v-for="(tile, i) in tiles"
+      :key="i"
+      :avatar="tile.avatar"
+      :title="tile.title"
+      :subtitle="tile.subtitle"
+    />
+  </template>
+  <template #footer>
+    <btn size="block" type="primary">Hide</btn>
+  </template>
 </panel>
 
 <!-- OR Composition -->
