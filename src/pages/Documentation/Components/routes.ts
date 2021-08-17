@@ -10,7 +10,7 @@ export { VerticalMenuRoute } from './VerticalMenu';
 // export { ModalRoute } from './Modal';
 // export { NavRoute } from './Nav';
 // export { OffCanvasRoute } from './OffCanvas';
-// export { OverlayRoute } from './Overlay';
+export { OverlayRoute } from './Overlay';
 // export { PaginationRoute } from './Pagination';
 // export { PanelRoute } from './Panel';
 // export { PopoverRoute } from './Popover';

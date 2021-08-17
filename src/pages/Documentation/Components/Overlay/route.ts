@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const OverlayRoute = {
+export const OverlayRoute: RouteRecordRaw = {
   name: 'OverlayPage',
   path: 'overlay',
   component: () => import(/* webpackChunkName: "overlay-component" */ './Overlay.vue'),
   meta: {
     title: 'Overlay',
   },
-} as RouteConfig;
+};

@@ -32,7 +32,7 @@
           </card-footer>
         </card>
       </column>
-      <column col="6" xs="12" xl="6" lg="6" mx>
+      <!-- <column col="6" xs="12" xl="6" lg="6" mx>
         <form-group>
           <form-label>Opacity</form-label>
           <form-slider v-model="opacity" max="99" tooltip="%" />
@@ -43,7 +43,7 @@
         </form-group>
         <form-switch v-model="fullscreen" label="Fullscreen" />
         <form-switch v-model="noScroll" label="No scroll" :disabled="!fullscreen" />
-      </column>
+      </column> -->
     </columns>
 
     <prism language="html" :code="html" />
@@ -57,14 +57,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Overlay, Column, Columns, Btn, Card, CardImage, CardBody, CardHeader, CardFooter } from '@vectrejs/vectre';
 import { events } from './events';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'OverlayPage',
-
+  components: { Overlay, Column, Columns, Btn, Card, CardImage, CardBody, CardHeader, CardFooter },
   data: () => ({
     props,
     slots,
