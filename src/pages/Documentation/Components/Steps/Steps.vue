@@ -18,24 +18,24 @@
     </columns>
     <prism language="html" :code="html" />
     <prism language="javascript" :code="js" />
-    <p>
-      <code>items</code> prop should have a certain structure to be used in a simplified way:
-    </p>
+    <p><code>items</code> prop should have a certain structure to be used in a simplified way:</p>
     <pre>
 Array of {
   name: string,
   tooltip?: string
-}</pre>
+}</pre
+    >
   </component-view>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Column, Columns, Steps, Step, Btn } from '@vectrejs/vectre';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'StepsPage',
-
+  components: { Column, Columns, Steps, Step, Btn },
   data: () => ({
     props,
     active: 1,
