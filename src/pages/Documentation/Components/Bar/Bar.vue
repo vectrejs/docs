@@ -20,13 +20,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Bar } from '@vectrejs/vectre';
 import { setInterval, clearInterval } from 'timers';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'BarPage',
-
+  components: { Bar },
   data: () => ({
     props,
     now: 10,
