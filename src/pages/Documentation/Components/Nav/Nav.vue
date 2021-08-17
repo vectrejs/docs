@@ -40,10 +40,10 @@ Array of {
 
     <h3 class="subtitle">Advanced</h3>
     <navigation :items="items" level="1">
-      <span slot-scope="{ item }">
+      <template #item="{ item }">
         <Icon name="right" />
         {{ item.text }}
-      </span>
+      </template>
     </navigation>
     <prism language="html" :code="advancedHtml" />
     <p>
@@ -54,13 +54,14 @@ Array of {
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Navigation, NavigationItem, Icon } from '@vectrejs/vectre';
 import { slots } from './slots';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'NavigationPage',
-
+  components: { Navigation, NavigationItem, Icon },
   data: () => ({
     slots,
     props,
@@ -116,10 +117,10 @@ export default Vue.extend({
   </navigation-item>
 </navigation>`,
     advancedHtml: `<navigation :items="items" level="1">
-  <span slot-scope="{item, index}">
-    <Icon name="right"/>
+  <template #item="{ item }">
+    <Icon name="right" />
     {{ item.text }}
-  </span>
+  </template>
 </navigation>`,
   }),
 });
