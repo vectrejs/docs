@@ -20,21 +20,22 @@
       <code>router-link</code> instead of &lt;a&gt;
     </p>
 
-    <breadcrumb :crumbs="customCrumbs">
-      <router-link slot-scope="{ crumb }" :to="crumb.path">{{ crumb.title }}</router-link>
+    <breadcrumb #default="{ crumb }" :crumbs="customCrumbs">
+      <router-link :to="crumb.path">{{ crumb.title }}</router-link>
     </breadcrumb>
     <prism language="html" :code="advanced" />
   </component-view>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Breadcrumb } from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'BreadcrumbPage',
-
+  components: { Breadcrumb },
   data: () => ({
     props,
     slots,
@@ -57,12 +58,13 @@ export default Vue.extend({
 />
     `,
     advanced: `<breadcrumb
+  #default="{ crumb }"
   :crumbs="[
     { to: '/', customTitle: 'Home' },
     { to: '/settings', customTitle: 'Settings' },
     { to: '/settings/avatar', customTitle: 'Change avatar' }
   ]">
-  <router-link slot-scope="{ crumb }" :to="crumb.to">
+  <router-link :to="crumb.to">
     {{ crumb.customTitle }}
   </router-link>
 </breadcrumb>`,

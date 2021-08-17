@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const BreadcrumbRoute = {
+export const BreadcrumbRoute: RouteRecordRaw = {
   name: 'BreadcrumbPage',
   path: 'breadcrumb',
   component: () => import(/* webpackChunkName: "breadcrumb" */ './Breadcrumb.vue'),
   meta: {
     title: 'Breadcrumb',
   },
-} as RouteConfig;
+};
