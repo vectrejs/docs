@@ -15,6 +15,6 @@ export { PaginationRoute } from './Pagination';
 export { PanelRoute } from './Panel';
 export { PopoverRoute } from './Popover';
 export { StepsRoute } from './Steps';
-// export { TabsRoute } from './Tabs';
+export { TabsRoute } from './Tabs';
 export { TileRoute } from './Tile';
 // export { ToastRoute } from './Toast';

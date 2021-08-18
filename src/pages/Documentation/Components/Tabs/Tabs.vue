@@ -42,25 +42,26 @@
     </columns>
     <prism language="html" :code="advancedHtml" />
     <prism language="javascript" :code="advancedJs" />
-    <p>
-      <code>items</code> prop should have a certain structure to be used in advanced mode:
-    </p>
+    <p><code>items</code> prop should have a certain structure to be used in advanced mode:</p>
     <pre>
 Array of {
   name: string,
   badge?: string | number
-}</pre>
+}</pre
+    >
   </component-view>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, Btn, Tabs, Tab, TabAction } from '@vectrejs/vectre';
 import { events } from './events';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'TabsPage',
+  components: { Columns, Column, Btn, Tabs, Tab, TabAction },
   data: () => ({
     events,
     props,
@@ -85,12 +86,14 @@ Current Tab: {{ current }}`,
   <template #tab="{ item }">
     {{ item.name }}
   </template>
-  <tab-action v-if="advancedCurrent != 0" slot="action">
-    <btn size="sm" @click="goToFirst">To music</btn>
-  </tab-action>
+  <template #action>
+    <tab-action v-if="advancedCurrent != 0">
+      <btn size="sm" @click="goToFirst">To music</btn>
+    </tab-action>
+  </template>
 </tabs>
 
-<!-- OR -->
+<!-- OR with composition -->
 
 <tabs v-model="current">
   <tab :badge="badge">Music</tab>
@@ -115,7 +118,7 @@ Current Tab: {{ current }}`,
 };`,
   }),
   methods: {
-    goToFirst() {
+    goToFirst(): void {
       this.badge -= 1;
       this.advancedCurrent = 0;
     },
