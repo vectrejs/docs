@@ -17,4 +17,4 @@ export { PopoverRoute } from './Popover';
 export { StepsRoute } from './Steps';
 export { TabsRoute } from './Tabs';
 export { TileRoute } from './Tile';
-// export { ToastRoute } from './Toast';
+export { ToastRoute } from './Toast';

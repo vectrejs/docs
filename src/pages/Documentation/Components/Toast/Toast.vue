@@ -30,13 +30,13 @@
         <toast type="primary" icon="people" closeable>
           <template #title>Who was the voice of Mickey Mouse?</template>
           <template #content>
-            <small
-              >Originally, Walt Disney himself was the voice of Mickey Mouse, followed by Jim MacDonald, and later Wayne
-              Allwine provided Mickey's distinctive voice. Mickey's new voice has not been offically announced.</small
-            >
+            <small>
+              Originally, Walt Disney himself was the voice of Mickey Mouse, followed by Jim MacDonald, and later Wayne
+              Allwine provided Mickey's distinctive voice. Mickey's new voice has not been offically announced.
+            </small>
           </template>
           <template #action>
-            <btn action type="link" size="sm" icon="bookmark" v-tooltip.left="'bookmark'" />
+            <btn v-tooltip.left="'bookmark'" action type="link" size="sm" icon="bookmark" />
           </template>
         </toast>
       </column>
@@ -48,16 +48,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Toast } from '@vectrejs/vectre';
+import { defineComponent } from 'vue';
+import { Btn, Columns, Column, Toast, Tooltip } from '@vectrejs/vectre';
 import { events } from './events';
 import { methods } from './methods';
 import { slots } from './slots';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'ToastPage',
-
+  directives: { Tooltip },
+  components: { Btn, Columns, Column, Toast },
   data: () => ({
     events,
     methods,
