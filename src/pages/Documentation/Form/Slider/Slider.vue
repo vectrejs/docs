@@ -53,13 +53,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, FormSlider, FormGroup, FormLabel, Tag, Tooltip } from '@vectrejs/vectre';
 import { events } from './events';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'SelectPage',
-
+  components: { Columns, Column, FormSlider, FormGroup, FormLabel, Tag },
+  directives: { Tooltip },
   data: () => ({
     events,
     props,

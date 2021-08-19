@@ -4,7 +4,7 @@
 // export { FormCheckboxRoute } from './Checkbox';
 export { FormRadioRoute } from './Radio';
 export { FormSelectRoute } from './Select';
-// export { FormSliderRoute } from './Slider';
+export { FormSliderRoute } from './Slider';
 // export { FormSwitchRoute } from './Switch';
 // export { FormTextareaRoute } from './Textarea';
 // export { FormValidationRoute } from './Validation';
