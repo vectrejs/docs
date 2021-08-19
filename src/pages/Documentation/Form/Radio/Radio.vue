@@ -6,12 +6,13 @@
       group should have the same <code>name</code> or <code>v-model</code>
     </p>
 
-    <form-radio v-model="gender">Male</form-radio>
-    <form-radio v-model="gender">Female</form-radio>
-    Selected radio: {{ gender }}
+    <form-radio v-model="drink">Tea</form-radio>
+    <form-radio v-model="drink" label="Coffee" />
+    <form-radio v-model="drink" value="Juice" />
+    Selected radio: {{ drink }}
 
-    <prism language="html" :code="genderHtml" />
-    <prism language="javascript" :code="genderJs" />
+    <prism language="html" :code="drinkHtml" />
+    <prism language="javascript" :code="drinkJs" />
 
     <h5 class="subtitle">Checked</h5>
     <form-radio label="Option A" checked />
@@ -111,29 +112,36 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { FormRadio, FormRadioGroup } from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'RadioPage',
-
+  components: { FormRadio, FormRadioGroup },
+  methods: {
+    al(v: any) {
+      alert(v);
+    },
+  },
   data: () => ({
     props,
     slots,
     selectedRadio: 'Male',
-    gender: undefined,
+    drink: undefined,
     options: ['Male', 'Female'],
     manualGroup: 'Male',
     arr: undefined,
     obj: undefined,
     nested: undefined,
 
-    genderHtml: `<form-radio v-model="gender">Male</form-radio>
-<form-radio v-model="gender">Female</form-radio>`,
-    genderJs: `export default {
+    drinkHtml: `<form-radio v-model="drink">Tea</form-radio>
+<form-radio v-model="drink" label="Coffee" />
+<form-radio v-model="drink" value="Juice" />`,
+    drinkJs: `export default {
   data: () => ({
-    gender: undefined,
+    drink: undefined,
   }),
 }`,
     sizeHtml: `<form-radio label="Text" name="example" size="sm" />
