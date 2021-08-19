@@ -81,14 +81,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, FormSelect, FormSelectOption } from '@vectrejs/vectre';
 import { events } from './events';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'SelectPage',
-
+  components: { Columns, Column, FormSelect, FormSelectOption },
   data: () => ({
     events,
     props,

@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const FormSelectRoute = {
+export const FormSelectRoute: RouteRecordRaw = {
   name: 'SelectPage',
   path: 'select',
   component: () => import(/* webpackChunkName: "select" */ './Select.vue'),
   meta: {
     title: 'Select',
   },
-} as RouteConfig;
+};
