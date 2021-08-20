@@ -2,9 +2,7 @@
   <container>
     <h2 class="title">Overview</h2>
 
-    <p>
-      Here’s a quick example to demonstrate most controls. Keep reading for documentation on required components.
-    </p>
+    <p>Here’s a quick example to demonstrate most controls. Keep reading for documentation on required components.</p>
     <columns>
       <column col="6" xl="8" sm="12">
         <form-group>
@@ -24,7 +22,7 @@
           <form-select
             v-model="source"
             :options="['Slack', 'Skype', 'Hipchat', 'Telegram', 'WhatsApp']"
-            size="3"
+            size="lg"
             multiple
           />
           <form-checkbox v-model="spam" type="switch">Send me emails with news and tips</form-checkbox>
@@ -90,12 +88,10 @@
               <form-select
                 v-model="source"
                 :options="['Slack', 'Skype', 'Hipchat', 'Telegram', 'WhatsApp']"
-                size="3"
+                size="lg"
                 multiple
               />
-              <form-checkbox v-model="spam" type="switch">
-                Send me emails with news and tips
-              </form-checkbox>
+              <form-checkbox v-model="spam" type="switch"> Send me emails with news and tips </form-checkbox>
             </column>
           </form-group>
           <form-group>
@@ -116,9 +112,42 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
+import { defineComponent } from 'vue';
+import {
+  Card,
+  Container,
+  Columns,
+  Column,
+  FormGroup,
+  FormHint,
+  FormLabel,
+  FormInput,
+  FormSelect,
+  FormRadioGroup,
+  FormRadio,
+  FormCheckbox,
+  FormTextarea,
+  FormHorizontal,
+} from '@vectrejs/vectre';
+
+export default defineComponent({
   name: 'FormOverviewPage',
+  components: {
+    Card,
+    Container,
+    Columns,
+    Column,
+    FormGroup,
+    FormHint,
+    FormLabel,
+    FormInput,
+    FormSelect,
+    FormRadioGroup,
+    FormRadio,
+    FormCheckbox,
+    FormTextarea,
+    FormHorizontal,
+  },
 
   data: () => ({
     name: '',
