@@ -42,9 +42,7 @@
     <prism language="html" :code="iconHtml" />
 
     <h3 class="subtitle">Loading</h3>
-    <p>
-      You can indicate that something is being loaded, such as a remote API call to validate the field.
-    </p>
+    <p>You can indicate that something is being loaded, such as a remote API call to validate the field.</p>
 
     <columns>
       <column col="7" xl="8" lg="9" xs="11">
@@ -79,13 +77,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, FormInput } from '@vectrejs/vectre';
 import { props } from './props';
 import { events } from './events';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'InputPage',
-
+  components: { Columns, Column, FormInput },
   data: () => ({
     events,
     props,
