@@ -101,11 +101,36 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import {
+  Columns,
+  Column,
+  FormGroup,
+  FormHint,
+  FormLabel,
+  FormInput,
+  FormSelect,
+  FormRadio,
+  FormCheckbox,
+  FormTextarea,
+} from '@vectrejs/vectre';
 import { props } from './props';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'GroupPage',
+  components: {
+    Columns,
+    Column,
+    FormGroup,
+    FormHint,
+    FormLabel,
+    FormInput,
+
+    FormSelect,
+    FormRadio,
+    FormCheckbox,
+    FormTextarea,
+  },
   data: () => ({
     props,
 

@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const FormGroupRoute = {
+export const FormGroupRoute: RouteRecordRaw = {
   name: 'GroupPage',
   path: 'group',
   component: () => import(/* webpackChunkName: "group" */ './Group.vue'),
   meta: {
     title: 'Group',
   },
-} as RouteConfig;
+};
