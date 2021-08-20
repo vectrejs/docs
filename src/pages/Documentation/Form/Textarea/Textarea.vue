@@ -15,12 +15,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { Columns, Column, FormTextarea } from '@vectrejs/vectre';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'TextareaPage',
-
+  components: { Columns, Column, FormTextarea },
   data: () => ({
     slots,
     message: '',

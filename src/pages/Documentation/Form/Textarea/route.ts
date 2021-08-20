@@ -1,10 +1,10 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-export const route = {
+export const route: RouteRecordRaw = {
   name: 'TextareaPage',
   path: 'textarea',
   component: () => import(/* webpackChunkName: "textarea" */ './Textarea.vue'),
   meta: {
     title: 'Textarea',
   },
-} as RouteConfig;
+};
