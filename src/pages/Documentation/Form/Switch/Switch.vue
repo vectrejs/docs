@@ -36,11 +36,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { FormSwitch, FormSwitchGroup } from '@vectrejs/vectre';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'SwitchPage',
-
+  components: { FormSwitch, FormSwitchGroup },
   data: () => ({
     light: false,
     conditions: [],
