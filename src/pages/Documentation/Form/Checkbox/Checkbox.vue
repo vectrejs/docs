@@ -110,13 +110,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { FormCheckbox, FormCheckboxGroup } from '@vectrejs/vectre';
 import { props } from './props';
 import { slots } from './slots';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'CheckboxPage',
-
+  components: { FormCheckbox, FormCheckboxGroup },
   data: () => ({
     props,
     slots,
