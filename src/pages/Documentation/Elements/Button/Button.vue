@@ -104,12 +104,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Columns, Column, Btn } from '@vectrejs/vectre';
+import { Columns, Column, Btn, BtnGroup } from '@vectrejs/vectre';
 import { props } from './props';
 
 export default defineComponent({
   name: 'ButtonPage',
-  components: { Columns, Column, Btn },
+  components: { Columns, Column, Btn, BtnGroup },
   data: () => ({
     props,
 
