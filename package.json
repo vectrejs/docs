@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@vectrejs/vectre": "^1.1.0",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.25.0",
     "sass-loader": "^7.1.0",
     "spectre.css": "github:picturepan2/spectre",
     "vee-validate": "^2.1.3",
